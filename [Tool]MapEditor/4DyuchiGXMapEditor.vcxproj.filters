@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{07e06b48-6bc1-49d0-bce9-bd52fd1c39b3}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="frame">
+      <UniqueIdentifier>{c7d6b17f-f0ef-449b-9c97-90be996636fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="history">
+      <UniqueIdentifier>{9f0af897-7b5c-47c6-b77d-0213387d979e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{b90bde94-d8ec-47c6-b270-a675d0624692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TileSet">
+      <UniqueIdentifier>{04164c09-9336-4b63-b8b5-be80673aa66e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog">
+      <UniqueIdentifier>{b5dcfeea-49a3-4015-a868-81cfee4cdd10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controls">
+      <UniqueIdentifier>{eb94e7cf-47bc-4550-9d8f-e408c64bc059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controls\DataGrid">
+      <UniqueIdentifier>{0ac914ef-e7b8-4b55-8b58-2d30d67ffe7b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\4DyuchiGXMapEditor.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\4DyuchiGXMapEditorDoc.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\idr_bott.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\idr_lefp.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\idr_left.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\idr_mode.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pick.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pick_color.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="sdi.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="4DyuchiGXMapEditor.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4DyuchiGXMapEditor.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="4DyuchiGXMapEditorDoc.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="4DyuchiGXMapEditorView.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="brush.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="helper.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGX_UTIL\MouseLib.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGX_UTIL\MToolMouseStatus.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="TileBrush.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Voidlist.h">
+      <Filter>frame</Filter>
+    </ClInclude>
+    <ClInclude Include="History.h">
+      <Filter>history</Filter>
+    </ClInclude>
+    <ClInclude Include="HistoryManager.h">
+      <Filter>history</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveObjectHistory.h">
+      <Filter>history</Filter>
+    </ClInclude>
+    <ClInclude Include="PutTileHistory.h">
+      <Filter>history</Filter>
+    </ClInclude>
+    <ClInclude Include="ReplaceTileHistory.h">
+      <Filter>history</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\FileStorage_typedef.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="FuncTable.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGXGFunc\global.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="GXSCHEDULE_PROC_MSG.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IExecutive.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IFileStorage.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IGeometry.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IRenderer.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\typedef.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSet.h">
+      <Filter>TileSet</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSetApplyer.h">
+      <Filter>TileSet</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSetEntry.h">
+      <Filter>TileSet</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSetPiece.h">
+      <Filter>TileSet</Filter>
+    </ClInclude>
+    <ClInclude Include="TileTableDesc.h">
+      <Filter>TileSet</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogDirectionalLightProperty.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogEditEntry.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogEditTileSet.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogEditZone.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogHFieldProperty.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogTileBrushProperty.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogTilePalette.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogTileSet.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgBarHField.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgBarTool.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="LightPosDlg.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="LightProperty.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="ListBoxContainer.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadFailedTextureDialog.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcInfoDlg.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectProperty.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="RightView.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="SectionInfoDlg.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSetView.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="TileView.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerProperty.h">
+      <Filter>dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DataGrid\DataGrid.h">
+      <Filter>Controls\DataGrid</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="4DyuchiGXMapEditor.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="4DyuchiGXMapEditorDoc.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="4DyuchiGXMapEditorView.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="brush.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="helper.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\4DyuchiGX_UTIL\MouseLib.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\4DyuchiGX_UTIL\MToolMouseStatus.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="TileBrush.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="Tool.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="Voidlist.cpp">
+      <Filter>frame</Filter>
+    </ClCompile>
+    <ClCompile Include="HistoryManager.cpp">
+      <Filter>history</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveObjectHistory.cpp">
+      <Filter>history</Filter>
+    </ClCompile>
+    <ClCompile Include="PutTileHistory.cpp">
+      <Filter>history</Filter>
+    </ClCompile>
+    <ClCompile Include="ReplaceTileHistory.cpp">
+      <Filter>history</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSet.cpp">
+      <Filter>TileSet</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSetApplyer.cpp">
+      <Filter>TileSet</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSetEntry.cpp">
+      <Filter>TileSet</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSetPiece.cpp">
+      <Filter>TileSet</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogDirectionalLightProperty.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogEditEntry.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogEditTileSet.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogEditZone.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogHFieldProperty.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogTileBrushProperty.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogTilePalette.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogTileSet.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgBarHField.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgBarTool.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="LightPosDlg.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="LightProperty.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="ListBoxContainer.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadFailedTextureDialog.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcInfoDlg.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectProperty.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="RightView.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="SectionInfoDlg.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSetView.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="TileView.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="TriggerProperty.cpp">
+      <Filter>dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DataGrid\DataGrid.cpp">
+      <Filter>Controls\DataGrid</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

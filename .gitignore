@@ -1,0 +1,12 @@
+*.opensdf
+*.sdf
+*.suo
+*.ipch
+lib/*
+obj/*
+Output/*
+*.lib
+*.ncb
+*.map
+*.dll
+*.vcxproj

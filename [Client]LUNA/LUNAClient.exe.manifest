@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<assemblyIdentity version="1.0.0.0"
+    processorArchitecture="x86"
+    name="루나플러스"
+    type="win32"
+/>
+<description>Luna Online</description>
+
+</assembly>
+

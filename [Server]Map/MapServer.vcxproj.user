@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">
+    <LocalDebuggerCommand>C:\Luna2025\Server\MapServer_Debug.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>C:\Luna2025\Server</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>31</LocalDebuggerCommandArguments>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release GM_TOOL|Win32'">
+    <LocalDebuggerCommand>C:\Luna2025\Client\Luna_DevR.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>C:\Luna2025\Client</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug GM_TOOL|Win32'">
+    <LocalDebuggerCommand>C:\Luna2025\Client\Luna_Dev.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>C:\Luna2025\Client</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

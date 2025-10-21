@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{6e9b0f7d-e5d3-47f8-a213-31afeb9d8a4f}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="YHLibrary">
+      <UniqueIdentifier>{7ff6aa41-51a7-46ec-852b-8040f6dcabc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unicode">
+      <UniqueIdentifier>{057cd383-09b3-4c45-b526-6655dbb8a965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MFC">
+      <UniqueIdentifier>{f889c891-ef07-4dd9-8555-c7751c7411ec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Launcher.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Luna.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Launcher.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Launcher.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource.hm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DirectoryName.cpp">
+      <Filter>YHLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="FileName.cpp">
+      <Filter>YHLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="PakName.cpp">
+      <Filter>YHLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="YHFileFind.cpp">
+      <Filter>YHLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="StdioFileEx.cpp">
+      <Filter>Unicode</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="HtmlViewNotice.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageComboBox.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="MainDialog.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="Network.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>MFC</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DirectoryName.h">
+      <Filter>YHLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="FileName.h">
+      <Filter>YHLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="PakName.h">
+      <Filter>YHLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="YHFileFind.h">
+      <Filter>YHLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="StdioFileEx.h">
+      <Filter>Unicode</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateSmartPtr.h">
+      <Filter>Unicode</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="HtmlViewNotice.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageComboBox.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="MainDialog.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Network.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
+    <ClInclude Include="XTrap4Launcher.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="LunaLauncher.exe.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

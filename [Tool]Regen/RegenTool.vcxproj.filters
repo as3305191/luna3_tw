@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{56dbc095-f997-4768-b165-c4e844e6ea53}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="source\3DSource">
+      <UniqueIdentifier>{8520bd90-9a9b-44bd-9e01-a02fd4e093b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\3DSource\4DyuchiGRX_myself97_util">
+      <UniqueIdentifier>{790dd32f-c001-46ab-8253-6fe8a029dec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\3DSource\Engine">
+      <UniqueIdentifier>{c882831a-5ee8-40fe-ab7d-c69f72f0869b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\3DSource\4DyuchiGXGFunc">
+      <UniqueIdentifier>{1a49d665-56b1-4c07-89e9-03728aa67cd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Input">
+      <UniqueIdentifier>{ab395b35-4392-4612-b241-e696a768321e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Dialog">
+      <UniqueIdentifier>{5b044b6d-21a2-452f-bc21-8c94bde05d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Dialog\GridControl">
+      <UniqueIdentifier>{ad12f024-1a6a-4272-9109-32a4b3d4a68d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{fc52e4fe-4245-4716-9119-c4df2b8864e2}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\[CC]Header\Aes\aes.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\AESFile.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryManager.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadList.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="MHFile.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="MINIDUMP.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="RegenTool.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="RegenToolDoc.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="RegenToolView.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="MHMap.cpp">
+      <Filter>source\3DSource</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>source\3DSource</Filter>
+    </ClCompile>
+    <ClCompile Include="TileManager.cpp">
+      <Filter>source\3DSource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\4DyuchiGRX_myself97_util\MouseLib.cpp">
+      <Filter>source\3DSource\4DyuchiGRX_myself97_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\4DyuchiGRX_myself97_util\MToolMouseStatus.cpp">
+      <Filter>source\3DSource\4DyuchiGRX_myself97_util</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Engine.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\EngineCamera.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\EngineEffect.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\EngineLight.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\EngineMap.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\EngineObject.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\EngineSky.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\EngineSound.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\GraphicEngine.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="PtrList.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\SoundEngine.cpp">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\Mouse.cpp">
+      <Filter>source\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\MouseEventReceiver.cpp">
+      <Filter>source\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\MouseEventThrower.cpp">
+      <Filter>source\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDlgBar.cpp">
+      <Filter>source\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="CoolDialogBar.cpp">
+      <Filter>source\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgBarSheet.cpp">
+      <Filter>source\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupInfoInputDlg.cpp">
+      <Filter>source\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptViewDlg.cpp">
+      <Filter>source\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="SheetPageMonster.cpp">
+      <Filter>source\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCell.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCellBase.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCellCheck.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCellCombo.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCellDateTime.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCellNumeric.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCtrl.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridDropTarget.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridURLCell.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\InPlaceEdit.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\TitleTip.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\MemDC.cpp">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\[CC]Header\Aes\aes.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\AESFile.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="DefineStruct.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryManager.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadList.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="MHFile.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="MINIDUMP.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="RegenTool.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="RegenToolDoc.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="RegenToolView.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="MHMap.h">
+      <Filter>source\3DSource</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>source\3DSource</Filter>
+    </ClInclude>
+    <ClInclude Include="TileManager.h">
+      <Filter>source\3DSource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_myself97_util\MouseLib.h">
+      <Filter>source\3DSource\4DyuchiGRX_myself97_util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_myself97_util\MToolMouseStatus.h">
+      <Filter>source\3DSource\4DyuchiGRX_myself97_util</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Engine.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineCamera.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineEffect.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineLight.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineMap.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineObject.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineSky.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineSound.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\GraphicEngine.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="PtrList.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\SoundEngine.h">
+      <Filter>source\3DSource\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGXGFunc\global.h">
+      <Filter>source\3DSource\4DyuchiGXGFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGXGFunc\type.h">
+      <Filter>source\3DSource\4DyuchiGXGFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\Mouse.h">
+      <Filter>source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\MouseEventReceiver.h">
+      <Filter>source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\MouseEventThrower.h">
+      <Filter>source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDlgBar.h">
+      <Filter>source\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="CoolDialogBar.h">
+      <Filter>source\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgBarSheet.h">
+      <Filter>source\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="GroupInfoInputDlg.h">
+      <Filter>source\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptViewDlg.h">
+      <Filter>source\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="SheetPageMonster.h">
+      <Filter>source\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\CellRange.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCell.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCellBase.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCellCheck.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCellCombo.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCellDateTime.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCellNumeric.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCtrl.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridDropTarget.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridURLCell.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\InPlaceEdit.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\MemDC.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\TitleTip.h">
+      <Filter>source\Dialog\GridControl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\4DyuchiGXGFunc\SS3DGFunc.lib">
+      <Filter>source\3DSource\4DyuchiGXGFunc</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\RegenToolDoc.ico">
+      <Filter>source\Dialog</Filter>
+    </Image>
+    <Image Include="res\RegenTool.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RegenTool.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RegenTool.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{13245db0-e0f6-4475-b468-15b3727b26b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PunishMgr">
+      <UniqueIdentifier>{f472799c-6ecb-4273-b775-120d934207e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GiftManager">
+      <UniqueIdentifier>{9406b106-d856-41c7-9137-ad93843bb3e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ChatRoomMgr">
+      <UniqueIdentifier>{c95efcac-eebe-4b04-beb3-45941ed6beef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NpcRecallMgr">
+      <UniqueIdentifier>{cd467003-3e38-4f6c-8be1-7d552582e0de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NpcRecallMgr\NpcRecallInfo">
+      <UniqueIdentifier>{3bb7ce18-289c-428d-a957-6ded50c6a7ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SiegeRecallMgr">
+      <UniqueIdentifier>{0cd075b3-bf97-43db-a3de-e3dd06c89c35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SiegeRecallMgr\SiegeRecallInfo">
+      <UniqueIdentifier>{879caae8-7657-4aff-a5a0-56951f900e76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module">
+      <UniqueIdentifier>{24a47d58-40c0-43f2-8168-9e1c4d14a745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\Security">
+      <UniqueIdentifier>{7efebc28-e9ee-4d96-a44c-bcdb9124d3b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{32f310a8-e5b3-4f7a-b8d4-3901e02c895d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\TargetList">
+      <UniqueIdentifier>{b90aaf69-44a9-474e-81e7-35127e948ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\AES">
+      <UniqueIdentifier>{5626775a-f2b9-491a-8f97-0a927eb16128}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineLib">
+      <UniqueIdentifier>{69052c02-f14d-445b-b9ad-fbaee380b7ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineLib\4DyuchiGRX_common">
+      <UniqueIdentifier>{92ec95dc-a570-49a5-badb-2458b350c357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineLib\4DyuchiGXGFunc">
+      <UniqueIdentifier>{c27ffd20-ea53-421a-822b-058b59d91ee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{2520811e-7837-41c1-a724-f8257ba9a939}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="hseos">
+      <UniqueIdentifier>{3e739fd7-ee1a-4dd8-a8af-ec140e2182af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hseos\Family">
+      <UniqueIdentifier>{2a819bd2-f8e6-4c2d-9f08-73a9a528dfc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hseos\Group">
+      <UniqueIdentifier>{a53ee85c-015d-407a-a2a6-fd95ba7fab77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hseos\Debug">
+      <UniqueIdentifier>{7e2c24a9-78b3-4524-8e53-f6e61d8df595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hseos\Date">
+      <UniqueIdentifier>{085638a7-dac8-469e-ac6f-570d7e730a79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hseos\ResidentRegist">
+      <UniqueIdentifier>{69110fbf-12e3-4627-96f0-13061a69e702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hseos\Farm">
+      <UniqueIdentifier>{160eb58a-9c14-4ee9-9e88-47a385bdc79e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AgentDBMsgParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AgentNetworkMsgParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\FilteringTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MHTimeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlustimeMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TrafficLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PunishManager.cpp">
+      <Filter>Source Files\PunishMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="GiftEvent.cpp">
+      <Filter>Source Files\GiftManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GiftManager.cpp">
+      <Filter>Source Files\GiftManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatRoomMgr.cpp">
+      <Filter>Source Files\ChatRoomMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcRecallMgr.cpp">
+      <Filter>Source Files\NpcRecallMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallBase.cpp">
+      <Filter>Source Files\NpcRecallMgr\NpcRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallMoveable.cpp">
+      <Filter>Source Files\NpcRecallMgr\NpcRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallRemainTime.cpp">
+      <Filter>Source Files\NpcRecallMgr\NpcRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallSelf.cpp">
+      <Filter>Source Files\NpcRecallMgr\NpcRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="SiegeRecallMgr.cpp">
+      <Filter>Source Files\SiegeRecallMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\Siege_AddObj.cpp">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\Siege_RecallBase.cpp">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeCommand.cpp">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeMap.cpp">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeStep.cpp">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeTerm.cpp">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeTheme.cpp">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\BootManager.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\CommonDBMsgParser.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\Console.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\DataBase.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\MHFile.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\MiniDumper.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\Network.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\ServerListManager.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="Crypt.cpp">
+      <Filter>Module\Security</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\AESFile.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\CommonCalcFunc.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\CommonGameFunc.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\vector.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\TargetList\TargetData.cpp">
+      <Filter>Common\TargetList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\TargetList\TargetList.cpp">
+      <Filter>Common\TargetList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\TargetList\TargetListIterator.cpp">
+      <Filter>Common\TargetList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\Aes\aes.cpp">
+      <Filter>Common\AES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Family\SHFamily.cpp">
+      <Filter>hseos\Family</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Family\SHFamilyManager.cpp">
+      <Filter>hseos\Family</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Group\SHGroup.cpp">
+      <Filter>hseos\Group</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Debug\SHDebug.cpp">
+      <Filter>hseos\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Date\SHDateManager.cpp">
+      <Filter>hseos\Date</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\ResidentRegist\SHResidentRegistManager.cpp">
+      <Filter>hseos\ResidentRegist</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Farm\Animal.cpp">
+      <Filter>hseos\Farm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Farm\Pen.cpp">
+      <Filter>hseos\Farm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Farm\SHCrop.cpp">
+      <Filter>hseos\Farm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Farm\SHFarm.cpp">
+      <Filter>hseos\Farm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Farm\SHFarmManager.cpp">
+      <Filter>hseos\Farm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Farm\SHFarmObj.cpp">
+      <Filter>hseos\Farm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Farm\SHFarmRenderObj.cpp">
+      <Filter>hseos\Farm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Farm\SHFarmZone.cpp">
+      <Filter>hseos\Farm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hseos\Farm\SHGarden.cpp">
+      <Filter>hseos\Farm</Filter>
+    </ClCompile>
+    <ClCompile Include="GMPowerList.cpp" />
+    <ClCompile Include="HackShieldManager.cpp" />
+    <ClCompile Include="NProtectManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AgentDBMsgParser.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AgentNetworkMsgParser.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\FilteringTable.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MHTimeManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgTable.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlustimeMgr.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerSystem.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerTable.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrafficLog.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserTable.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PunishManager.h">
+      <Filter>Source Files\PunishMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="GiftEvent.h">
+      <Filter>Source Files\GiftManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GiftManager.h">
+      <Filter>Source Files\GiftManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatRoomMgr.h">
+      <Filter>Source Files\ChatRoomMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcRecallMgr.h">
+      <Filter>Source Files\NpcRecallMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallBase.h">
+      <Filter>Source Files\NpcRecallMgr\NpcRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallMoveable.h">
+      <Filter>Source Files\NpcRecallMgr\NpcRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallRemainTime.h">
+      <Filter>Source Files\NpcRecallMgr\NpcRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallSelf.h">
+      <Filter>Source Files\NpcRecallMgr\NpcRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="SiegeRecallMgr.h">
+      <Filter>Source Files\SiegeRecallMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\Siege_AddObj.h">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\Siege_RecallBase.h">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeCommand.h">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeMap.h">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeStep.h">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeTerm.h">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeTheme.h">
+      <Filter>Source Files\SiegeRecallMgr\SiegeRecallInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\BootManager.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\CommonDBMsgParser.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\Console.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\console_type.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\DataBase.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\DB.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\DBThreadInterface.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\define.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\iconsole.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\iconsole_guid.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\inetwork.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\MHFile.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\MiniDumper.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\net_define.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\Network.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\network_guid.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\Noncopyable.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\ServerListManager.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\TConsole_Def.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\TConsole_Guids.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\TConsole_Interface.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]ServerModule\typedef.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="Crypt.h">
+      <Filter>Module\Security</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\AddableInfo.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\AESFile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\ClientGameDefine.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\ClientGameStruct.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\CommonCalcFunc.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\CommonDefine.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\CommonGameDefine.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\CommonGameFunc.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\CommonStruct.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\Pool.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\Protocol.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\ServerGameDefine.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\ServerGameStruct.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\vector.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\TargetList\TargetData.h">
+      <Filter>Common\TargetList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\TargetList\TargetList.h">
+      <Filter>Common\TargetList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\TargetList\TargetListIterator.h">
+      <Filter>Common\TargetList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\[CC]Header\Aes\aes.h">
+      <Filter>Common\AES</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\FileStorage_typedef.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\GXSCHEDULE_PROC_MSG.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IAudio.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IAudio_GUID.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IExecutive.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IExecutive_GUID.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IFileStorage.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IFileStorage_GUID.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IGeometry.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IGeometry_GUID.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IRenderer.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\IRenderer_GUID.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\mesh_flag.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\motion_flag.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\StdAfx.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGRX_common\typedef.h">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGXGFunc\global.h">
+      <Filter>EngineLib\4DyuchiGXGFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4DyuchiGXGFunc\type.h">
+      <Filter>EngineLib\4DyuchiGXGFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Family\SHFamily.h">
+      <Filter>hseos\Family</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Family\SHFamilyManager.h">
+      <Filter>hseos\Family</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Group\SHGroup.h">
+      <Filter>hseos\Group</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Debug\SHDebug.h">
+      <Filter>hseos\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Date\SHDateManager.h">
+      <Filter>hseos\Date</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\ResidentRegist\SHResidentRegistManager.h">
+      <Filter>hseos\ResidentRegist</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Farm\Animal.h">
+      <Filter>hseos\Farm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Farm\Pen.h">
+      <Filter>hseos\Farm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Farm\SHCrop.h">
+      <Filter>hseos\Farm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Farm\SHFarm.h">
+      <Filter>hseos\Farm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Farm\SHFarmManager.h">
+      <Filter>hseos\Farm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Farm\SHFarmObj.h">
+      <Filter>hseos\Farm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Farm\SHFarmRenderObj.h">
+      <Filter>hseos\Farm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Farm\SHFarmZone.h">
+      <Filter>hseos\Farm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\hseos\Farm\SHGarden.h">
+      <Filter>hseos\Farm</Filter>
+    </ClInclude>
+    <ClInclude Include="AntiCpSvrFunc.h" />
+    <ClInclude Include="AntiCpXSvr.h" />
+    <ClInclude Include="ggsrv25.h" />
+    <ClInclude Include="GMPowerList.h" />
+    <ClInclude Include="HackShieldManager.h" />
+    <ClInclude Include="NProtectManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\4DyuchiGRX_common\math.inl">
+      <Filter>EngineLib\4DyuchiGRX_common</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\4DyuchiGXGFunc\SS3DGFunc.lib">
+      <Filter>EngineLib\4DyuchiGXGFunc</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Dialog">
+      <UniqueIdentifier>{94deb278-72ad-4886-9ab6-9b5c6b80eda0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\Item">
+      <UniqueIdentifier>{c112fa2d-7a71-41b3-b3f7-8f38e1363e30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\User">
+      <UniqueIdentifier>{1826f7dd-e132-45ee-890c-12eda8ac9fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\Operator">
+      <UniqueIdentifier>{b07a8647-bfbf-4be4-8c17-757a451a4458}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\Quest">
+      <UniqueIdentifier>{19257c67-5c19-46b0-8191-b595128cf4a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\Skill">
+      <UniqueIdentifier>{1bd7a1f2-7c05-42d4-8b95-1deb05ab18eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog\Guild">
+      <UniqueIdentifier>{afa58b30-6504-4dcd-bb31-a6c64e7d13f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MFC frame">
+      <UniqueIdentifier>{f2a95130-c966-46ef-ae9b-e07ae788a2f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{1ac9e80c-3cb5-4d50-a5f2-cdb893423e76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module">
+      <UniqueIdentifier>{032118cf-b9e9-487d-9952-e0db42fd3d8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\grid_control">
+      <UniqueIdentifier>{a367e4cc-111d-4bd0-b2eb-9cacfe243374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\StdioFileEx">
+      <UniqueIdentifier>{76838309-a2c1-47b6-a391-c462a9e3909a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command">
+      <UniqueIdentifier>{2681c2f4-5977-46d8-8e0a-8101a177d08a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\about.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\baby.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\bastard.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\bitmap3.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\client.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\daughter.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\elf.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\friend.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\girl.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\heroin.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\honey.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\knight.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\lady.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\loader.gif">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\logo.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\scholar.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\uncle.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\witch.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="client.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="client_english.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>리소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="FamilyDialog.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="LogDialog.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginDialog.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDialog.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitDialog.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DateDialog.h">
+      <Filter>Dialog\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemAddDialog.h">
+      <Filter>Dialog\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemChangeDialog.h">
+      <Filter>Dialog\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemDialog.h">
+      <Filter>Dialog\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemFindDialog.h">
+      <Filter>Dialog\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemLogConditionDialog.h">
+      <Filter>Dialog\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemPositionDialog.h">
+      <Filter>Dialog\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="QuantityDialog.h">
+      <Filter>Dialog\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="NewUserDialog.h">
+      <Filter>Dialog\User</Filter>
+    </ClInclude>
+    <ClInclude Include="UserCreateDialog.h">
+      <Filter>Dialog\User</Filter>
+    </ClInclude>
+    <ClInclude Include="UserDialog.h">
+      <Filter>Dialog\User</Filter>
+    </ClInclude>
+    <ClInclude Include="UserRestoreDialog.h">
+      <Filter>Dialog\User</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorityDialog.h">
+      <Filter>Dialog\Operator</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorDialog.h">
+      <Filter>Dialog\Operator</Filter>
+    </ClInclude>
+    <ClInclude Include="PasswordDialog.h">
+      <Filter>Dialog\Operator</Filter>
+    </ClInclude>
+    <ClInclude Include="PermissionDialog.h">
+      <Filter>Dialog\Operator</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestDialog.h">
+      <Filter>Dialog\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestItemAddDialog.h">
+      <Filter>Dialog\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillDialog.h">
+      <Filter>Dialog\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillReportDialog.h">
+      <Filter>Dialog\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="GuildDialog.h">
+      <Filter>Dialog\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="TournamentDialog.h">
+      <Filter>Dialog\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="client.h">
+      <Filter>MFC frame</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>MFC frame</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>MFC frame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\[CC]Header\Aes\aes.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\[CC]Header\AESFile.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\common.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\[CC]ServerModule\MHFile.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\version.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="Network.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="PictureEx.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\CellRange.h">
+      <Filter>Module\grid_control</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCell.h">
+      <Filter>Module\grid_control</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCellBase.h">
+      <Filter>Module\grid_control</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridCtrl.h">
+      <Filter>Module\grid_control</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\GridDropTarget.h">
+      <Filter>Module\grid_control</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\InPlaceEdit.h">
+      <Filter>Module\grid_control</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\MemDC.h">
+      <Filter>Module\grid_control</Filter>
+    </ClInclude>
+    <ClInclude Include="grid_control\TitleTip.h">
+      <Filter>Module\grid_control</Filter>
+    </ClInclude>
+    <ClInclude Include="StdioFileEx.h">
+      <Filter>Module\StdioFileEx</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateSmartPtr.h">
+      <Filter>Module\StdioFileEx</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoNoteLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsignLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="CookLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ExperienceLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="FamilyLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="FamilyPointLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="FarmCropLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="FarmLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="FishLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ForbidChatLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRoomPointLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="GuildLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="GuildScoreLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="GuildWarehouseLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="HouseLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemDropOptionLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemGlobalLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemOptionLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemShopLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="JobLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="LivestockLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="MoneyLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="NameLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="PetLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="RecipeLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptHackLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="SiegeLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="StatLogCommand.h">
+      <Filter>command</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexInputDialog.h" />
+    <ClInclude Include="MemoDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FamilyDialog.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="LogDialog.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginDialog.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDialog.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitDialog.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DateDialog.cpp">
+      <Filter>Dialog\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemAddDialog.cpp">
+      <Filter>Dialog\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemChangeDialog.cpp">
+      <Filter>Dialog\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemDialog.cpp">
+      <Filter>Dialog\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemFindDialog.cpp">
+      <Filter>Dialog\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemLogConditionDialog.cpp">
+      <Filter>Dialog\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemPositionDialog.cpp">
+      <Filter>Dialog\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="QuantityDialog.cpp">
+      <Filter>Dialog\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="NewUserDialog.cpp">
+      <Filter>Dialog\User</Filter>
+    </ClCompile>
+    <ClCompile Include="UserCreateDialog.cpp">
+      <Filter>Dialog\User</Filter>
+    </ClCompile>
+    <ClCompile Include="UserDialog.cpp">
+      <Filter>Dialog\User</Filter>
+    </ClCompile>
+    <ClCompile Include="UserRestoreDialog.cpp">
+      <Filter>Dialog\User</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthorityDialog.cpp">
+      <Filter>Dialog\Operator</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorDialog.cpp">
+      <Filter>Dialog\Operator</Filter>
+    </ClCompile>
+    <ClCompile Include="PasswordDialog.cpp">
+      <Filter>Dialog\Operator</Filter>
+    </ClCompile>
+    <ClCompile Include="PermissionDialog.cpp">
+      <Filter>Dialog\Operator</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestDialog.cpp">
+      <Filter>Dialog\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestItemAddDialog.cpp">
+      <Filter>Dialog\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillDialog.cpp">
+      <Filter>Dialog\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillReportDialog.cpp">
+      <Filter>Dialog\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="GuildDialog.cpp">
+      <Filter>Dialog\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="TournamentDialog.cpp">
+      <Filter>Dialog\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="client.cpp">
+      <Filter>MFC frame</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>MFC frame</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>MFC frame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\[CC]Header\Aes\aes.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\[CC]Header\AESFile.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\[CC]ServerModule\MHFile.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Network.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="PictureEx.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCell.cpp">
+      <Filter>Module\grid_control</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCellBase.cpp">
+      <Filter>Module\grid_control</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridCtrl.cpp">
+      <Filter>Module\grid_control</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\GridDropTarget.cpp">
+      <Filter>Module\grid_control</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\InPlaceEdit.cpp">
+      <Filter>Module\grid_control</Filter>
+    </ClCompile>
+    <ClCompile Include="grid_control\TitleTip.cpp">
+      <Filter>Module\grid_control</Filter>
+    </ClCompile>
+    <ClCompile Include="StdioFileEx.cpp">
+      <Filter>Module\StdioFileEx</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoNoteLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsignLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="CookLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ExperienceLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="FamilyLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="FamilyPointLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="FarmCropLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="FarmLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="FishLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ForbidChatLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRoomPointLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="GuildLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="GuildScoreLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="GuildWarehouseLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="HouseLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemDropOptionLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemGlobalLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemOptionLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemShopLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="JobLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="LivestockLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="MoneyLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="NameLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="PetLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="RecipeLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptHackLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="SiegeLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="StatLogCommand.cpp">
+      <Filter>command</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexInputDialog.cpp" />
+    <ClCompile Include="MemoDialog.cpp" />
+    <ClCompile Include="grid_control\MemDC.cpp">
+      <Filter>Module\grid_control</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\client.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

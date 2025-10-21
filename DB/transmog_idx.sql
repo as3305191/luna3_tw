@@ -1,0 +1,1 @@
+alter table tb_item add transmog_idx int null

@@ -1,0 +1,12 @@
+USE [LUNA_GAMEDB_2025]
+GO
+
+/****** Object:  Table [dbo].[TB_OPTION]    Script Date: 26/06/2022 03:57:50 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER TABLE [dbo].[TB_OPTION] ADD [MOVETYPE] [tinyint] NOT NULL DEFAULT ((1))
+GO
