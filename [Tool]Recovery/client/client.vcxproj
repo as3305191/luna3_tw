@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>RecoveryClient</ProjectName>
+    <ProjectGuid>{E9F89806-BDDD-42E1-913F-DD75A82EFA09}</ProjectGuid>
+    <RootNamespace>client</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\[CC]Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4819;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0000</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)\..\Output\Debug\"
+xcopy /Y "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)\..\Output\Debug\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\..\[CC]Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4819;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile />
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)\..\Output\Release\"</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Image Include="res\about.bmp" />
+    <Image Include="res\baby.bmp" />
+    <Image Include="res\bastard.bmp" />
+    <Image Include="res\bitmap3.bmp" />
+    <Image Include="res\client.ico" />
+    <Image Include="res\daughter.bmp" />
+    <Image Include="res\elf.bmp" />
+    <Image Include="res\friend.bmp" />
+    <Image Include="res\girl.bmp" />
+    <Image Include="res\heroin.bmp" />
+    <Image Include="res\honey.bmp" />
+    <Image Include="res\knight.bmp" />
+    <Image Include="res\lady.bmp" />
+    <Image Include="res\loader.gif" />
+    <Image Include="res\logo.bmp" />
+    <Image Include="res\scholar.bmp" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\uncle.bmp" />
+    <Image Include="res\witch.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="client.rc">
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">0x0000</Culture>
+    </ResourceCompile>
+    <ResourceCompile Include="client_english.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="FamilyDialog.h" />
+    <ClInclude Include="LogDialog.h" />
+    <ClInclude Include="LoginDialog.h" />
+    <ClInclude Include="PlayerDialog.h" />
+    <ClInclude Include="WaitDialog.h" />
+    <ClInclude Include="DateDialog.h" />
+    <ClInclude Include="ItemAddDialog.h" />
+    <ClInclude Include="ItemChangeDialog.h" />
+    <ClInclude Include="ItemDialog.h" />
+    <ClInclude Include="ItemFindDialog.h" />
+    <ClInclude Include="ItemLogConditionDialog.h" />
+    <ClInclude Include="ItemPositionDialog.h" />
+    <ClInclude Include="QuantityDialog.h" />
+    <ClInclude Include="NewUserDialog.h" />
+    <ClInclude Include="UserCreateDialog.h" />
+    <ClInclude Include="UserDialog.h" />
+    <ClInclude Include="UserRestoreDialog.h" />
+    <ClInclude Include="AuthorityDialog.h" />
+    <ClInclude Include="OperatorDialog.h" />
+    <ClInclude Include="PasswordDialog.h" />
+    <ClInclude Include="PermissionDialog.h" />
+    <ClInclude Include="QuestDialog.h" />
+    <ClInclude Include="QuestItemAddDialog.h" />
+    <ClInclude Include="SkillDialog.h" />
+    <ClInclude Include="SkillReportDialog.h" />
+    <ClInclude Include="GuildDialog.h" />
+    <ClInclude Include="TournamentDialog.h" />
+    <ClInclude Include="client.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\..\[CC]Header\Aes\aes.h" />
+    <ClInclude Include="..\..\[CC]Header\AESFile.h" />
+    <ClInclude Include="..\common\common.h" />
+    <ClInclude Include="..\..\[CC]ServerModule\MHFile.h" />
+    <ClInclude Include="..\common\version.h" />
+    <ClInclude Include="Network.h" />
+    <ClInclude Include="PictureEx.h" />
+    <ClInclude Include="grid_control\CellRange.h" />
+    <ClInclude Include="grid_control\GridCell.h" />
+    <ClInclude Include="grid_control\GridCellBase.h" />
+    <ClInclude Include="grid_control\GridCtrl.h" />
+    <ClInclude Include="grid_control\GridDropTarget.h" />
+    <ClInclude Include="grid_control\InPlaceEdit.h" />
+    <ClInclude Include="grid_control\MemDC.h" />
+    <ClInclude Include="grid_control\TitleTip.h" />
+    <ClInclude Include="StdioFileEx.h" />
+    <ClInclude Include="TemplateSmartPtr.h" />
+    <ClInclude Include="AutoNoteLogCommand.h" />
+    <ClInclude Include="ChatLogCommand.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="ConsignLogCommand.h" />
+    <ClInclude Include="CookLogCommand.h" />
+    <ClInclude Include="ExperienceLogCommand.h" />
+    <ClInclude Include="FamilyLogCommand.h" />
+    <ClInclude Include="FamilyPointLogCommand.h" />
+    <ClInclude Include="FarmCropLogCommand.h" />
+    <ClInclude Include="FarmLogCommand.h" />
+    <ClInclude Include="FishLogCommand.h" />
+    <ClInclude Include="ForbidChatLogCommand.h" />
+    <ClInclude Include="GameRoomPointLogCommand.h" />
+    <ClInclude Include="GuildLogCommand.h" />
+    <ClInclude Include="GuildScoreLogCommand.h" />
+    <ClInclude Include="GuildWarehouseLogCommand.h" />
+    <ClInclude Include="HouseLogCommand.h" />
+    <ClInclude Include="ItemDropOptionLogCommand.h" />
+    <ClInclude Include="ItemGlobalLogCommand.h" />
+    <ClInclude Include="ItemLogCommand.h" />
+    <ClInclude Include="ItemOptionLogCommand.h" />
+    <ClInclude Include="ItemShopLogCommand.h" />
+    <ClInclude Include="JobLogCommand.h" />
+    <ClInclude Include="LivestockLogCommand.h" />
+    <ClInclude Include="MoneyLogCommand.h" />
+    <ClInclude Include="NameLogCommand.h" />
+    <ClInclude Include="OperatorLogCommand.h" />
+    <ClInclude Include="PetLogCommand.h" />
+    <ClInclude Include="QuestLogCommand.h" />
+    <ClInclude Include="RecipeLogCommand.h" />
+    <ClInclude Include="ScriptHackLogCommand.h" />
+    <ClInclude Include="SiegeLogCommand.h" />
+    <ClInclude Include="SkillLogCommand.h" />
+    <ClInclude Include="StatLogCommand.h" />
+    <ClInclude Include="IndexInputDialog.h" />
+    <ClInclude Include="MemoDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FamilyDialog.cpp" />
+    <ClCompile Include="grid_control\MemDC.cpp" />
+    <ClCompile Include="LogDialog.cpp" />
+    <ClCompile Include="LoginDialog.cpp" />
+    <ClCompile Include="PlayerDialog.cpp" />
+    <ClCompile Include="WaitDialog.cpp" />
+    <ClCompile Include="DateDialog.cpp" />
+    <ClCompile Include="ItemAddDialog.cpp" />
+    <ClCompile Include="ItemChangeDialog.cpp" />
+    <ClCompile Include="ItemDialog.cpp" />
+    <ClCompile Include="ItemFindDialog.cpp" />
+    <ClCompile Include="ItemLogConditionDialog.cpp" />
+    <ClCompile Include="ItemPositionDialog.cpp" />
+    <ClCompile Include="QuantityDialog.cpp" />
+    <ClCompile Include="NewUserDialog.cpp" />
+    <ClCompile Include="UserCreateDialog.cpp" />
+    <ClCompile Include="UserDialog.cpp" />
+    <ClCompile Include="UserRestoreDialog.cpp" />
+    <ClCompile Include="AuthorityDialog.cpp" />
+    <ClCompile Include="OperatorDialog.cpp" />
+    <ClCompile Include="PasswordDialog.cpp" />
+    <ClCompile Include="PermissionDialog.cpp" />
+    <ClCompile Include="QuestDialog.cpp" />
+    <ClCompile Include="QuestItemAddDialog.cpp" />
+    <ClCompile Include="SkillDialog.cpp" />
+    <ClCompile Include="SkillReportDialog.cpp" />
+    <ClCompile Include="GuildDialog.cpp" />
+    <ClCompile Include="TournamentDialog.cpp" />
+    <ClCompile Include="client.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\[CC]Header\Aes\aes.cpp" />
+    <ClCompile Include="..\..\[CC]Header\AESFile.cpp" />
+    <ClCompile Include="..\..\[CC]ServerModule\MHFile.cpp" />
+    <ClCompile Include="Network.cpp" />
+    <ClCompile Include="PictureEx.cpp" />
+    <ClCompile Include="grid_control\GridCell.cpp" />
+    <ClCompile Include="grid_control\GridCellBase.cpp" />
+    <ClCompile Include="grid_control\GridCtrl.cpp" />
+    <ClCompile Include="grid_control\GridDropTarget.cpp" />
+    <ClCompile Include="grid_control\InPlaceEdit.cpp" />
+    <ClCompile Include="grid_control\TitleTip.cpp" />
+    <ClCompile Include="StdioFileEx.cpp" />
+    <ClCompile Include="AutoNoteLogCommand.cpp" />
+    <ClCompile Include="ChatLogCommand.cpp" />
+    <ClCompile Include="Command.cpp" />
+    <ClCompile Include="ConsignLogCommand.cpp" />
+    <ClCompile Include="CookLogCommand.cpp" />
+    <ClCompile Include="ExperienceLogCommand.cpp" />
+    <ClCompile Include="FamilyLogCommand.cpp" />
+    <ClCompile Include="FamilyPointLogCommand.cpp" />
+    <ClCompile Include="FarmCropLogCommand.cpp" />
+    <ClCompile Include="FarmLogCommand.cpp" />
+    <ClCompile Include="FishLogCommand.cpp" />
+    <ClCompile Include="ForbidChatLogCommand.cpp" />
+    <ClCompile Include="GameRoomPointLogCommand.cpp" />
+    <ClCompile Include="GuildLogCommand.cpp" />
+    <ClCompile Include="GuildScoreLogCommand.cpp" />
+    <ClCompile Include="GuildWarehouseLogCommand.cpp" />
+    <ClCompile Include="HouseLogCommand.cpp" />
+    <ClCompile Include="ItemDropOptionLogCommand.cpp" />
+    <ClCompile Include="ItemGlobalLogCommand.cpp" />
+    <ClCompile Include="ItemLogCommand.cpp" />
+    <ClCompile Include="ItemOptionLogCommand.cpp" />
+    <ClCompile Include="ItemShopLogCommand.cpp" />
+    <ClCompile Include="JobLogCommand.cpp" />
+    <ClCompile Include="LivestockLogCommand.cpp" />
+    <ClCompile Include="MoneyLogCommand.cpp" />
+    <ClCompile Include="NameLogCommand.cpp" />
+    <ClCompile Include="OperatorLogCommand.cpp" />
+    <ClCompile Include="PetLogCommand.cpp" />
+    <ClCompile Include="QuestLogCommand.cpp" />
+    <ClCompile Include="RecipeLogCommand.cpp" />
+    <ClCompile Include="ScriptHackLogCommand.cpp" />
+    <ClCompile Include="SiegeLogCommand.cpp" />
+    <ClCompile Include="SkillLogCommand.cpp" />
+    <ClCompile Include="StatLogCommand.cpp" />
+    <ClCompile Include="IndexInputDialog.cpp" />
+    <ClCompile Include="MemoDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\client.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="client.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

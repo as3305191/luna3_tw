@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{19F0CC92-EE89-4B38-B621-75A2C2B29F36}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\;..\[Lib]YHLibrary;..\[CC]Header;..\[CC]ServerModule;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_AGENTSERVER;_AES_FILE_;_SELECT_GENDER_;_TW_LOCAL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4819;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\[Lib]YHLibrary\YHLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>..\Output\Debug;..\Output\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib;LIBCMTD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Obj\AgentServer\Release/AgentServer.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)\..\Output\Release\"
+xcopy /Y "$(TargetDir)$(TargetFileName)" "C:\Luna2025\Server"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;..\[Lib]YHLibrary;..\[CC]Header;..\[CC]ServerModule;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_AGENTSERVER;_AES_FILE_;_TW_LOCAL_;_SELECT_GENDER_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4819;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>YHLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\Output\Debug;..\Output\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;LIBC.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>$(OutDir)$(TargetName).map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Obj\AgentServer\Debug/AgentServer.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)\..\Output\Debug\"
+xcopy /Y "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)\..\Output\Debug\"
+xcopy /Y "$(TargetDir)$(TargetFileName)" "C:\Luna2025\Server"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AgentDBMsgParser.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="AgentNetworkMsgParser.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\FilteringTable.cpp" />
+    <ClCompile Include="MHTimeManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MsgTable.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PlustimeMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ServerSystem.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ServerTable.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TrafficLog.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="UserTable.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PunishManager.cpp" />
+    <ClCompile Include="GiftEvent.cpp" />
+    <ClCompile Include="GiftManager.cpp" />
+    <ClCompile Include="ChatRoomMgr.cpp" />
+    <ClCompile Include="NpcRecallMgr.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallBase.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallMoveable.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallRemainTime.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallSelf.cpp" />
+    <ClCompile Include="SiegeRecallMgr.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\Siege_AddObj.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\Siege_RecallBase.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeCommand.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeMap.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeStep.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeTerm.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeTheme.cpp" />
+    <ClCompile Include="..\[CC]ServerModule\BootManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\CommonDBMsgParser.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\Console.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\DataBase.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\MHFile.cpp" />
+    <ClCompile Include="..\[CC]ServerModule\MiniDumper.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\Network.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\ServerListManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Crypt.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\AESFile.cpp" />
+    <ClCompile Include="..\[CC]Header\CommonCalcFunc.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\CommonGameFunc.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\vector.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\TargetList\TargetData.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\TargetList\TargetList.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\TargetList\TargetListIterator.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\Aes\aes.cpp" />
+    <ClCompile Include="..\hseos\Family\SHFamily.cpp" />
+    <ClCompile Include="..\hseos\Family\SHFamilyManager.cpp" />
+    <ClCompile Include="..\hseos\Group\SHGroup.cpp" />
+    <ClCompile Include="..\hseos\Debug\SHDebug.cpp" />
+    <ClCompile Include="..\hseos\Date\SHDateManager.cpp" />
+    <ClCompile Include="..\hseos\ResidentRegist\SHResidentRegistManager.cpp" />
+    <ClCompile Include="..\hseos\Farm\Animal.cpp" />
+    <ClCompile Include="..\hseos\Farm\Pen.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHCrop.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHFarm.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHFarmManager.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHFarmObj.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHFarmRenderObj.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHFarmZone.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHGarden.cpp" />
+    <ClCompile Include="GMPowerList.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="HackShieldManager.cpp" />
+    <ClCompile Include="NProtectManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AgentDBMsgParser.h" />
+    <ClInclude Include="AgentNetworkMsgParser.h" />
+    <ClInclude Include="..\[CC]Header\FilteringTable.h" />
+    <ClInclude Include="MHTimeManager.h" />
+    <ClInclude Include="MsgTable.h" />
+    <ClInclude Include="PlustimeMgr.h" />
+    <ClInclude Include="ServerSystem.h" />
+    <ClInclude Include="ServerTable.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TrafficLog.h" />
+    <ClInclude Include="UserTable.h" />
+    <ClInclude Include="PunishManager.h" />
+    <ClInclude Include="GiftEvent.h" />
+    <ClInclude Include="GiftManager.h" />
+    <ClInclude Include="ChatRoomMgr.h" />
+    <ClInclude Include="NpcRecallMgr.h" />
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallBase.h" />
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallMoveable.h" />
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallRemainTime.h" />
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallSelf.h" />
+    <ClInclude Include="SiegeRecallMgr.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\Siege_AddObj.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\Siege_RecallBase.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeCommand.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeMap.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeStep.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeTerm.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeTheme.h" />
+    <ClInclude Include="..\[CC]ServerModule\BootManager.h" />
+    <ClInclude Include="..\[CC]ServerModule\CommonDBMsgParser.h" />
+    <ClInclude Include="..\[CC]ServerModule\Console.h" />
+    <ClInclude Include="..\[CC]ServerModule\console_type.h" />
+    <ClInclude Include="..\[CC]ServerModule\DataBase.h" />
+    <ClInclude Include="..\[CC]ServerModule\DB.h" />
+    <ClInclude Include="..\[CC]ServerModule\DBThreadInterface.h" />
+    <ClInclude Include="..\[CC]ServerModule\define.h" />
+    <ClInclude Include="..\[CC]ServerModule\iconsole.h" />
+    <ClInclude Include="..\[CC]ServerModule\iconsole_guid.h" />
+    <ClInclude Include="..\[CC]ServerModule\inetwork.h" />
+    <ClInclude Include="..\[CC]ServerModule\MHFile.h" />
+    <ClInclude Include="..\[CC]ServerModule\MiniDumper.h" />
+    <ClInclude Include="..\[CC]ServerModule\net_define.h" />
+    <ClInclude Include="..\[CC]ServerModule\Network.h" />
+    <ClInclude Include="..\[CC]ServerModule\network_guid.h" />
+    <ClInclude Include="..\[CC]ServerModule\Noncopyable.h" />
+    <ClInclude Include="..\[CC]ServerModule\ServerListManager.h" />
+    <ClInclude Include="..\[CC]ServerModule\TConsole_Def.h" />
+    <ClInclude Include="..\[CC]ServerModule\TConsole_Guids.h" />
+    <ClInclude Include="..\[CC]ServerModule\TConsole_Interface.h" />
+    <ClInclude Include="..\[CC]ServerModule\typedef.h" />
+    <ClInclude Include="Crypt.h" />
+    <ClInclude Include="..\[CC]Header\AddableInfo.h" />
+    <ClInclude Include="..\[CC]Header\AESFile.h" />
+    <ClInclude Include="..\[CC]Header\ClientGameDefine.h" />
+    <ClInclude Include="..\[CC]Header\ClientGameStruct.h" />
+    <ClInclude Include="..\[CC]Header\CommonCalcFunc.h" />
+    <ClInclude Include="..\[CC]Header\CommonDefine.h" />
+    <ClInclude Include="..\[CC]Header\CommonGameDefine.h" />
+    <ClInclude Include="..\[CC]Header\CommonGameFunc.h" />
+    <ClInclude Include="..\[CC]Header\CommonStruct.h" />
+    <ClInclude Include="..\[CC]Header\Pool.h" />
+    <ClInclude Include="..\[CC]Header\Protocol.h" />
+    <ClInclude Include="..\[CC]Header\ServerGameDefine.h" />
+    <ClInclude Include="..\[CC]Header\ServerGameStruct.h" />
+    <ClInclude Include="..\[CC]Header\vector.h" />
+    <ClInclude Include="..\[CC]Header\TargetList\TargetData.h" />
+    <ClInclude Include="..\[CC]Header\TargetList\TargetList.h" />
+    <ClInclude Include="..\[CC]Header\TargetList\TargetListIterator.h" />
+    <ClInclude Include="..\[CC]Header\Aes\aes.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\FileStorage_typedef.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\GXSCHEDULE_PROC_MSG.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IAudio.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IAudio_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IExecutive.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IExecutive_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IFileStorage.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IFileStorage_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IGeometry.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IGeometry_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IRenderer.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IRenderer_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\mesh_flag.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\motion_flag.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\StdAfx.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\typedef.h" />
+    <ClInclude Include="..\4DyuchiGXGFunc\global.h" />
+    <ClInclude Include="..\4DyuchiGXGFunc\type.h" />
+    <ClInclude Include="..\hseos\Family\SHFamily.h" />
+    <ClInclude Include="..\hseos\Family\SHFamilyManager.h" />
+    <ClInclude Include="..\hseos\Group\SHGroup.h" />
+    <ClInclude Include="..\hseos\Debug\SHDebug.h" />
+    <ClInclude Include="..\hseos\Date\SHDateManager.h" />
+    <ClInclude Include="..\hseos\ResidentRegist\SHResidentRegistManager.h" />
+    <ClInclude Include="..\hseos\Farm\Animal.h" />
+    <ClInclude Include="..\hseos\Farm\Pen.h" />
+    <ClInclude Include="..\hseos\Farm\SHCrop.h" />
+    <ClInclude Include="..\hseos\Farm\SHFarm.h" />
+    <ClInclude Include="..\hseos\Farm\SHFarmManager.h" />
+    <ClInclude Include="..\hseos\Farm\SHFarmObj.h" />
+    <ClInclude Include="..\hseos\Farm\SHFarmRenderObj.h" />
+    <ClInclude Include="..\hseos\Farm\SHFarmZone.h" />
+    <ClInclude Include="..\hseos\Farm\SHGarden.h" />
+    <ClInclude Include="AntiCpSvrFunc.h" />
+    <ClInclude Include="AntiCpXSvr.h" />
+    <ClInclude Include="ggsrv25.h" />
+    <ClInclude Include="GMPowerList.h" />
+    <ClInclude Include="HackShieldManager.h" />
+    <ClInclude Include="NProtectManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\4DyuchiGRX_common\math.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\4DyuchiGXGFunc\SS3DGFunc.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

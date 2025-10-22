@@ -1,0 +1,1461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Console|Win32">
+      <Configuration>Debug_Console</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2737D1A6-4EB0-4487-AB4E-872FE04C6C8F}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath />
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">
+    <OutDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_Debug</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\[CC]Header;.\;..\[Lib]YHLibrary;..\[CC]ServerModule;..\[CC]Ability;..\[CC]BattleSystem;..\[CC]Skill</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_MAPSERVER_;_AES_FILE_;_TW_LOCAL_</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4819;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;..\[Lib]YHLibrary\YHLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName />
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>WinMainCRTStartup</EntryPointSymbol>
+      <BaseAddress>0x04000000</BaseAddress>
+      <TargetMachine>MachineX86</TargetMachine>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <AdditionalLibraryDirectories>..\Output\Debug;..\Output\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Obj\Mapserver\MapServer___Win32_Debug_Console/MapServer.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)\..\Output\Debug\"
+xcopy /Y "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)\..\Output\Debug\"
+xcopy /Y "$(TargetDir)$(TargetFileName)" "C:\Luna2025\Server"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\[CC]Header;.\;..\[Lib]YHLibrary;..\[CC]ServerModule;..\[CC]Ability;..\[CC]BattleSystem;..\[CC]Skill;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_MAPSERVER_;_AES_FILE_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4819;4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\[Lib]YHLibrary\YHLibrary.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <IgnoreSpecificDefaultLibraries>LIBC.lib;LIBCMTD</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\Obj\Mapserver\Release/MapServer.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)\..\Output\Release\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="MapDBMsgParser.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MapNetworkMsgParser.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MHError.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="NPCMoveMgr.cpp" />
+    <ClCompile Include="PackedData.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ServerSystem.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ServerTable.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="UserTable.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ObjectFactory.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="FixedTile.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="FixedTileInfo.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MHMap.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TileGroup.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="TileManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CharMove.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MoveManager.cpp" />
+    <ClCompile Include="ItemDrop.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="InventorySlot.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ItemContainer.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ItemManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ItemSlot.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MunpaWareSlot.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StorageSlot.cpp" />
+    <ClCompile Include="WearSlot.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Purse.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Quest.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="QuestGroup.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="QuestManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="QuestMapMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="QuestRegenMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="QuestUpdater.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CQuestBase.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestEvent.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestLimit.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestLimitKind.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestLimitKind_Level.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestLimitKind_Quest.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestLimitKind_Stage.cpp" />
+    <ClCompile Include="..\[CC]Quest\QuestScriptLoader.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestString.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestInfo.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\SubQuestInfo.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestCondition.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestExecute.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestExecute_Count.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestExecute_Item.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestExecute_Quest.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestExecute_RandomItem.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestExecute_SelectItem.cpp" />
+    <ClCompile Include="..\[CC]Quest\QuestExecute_Time.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestTrigger.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestNpc.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestNpcData.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Quest\QuestNpcScript.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GeneralGridTable.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GridSystem.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GridTable.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GridUnit.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MurimGridTable.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SkillTreeManager.cpp" />
+    <ClCompile Include="MHTimeManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CharacterCalcManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Party.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PartyManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="AttackManager.cpp" />
+    <ClCompile Include="ObjectStateManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ExchangeManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ExchangeRoom.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StreetStall.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StreetStallManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StorageManager.cpp" />
+    <ClCompile Include="QuickManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="QuickSlot.cpp" />
+    <ClCompile Include="LootingManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="LootingRoom.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="PKManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Channel.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="ChannelSystem.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="CheckRoutine.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Guild.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GuildFieldWarMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GuildManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GuildMark.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GuildScore.cpp" />
+    <ClCompile Include="GuildTournamentMgr.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GuildUnion.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GuildUnionManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="GuildWarehouse.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="cMonsterSpeechManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="WeatherManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="AutoNoteManager.cpp" />
+    <ClCompile Include="AutoNoteRoom.cpp" />
+    <ClCompile Include="FishingManager.cpp" />
+    <ClCompile Include="..\[CC]SiegeDungeon\SiegeDungeonMgr.cpp" />
+    <ClCompile Include="SiegeRecallMgr.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\Siege_AddObj.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\Siege_RecallBase.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeCommand.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeMap.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeStep.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeTerm.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\SiegeRecall\SiegeTheme.cpp" />
+    <ClCompile Include="SiegeWarfareMgr.cpp" />
+    <ClCompile Include="NpcRecallMgr.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallBase.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallMoveable.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallRemainTime.cpp" />
+    <ClCompile Include="..\[CC]RecallInfo\NpcRecall\NpcRecallSelf.cpp" />
+    <ClCompile Include="LimitDungeonMgr.cpp" />
+    <ClCompile Include="cCookManager.cpp" />
+    <ClCompile Include="HousingMgr.cpp" />
+    <ClCompile Include="PCRoomManager.cpp" />
+    <ClCompile Include="ConsignmentMgr.cpp" />
+    <ClCompile Include="..\[CC]ServerModule\BootManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\CommonDBMsgParser.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\Console.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\DataBase.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\MHFile.cpp" />
+    <ClCompile Include="..\[CC]ServerModule\MiniDumper.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\Network.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]ServerModule\ServerListManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\AESFile.cpp" />
+    <ClCompile Include="..\[CC]Header\CommonCalcFunc.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\CommonGameFunc.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\GameResourceManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\vector.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\TargetList\TargetData.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\TargetList\TargetList.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\TargetList\TargetListIterator.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Header\Aes\aes.cpp" />
+    <ClCompile Include="Distributer.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MapObject.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Npc.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Trap.cpp" />
+    <ClCompile Include="BossMonster.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="BossMonsterInfo.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="BossMonsterManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="BossRewardsManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="BossState.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SummonGroup.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="SummonInfo.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="FieldBossMonster.cpp" />
+    <ClCompile Include="FieldBossMonsterManager.cpp" />
+    <ClCompile Include="FieldSubMonster.cpp" />
+    <ClCompile Include="Pet.cpp" />
+    <ClCompile Include="PetManager.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="VehicleManager.cpp" />
+    <ClCompile Include="..\[CC]BattleSystem\BattleSystem_Server.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]BattleSystem\Battle.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]BattleSystem\BattleFactory.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]BattleSystem\BattleTeam.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]BattleSystem\Showdown\Battle_Showdown.cpp" />
+    <ClCompile Include="..\[CC]BattleSystem\Showdown\BattleFactory_Showdown.cpp" />
+    <ClCompile Include="..\[CC]BattleSystem\Showdown\BattleTeam_Showdown.cpp" />
+    <ClCompile Include="ShowdownManager.cpp" />
+    <ClCompile Include="..\[CC]BattleSystem\GTournament\Battle_GTournament.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]BattleSystem\GTournament\BattleFactory_GTournament.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]BattleSystem\GTournament\BattleTeam_GTournament.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="BattleFactory_Default.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="AIGroupManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="AIGroupPrototype.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="AISystem.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="MsgRouter.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="RecallManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="RegenManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="StateMachinen.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="Finite State Machine\Machine.cpp" />
+    <ClCompile Include="Finite State Machine\Memory.cpp" />
+    <ClCompile Include="Finite State Machine\Parser.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="Finite State Machine\State.cpp" />
+    <ClCompile Include="Finite State Machine\ActionAggro.cpp" />
+    <ClCompile Include="Finite State Machine\ActionAggroBuff.cpp" />
+    <ClCompile Include="Finite State Machine\ActionAlias.cpp" />
+    <ClCompile Include="Finite State Machine\ActionCallFriend.cpp" />
+    <ClCompile Include="Finite State Machine\ActionCallTeam.cpp" />
+    <ClCompile Include="Finite State Machine\ActionDistance.cpp" />
+    <ClCompile Include="Finite State Machine\ActionFollow.cpp" />
+    <ClCompile Include="Finite State Machine\ActionFollowAlias.cpp" />
+    <ClCompile Include="Finite State Machine\ActionFollowTeam.cpp" />
+    <ClCompile Include="Finite State Machine\ActionFriend.cpp" />
+    <ClCompile Include="Finite State Machine\ActionFriendByHealth.cpp" />
+    <ClCompile Include="Finite State Machine\ActionHealth.cpp" />
+    <ClCompile Include="Finite State Machine\ActionHealthOfTarget.cpp" />
+    <ClCompile Include="Finite State Machine\ActionIsBattle.cpp" />
+    <ClCompile Include="Finite State Machine\ActionListen.cpp" />
+    <ClCompile Include="Finite State Machine\ActionMainState.cpp" />
+    <ClCompile Include="Finite State Machine\ActionMove.cpp" />
+    <ClCompile Include="Finite State Machine\ActionNextState.cpp" />
+    <ClCompile Include="Finite State Machine\ActionPause.cpp" />
+    <ClCompile Include="Finite State Machine\ActionPopState.cpp" />
+    <ClCompile Include="Finite State Machine\ActionPushState.cpp" />
+    <ClCompile Include="Finite State Machine\ActionQuit.cpp" />
+    <ClCompile Include="Finite State Machine\ActionRandom.cpp" />
+    <ClCompile Include="Finite State Machine\ActionRunaway.cpp" />
+    <ClCompile Include="Finite State Machine\ActionSetValue.cpp" />
+    <ClCompile Include="Finite State Machine\ActionSkill.cpp" />
+    <ClCompile Include="Finite State Machine\ActionSkillToAlias.cpp" />
+    <ClCompile Include="Finite State Machine\ActionSkillToFoundObject.cpp" />
+    <ClCompile Include="Finite State Machine\ActionSkillToTarget.cpp" />
+    <ClCompile Include="Finite State Machine\ActionStop.cpp" />
+    <ClCompile Include="Finite State Machine\ActionSwitch.cpp" />
+    <ClCompile Include="Finite State Machine\ActionTalk.cpp" />
+    <ClCompile Include="Finite State Machine\ActionTalkToFriend.cpp" />
+    <ClCompile Include="Finite State Machine\ActionTalkToTeam.cpp" />
+    <ClCompile Include="Finite State Machine\ActionTeam.cpp" />
+    <ClCompile Include="Finite State Machine\ActionTeamByHealth.cpp" />
+    <ClCompile Include="Finite State Machine\ActionTeamChief.cpp" />
+    <ClCompile Include="PathManager.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="STRPath.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <BrowseInformation Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">true</BrowseInformation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="..\[CC]Skill\Server\Object\ActiveSkillObject.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Object\BuffSkillObject.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Object\SkillObject.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Unit\AttackSkillUnit.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Unit\cDeBuffSkillUnit.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Unit\cSpecialSkillUnit.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Unit\RecoverSkillUnit.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Unit\SkillUnit.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Unit\SummonSkillUnit.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Unit\TameSkillUnit.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Target\Target.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Delay\Delay.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Manager\SkillManager.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Info\ActiveSkillInfo.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Info\BuffSkillInfo.cpp" />
+    <ClCompile Include="..\[CC]Skill\Server\Tree\SkillTree.cpp" />
+    <ClCompile Include="..\hseos\SHMain.cpp" />
+    <ClCompile Include="..\hseos\Farm\Animal.cpp" />
+    <ClCompile Include="..\hseos\Farm\Pen.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHCrop.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHFarm.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHFarmManager.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHFarmObj.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHFarmZone.cpp" />
+    <ClCompile Include="..\hseos\Farm\SHGarden.cpp" />
+    <ClCompile Include="..\hseos\Debug\SHDebug.cpp" />
+    <ClCompile Include="..\hseos\Common\SHMath.cpp" />
+    <ClCompile Include="..\hseos\ResidentRegist\SHResidentRegistManager.cpp" />
+    <ClCompile Include="..\hseos\Family\SHFamily.cpp" />
+    <ClCompile Include="..\hseos\Family\SHFamilyManager.cpp" />
+    <ClCompile Include="..\hseos\Monstermeter\SHMonstermeterManager.cpp" />
+    <ClCompile Include="..\hseos\Group\SHGroup.cpp" />
+    <ClCompile Include="..\hseos\Date\SHDateManager.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="Trigger\common.cpp" />
+    <ClCompile Include="Trigger\CristalEmpireBonusProcess.cpp" />
+    <ClCompile Include="Trigger\FlagManager.cpp" />
+    <ClCompile Include="trigger\Manager.cpp" />
+    <ClCompile Include="trigger\Message.cpp" />
+    <ClCompile Include="Trigger\Parser.cpp" />
+    <ClCompile Include="trigger\Pool.cpp" />
+    <ClCompile Include="Trigger\Timer.cpp" />
+    <ClCompile Include="trigger\Trigger.cpp" />
+    <ClCompile Include="trigger\Action.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Console|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="Trigger\ActionAddFlag.cpp" />
+    <ClCompile Include="Trigger\ActionAddMoney.cpp" />
+    <ClCompile Include="Trigger\ActionAnimation.cpp" />
+    <ClCompile Include="Trigger\ActionBeginQuest.cpp" />
+    <ClCompile Include="Trigger\ActionBuff.cpp" />
+    <ClCompile Include="Trigger\ActionCamera.cpp" />
+    <ClCompile Include="Trigger\ActionChat.cpp" />
+    <ClCompile Include="Trigger\ActionCollisionTile.cpp" />
+    <ClCompile Include="Trigger\ActionControlMonster.cpp" />
+    <ClCompile Include="Trigger\ActionCreateTrigger.cpp" />
+    <ClCompile Include="Trigger\ActionCristalEmpireBonus.cpp" />
+    <ClCompile Include="Trigger\ActionDeleteQuest.cpp" />
+    <ClCompile Include="Trigger\ActionDungeon.cpp" />
+    <ClCompile Include="Trigger\ActionEffect.cpp" />
+    <ClCompile Include="Trigger\ActionEndQuest.cpp" />
+    <ClCompile Include="Trigger\ActionEngineEffect.cpp" />
+    <ClCompile Include="trigger\ActionGetItem.cpp" />
+    <ClCompile Include="Trigger\ActionKillMonster.cpp" />
+    <ClCompile Include="Trigger\ActionMonsterChat.cpp" />
+    <ClCompile Include="Trigger\ActionMoveMap.cpp" />
+    <ClCompile Include="Trigger\ActionPlaySound.cpp" />
+    <ClCompile Include="Trigger\ActionPlayWeather.cpp" />
+    <ClCompile Include="Trigger\ActionPutNotice.cpp" />
+    <ClCompile Include="Trigger\ActionPutNpcChat.cpp" />
+    <ClCompile Include="Trigger\ActionRemoveBuff.cpp" />
+    <ClCompile Include="Trigger\ActionRemoveItem.cpp" />
+    <ClCompile Include="Trigger\ActionSelectFlag.cpp" />
+    <ClCompile Include="Trigger\ActionSetAlias.cpp" />
+    <ClCompile Include="Trigger\ActionSetFlag.cpp" />
+    <ClCompile Include="Trigger\ActionSetReviveFlag.cpp" />
+    <ClCompile Include="Trigger\ActionSummonMonster.cpp" />
+    <ClCompile Include="Trigger\ActionTimer.cpp" />
+    <ClCompile Include="Trigger\CheckFunc.cpp" />
+    <ClCompile Include="trigger\Condition.cpp" />
+    <ClCompile Include="Dungeon\DungeonMgr.cpp" />
+    <ClCompile Include="Dungeon\DungeonProcessorBase.cpp" />
+    <ClCompile Include="Dungeon\DungeonProcessorBrokenShipwrecked.cpp" />
+    <ClCompile Include="Dungeon\DungeonProcessorTempleofGreed.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MapDBMsgParser.h" />
+    <ClInclude Include="MapNetworkMsgParser.h" />
+    <ClInclude Include="MHError.h" />
+    <ClInclude Include="NPCMoveMgr.h" />
+    <ClInclude Include="PackedData.h" />
+    <ClInclude Include="ServerSystem.h" />
+    <ClInclude Include="ServerTable.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="UserTable.h" />
+    <ClInclude Include="ObjectFactory.h" />
+    <ClInclude Include="FixedTile.h" />
+    <ClInclude Include="FixedTileInfo.h" />
+    <ClInclude Include="MHMap.h" />
+    <ClInclude Include="TileGroup.h" />
+    <ClInclude Include="TileManager.h" />
+    <ClInclude Include="CharMove.h" />
+    <ClInclude Include="MoveManager.h" />
+    <ClInclude Include="ItemDrop.h" />
+    <ClInclude Include="InventorySlot.h" />
+    <ClInclude Include="ItemContainer.h" />
+    <ClInclude Include="ItemManager.h" />
+    <ClInclude Include="ItemSlot.h" />
+    <ClInclude Include="MunpaWareSlot.h" />
+    <ClInclude Include="StorageSlot.h" />
+    <ClInclude Include="WearSlot.h" />
+    <ClInclude Include="Purse.h" />
+    <ClInclude Include="Quest.h" />
+    <ClInclude Include="QuestGroup.h" />
+    <ClInclude Include="QuestManager.h" />
+    <ClInclude Include="QuestMapMgr.h" />
+    <ClInclude Include="QuestRegenMgr.h" />
+    <ClInclude Include="QuestUpdater.h" />
+    <ClInclude Include="CQuestBase.h" />
+    <ClInclude Include="cWindowDef.h" />
+    <ClInclude Include="..\[CC]Quest\QuestDefines.h" />
+    <ClInclude Include="..\[CC]Quest\QuestEvent.h" />
+    <ClInclude Include="..\[CC]Quest\QuestLimit.h" />
+    <ClInclude Include="..\[CC]Quest\QuestLimitKind.h" />
+    <ClInclude Include="..\[CC]Quest\QuestLimitKind_Level.h" />
+    <ClInclude Include="..\[CC]Quest\QuestLimitKind_Quest.h" />
+    <ClInclude Include="..\[CC]Quest\QuestLimitKind_Stage.h" />
+    <ClInclude Include="..\[CC]Quest\QuestScriptLoader.h" />
+    <ClInclude Include="..\[CC]Quest\QuestString.h" />
+    <ClInclude Include="..\[CC]Quest\QuestInfo.h" />
+    <ClInclude Include="..\[CC]Quest\SubQuestInfo.h" />
+    <ClInclude Include="..\[CC]Quest\QuestCondition.h" />
+    <ClInclude Include="..\[CC]Quest\QuestExecute.h" />
+    <ClInclude Include="..\[CC]Quest\QuestExecute_Count.h" />
+    <ClInclude Include="..\[CC]Quest\QuestExecute_Item.h" />
+    <ClInclude Include="..\[CC]Quest\QuestExecute_Quest.h" />
+    <ClInclude Include="..\[CC]Quest\QuestExecute_RandomItem.h" />
+    <ClInclude Include="..\[CC]Quest\QuestExecute_SelectItem.h" />
+    <ClInclude Include="..\[CC]Quest\QuestExecute_Time.h" />
+    <ClInclude Include="..\[CC]Quest\QuestTrigger.h" />
+    <ClInclude Include="..\[CC]Quest\QuestNpc.h" />
+    <ClInclude Include="..\[CC]Quest\QuestNpcData.h" />
+    <ClInclude Include="..\[CC]Quest\QuestNpcScript.h" />
+    <ClInclude Include="GeneralGridTable.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="GridSystem.h" />
+    <ClInclude Include="GridTable.h" />
+    <ClInclude Include="GridUnit.h" />
+    <ClInclude Include="MurimGridTable.h" />
+    <ClInclude Include="SkillTreeManager.h" />
+    <ClInclude Include="MHTimeManager.h" />
+    <ClInclude Include="CharacterCalcManager.h" />
+    <ClInclude Include="Party.h" />
+    <ClInclude Include="PartyManager.h" />
+    <ClInclude Include="AttackManager.h" />
+    <ClInclude Include="ObjectStateManager.h" />
+    <ClInclude Include="ExchangeManager.h" />
+    <ClInclude Include="ExchangeRoom.h" />
+    <ClInclude Include="StreetStall.h" />
+    <ClInclude Include="StreetStallManager.h" />
+    <ClInclude Include="StorageManager.h" />
+    <ClInclude Include="QuickManager.h" />
+    <ClInclude Include="QuickSlot.h" />
+    <ClInclude Include="LootingManager.h" />
+    <ClInclude Include="LootingRoom.h" />
+    <ClInclude Include="PKManager.h" />
+    <ClInclude Include="Channel.h" />
+    <ClInclude Include="ChannelSystem.h" />
+    <ClInclude Include="CheckRoutine.h" />
+    <ClInclude Include="Guild.h" />
+    <ClInclude Include="GuildFieldWarMgr.h" />
+    <ClInclude Include="GuildManager.h" />
+    <ClInclude Include="GuildMark.h" />
+    <ClInclude Include="GuildScore.h" />
+    <ClInclude Include="GuildTournamentMgr.h" />
+    <ClInclude Include="GuildUnion.h" />
+    <ClInclude Include="GuildUnionManager.h" />
+    <ClInclude Include="GuildWarehouse.h" />
+    <ClInclude Include="cMonsterSpeechManager.h" />
+    <ClInclude Include="WeatherManager.h" />
+    <ClInclude Include="AutoNoteManager.h" />
+    <ClInclude Include="AutoNoteRoom.h" />
+    <ClInclude Include="FishingManager.h" />
+    <ClInclude Include="..\[CC]SiegeDungeon\SiegeDungeonMgr.h" />
+    <ClInclude Include="SiegeRecallMgr.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\Siege_AddObj.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\Siege_RecallBase.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeCommand.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeMap.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeStep.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeTerm.h" />
+    <ClInclude Include="..\[CC]RecallInfo\SiegeRecall\SiegeTheme.h" />
+    <ClInclude Include="SiegeWarfareMgr.h" />
+    <ClInclude Include="NpcRecallMgr.h" />
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallBase.h" />
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallMoveable.h" />
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallRemainTime.h" />
+    <ClInclude Include="..\[CC]RecallInfo\NpcRecall\NpcRecallSelf.h" />
+    <ClInclude Include="LimitDungeonMgr.h" />
+    <ClInclude Include="cCookManager.h" />
+    <ClInclude Include="HousingMgr.h" />
+    <ClInclude Include="PCRoomManager.h" />
+    <ClInclude Include="ConsignmentMgr.h" />
+    <ClInclude Include="..\[CC]ServerModule\BootManager.h" />
+    <ClInclude Include="..\[CC]ServerModule\CommonDBMsgParser.h" />
+    <ClInclude Include="..\[CC]ServerModule\Console.h" />
+    <ClInclude Include="..\[CC]ServerModule\console_type.h" />
+    <ClInclude Include="..\[CC]ServerModule\DataBase.h" />
+    <ClInclude Include="..\[CC]ServerModule\DB.h" />
+    <ClInclude Include="..\[CC]ServerModule\DBThreadInterface.h" />
+    <ClInclude Include="..\[CC]ServerModule\define.h" />
+    <ClInclude Include="..\[CC]ServerModule\iconsole.h" />
+    <ClInclude Include="..\[CC]ServerModule\iconsole_guid.h" />
+    <ClInclude Include="..\[CC]ServerModule\inetwork.h" />
+    <ClInclude Include="..\[CC]ServerModule\MHFile.h" />
+    <ClInclude Include="..\[CC]ServerModule\MiniDumper.h" />
+    <ClInclude Include="..\[CC]ServerModule\net_define.h" />
+    <ClInclude Include="..\[CC]ServerModule\Network.h" />
+    <ClInclude Include="..\[CC]ServerModule\network_guid.h" />
+    <ClInclude Include="..\[CC]ServerModule\Noncopyable.h" />
+    <ClInclude Include="..\[CC]ServerModule\ServerListManager.h" />
+    <ClInclude Include="..\[CC]ServerModule\TConsole_Def.h" />
+    <ClInclude Include="..\[CC]ServerModule\TConsole_Guids.h" />
+    <ClInclude Include="..\[CC]ServerModule\TConsole_Interface.h" />
+    <ClInclude Include="..\[CC]ServerModule\typedef.h" />
+    <ClInclude Include="..\[CC]Header\AddableInfo.h" />
+    <ClInclude Include="..\[CC]Header\AESFile.h" />
+    <ClInclude Include="..\[CC]Header\ClientGameDefine.h" />
+    <ClInclude Include="..\[CC]Header\ClientGameStruct.h" />
+    <ClInclude Include="..\[CC]Header\CommonCalcFunc.h" />
+    <ClInclude Include="..\[CC]Header\CommonDefine.h" />
+    <ClInclude Include="..\[CC]Header\CommonGameDefine.h" />
+    <ClInclude Include="..\[CC]Header\CommonGameFunc.h" />
+    <ClInclude Include="..\[CC]Header\CommonStruct.h" />
+    <ClInclude Include="..\[CC]Header\GameResourceManager.h" />
+    <ClInclude Include="..\[CC]Header\GameResourceStruct.h" />
+    <ClInclude Include="..\[CC]Header\Pool.h" />
+    <ClInclude Include="..\[CC]Header\Protocol.h" />
+    <ClInclude Include="..\[CC]Header\ServerGameDefine.h" />
+    <ClInclude Include="..\[CC]Header\ServerGameStruct.h" />
+    <ClInclude Include="..\[CC]Header\vector.h" />
+    <ClInclude Include="..\[CC]Header\TargetList\TargetData.h" />
+    <ClInclude Include="..\[CC]Header\TargetList\TargetList.h" />
+    <ClInclude Include="..\[CC]Header\TargetList\TargetListIterator.h" />
+    <ClInclude Include="..\[CC]Header\Aes\aes.h" />
+    <ClInclude Include="Distributer.h" />
+    <ClInclude Include="MapObject.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="Npc.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Trap.h" />
+    <ClInclude Include="BossMonster.h" />
+    <ClInclude Include="BossMonsterInfo.h" />
+    <ClInclude Include="BossMonsterManager.h" />
+    <ClInclude Include="BossRewardsManager.h" />
+    <ClInclude Include="BossState.h" />
+    <ClInclude Include="SummonGroup.h" />
+    <ClInclude Include="SummonInfo.h" />
+    <ClInclude Include="FieldBossMonster.h" />
+    <ClInclude Include="FieldBossMonsterManager.h" />
+    <ClInclude Include="FieldSubMonster.h" />
+    <ClInclude Include="Pet.h" />
+    <ClInclude Include="PetManager.h" />
+    <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="VehicleManager.h" />
+    <ClInclude Include="..\[CC]BattleSystem\BattleSystem_Server.h" />
+    <ClInclude Include="..\[CC]BattleSystem\Battle.h" />
+    <ClInclude Include="..\[CC]BattleSystem\BattleFactory.h" />
+    <ClInclude Include="..\[CC]BattleSystem\BattleTeam.h" />
+    <ClInclude Include="..\[CC]BattleSystem\Showdown\Battle_Showdown.h" />
+    <ClInclude Include="..\[CC]BattleSystem\Showdown\BattleFactory_Showdown.h" />
+    <ClInclude Include="..\[CC]BattleSystem\Showdown\BattleTeam_Showdown.h" />
+    <ClInclude Include="ShowdownManager.h" />
+    <ClInclude Include="..\[CC]BattleSystem\GTournament\Battle_GTournament.h" />
+    <ClInclude Include="..\[CC]BattleSystem\GTournament\BattleFactory_GTournament.h" />
+    <ClInclude Include="..\[CC]BattleSystem\GTournament\BattleTeam_GTournament.h" />
+    <ClInclude Include="BattleFactory_Default.h" />
+    <ClInclude Include="AIGroupManager.h" />
+    <ClInclude Include="AIGroupPrototype.h" />
+    <ClInclude Include="AISystem.h" />
+    <ClInclude Include="MsgRouter.h" />
+    <ClInclude Include="RecallManager.h" />
+    <ClInclude Include="RegenManager.h" />
+    <ClInclude Include="StateMachinen.h" />
+    <ClInclude Include="Finite State Machine\Machine.h" />
+    <ClInclude Include="Finite State Machine\Memory.h" />
+    <ClInclude Include="Finite State Machine\Parser.h" />
+    <ClInclude Include="Finite State Machine\State.h" />
+    <ClInclude Include="Finite State Machine\Action.h" />
+    <ClInclude Include="Finite State Machine\ActionAggro.h" />
+    <ClInclude Include="Finite State Machine\ActionAggroBuff.h" />
+    <ClInclude Include="Finite State Machine\ActionAlias.h" />
+    <ClInclude Include="Finite State Machine\ActionCallFriend.h" />
+    <ClInclude Include="Finite State Machine\ActionCallTeam.h" />
+    <ClInclude Include="Finite State Machine\ActionDistance.h" />
+    <ClInclude Include="Finite State Machine\ActionFollow.h" />
+    <ClInclude Include="Finite State Machine\ActionFollowAlias.h" />
+    <ClInclude Include="Finite State Machine\ActionFollowTeam.h" />
+    <ClInclude Include="Finite State Machine\ActionFriend.h" />
+    <ClInclude Include="Finite State Machine\ActionFriendByHealth.h" />
+    <ClInclude Include="Finite State Machine\ActionHealth.h" />
+    <ClInclude Include="Finite State Machine\ActionHealthOfTarget.h" />
+    <ClInclude Include="Finite State Machine\ActionIsBattle.h" />
+    <ClInclude Include="Finite State Machine\ActionListen.h" />
+    <ClInclude Include="Finite State Machine\ActionMainState.h" />
+    <ClInclude Include="Finite State Machine\ActionMove.h" />
+    <ClInclude Include="Finite State Machine\ActionNextState.h" />
+    <ClInclude Include="Finite State Machine\ActionPause.h" />
+    <ClInclude Include="Finite State Machine\ActionPopState.h" />
+    <ClInclude Include="Finite State Machine\ActionPushState.h" />
+    <ClInclude Include="Finite State Machine\ActionQuit.h" />
+    <ClInclude Include="Finite State Machine\ActionRandom.h" />
+    <ClInclude Include="Finite State Machine\ActionRunaway.h" />
+    <ClInclude Include="Finite State Machine\ActionSetValue.h" />
+    <ClInclude Include="Finite State Machine\ActionSkill.h" />
+    <ClInclude Include="Finite State Machine\ActionSkillToAlias.h" />
+    <ClInclude Include="Finite State Machine\ActionSkillToFoundObject.h" />
+    <ClInclude Include="Finite State Machine\ActionSkillToTarget.h" />
+    <ClInclude Include="Finite State Machine\ActionStop.h" />
+    <ClInclude Include="Finite State Machine\ActionSwitch.h" />
+    <ClInclude Include="Finite State Machine\ActionTalk.h" />
+    <ClInclude Include="Finite State Machine\ActionTalkToFriend.h" />
+    <ClInclude Include="Finite State Machine\ActionTalkToTeam.h" />
+    <ClInclude Include="Finite State Machine\ActionTeam.h" />
+    <ClInclude Include="Finite State Machine\ActionTeamByHealth.h" />
+    <ClInclude Include="Finite State Machine\ActionTeamChief.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\FileStorage_typedef.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\GXSCHEDULE_PROC_MSG.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IAudio.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IAudio_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IExecutive.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IExecutive_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IFileStorage.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IFileStorage_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IGeometry.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IGeometry_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IRenderer.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\IRenderer_GUID.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\mesh_flag.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\motion_flag.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\StdAfx.h" />
+    <ClInclude Include="..\4DyuchiGRX_common\typedef.h" />
+    <ClInclude Include="..\4DyuchiGXGFunc\global.h" />
+    <ClInclude Include="..\4DyuchiGXGFunc\type.h" />
+    <ClInclude Include="PathManager.h" />
+    <ClInclude Include="STRPath.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Object\ActiveSkillObject.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Object\BuffSkillObject.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Object\SkillObject.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Unit\AttackSkillUnit.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Unit\cDeBuffSkillUnit.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Unit\cSpecialSkillUnit.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Unit\RecoverSkillUnit.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Unit\SkillUnit.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Unit\SummonSkillUnit.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Unit\TameSkillUnit.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Target\Target.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Delay\Delay.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Manager\SkillManager.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Info\ActiveSkillInfo.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Info\BuffSkillInfo.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Info\SkillInfo.h" />
+    <ClInclude Include="..\[CC]Skill\Server\Tree\SkillTree.h" />
+    <ClInclude Include="..\hseos\SHMain.h" />
+    <ClInclude Include="..\hseos\Farm\Animal.h" />
+    <ClInclude Include="..\hseos\Farm\Pen.h" />
+    <ClInclude Include="..\hseos\Farm\SHCrop.h" />
+    <ClInclude Include="..\hseos\Farm\SHFarm.h" />
+    <ClInclude Include="..\hseos\Farm\SHFarmManager.h" />
+    <ClInclude Include="..\hseos\Farm\SHFarmObj.h" />
+    <ClInclude Include="..\hseos\Farm\SHFarmZone.h" />
+    <ClInclude Include="..\hseos\Farm\SHGarden.h" />
+    <ClInclude Include="..\hseos\Debug\SHDebug.h" />
+    <ClInclude Include="..\hseos\Common\SHMath.h" />
+    <ClInclude Include="..\hseos\ResidentRegist\SHResidentRegistManager.h" />
+    <ClInclude Include="..\hseos\Family\SHFamily.h" />
+    <ClInclude Include="..\hseos\Family\SHFamilyManager.h" />
+    <ClInclude Include="..\hseos\Monstermeter\SHMonstermeterManager.h" />
+    <ClInclude Include="..\hseos\Group\SHGroup.h" />
+    <ClInclude Include="..\hseos\Date\SHDateManager.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="trigger\common.h" />
+    <ClInclude Include="Trigger\CristalEmpireBonusProcess.h" />
+    <ClInclude Include="Trigger\FlagManager.h" />
+    <ClInclude Include="trigger\Manager.h" />
+    <ClInclude Include="trigger\Message.h" />
+    <ClInclude Include="Trigger\Parser.h" />
+    <ClInclude Include="trigger\Pool.h" />
+    <ClInclude Include="Trigger\Timer.h" />
+    <ClInclude Include="trigger\Trigger.h" />
+    <ClInclude Include="trigger\Action.h" />
+    <ClInclude Include="Trigger\ActionAddFlag.h" />
+    <ClInclude Include="Trigger\ActionAddMoney.h" />
+    <ClInclude Include="Trigger\ActionAnimation.h" />
+    <ClInclude Include="Trigger\ActionBeginQuest.h" />
+    <ClInclude Include="Trigger\ActionBuff.h" />
+    <ClInclude Include="Trigger\ActionCamera.h" />
+    <ClInclude Include="Trigger\ActionChat.h" />
+    <ClInclude Include="Trigger\ActionCollisionTile.h" />
+    <ClInclude Include="Trigger\ActionControlMonster.h" />
+    <ClInclude Include="Trigger\ActionCreateTrigger.h" />
+    <ClInclude Include="Trigger\ActionCristalEmpireBonus.h" />
+    <ClInclude Include="Trigger\ActionDeleteQuest.h" />
+    <ClInclude Include="Trigger\ActionDungeon.h" />
+    <ClInclude Include="Trigger\ActionEffect.h" />
+    <ClInclude Include="Trigger\ActionEndQuest.h" />
+    <ClInclude Include="Trigger\ActionEngineEffect.h" />
+    <ClInclude Include="trigger\ActionGetItem.h" />
+    <ClInclude Include="Trigger\ActionKillMonster.h" />
+    <ClInclude Include="Trigger\ActionMonsterChat.h" />
+    <ClInclude Include="Trigger\ActionMoveMap.h" />
+    <ClInclude Include="Trigger\ActionPlaySound.h" />
+    <ClInclude Include="Trigger\ActionPlayWeather.h" />
+    <ClInclude Include="Trigger\ActionPutNotice.h" />
+    <ClInclude Include="Trigger\ActionPutNpcChat.h" />
+    <ClInclude Include="Trigger\ActionRemoveBuff.h" />
+    <ClInclude Include="Trigger\ActionRemoveItem.h" />
+    <ClInclude Include="Trigger\ActionSelectFlag.h" />
+    <ClInclude Include="Trigger\ActionSetAlias.h" />
+    <ClInclude Include="Trigger\ActionSetFlag.h" />
+    <ClInclude Include="Trigger\ActionSetReviveFlag.h" />
+    <ClInclude Include="Trigger\ActionSummonMonster.h" />
+    <ClInclude Include="Trigger\ActionTimer.h" />
+    <ClInclude Include="Trigger\CheckFunc.h" />
+    <ClInclude Include="trigger\Condition.h" />
+    <ClInclude Include="Dungeon\DungeonMgr.h" />
+    <ClInclude Include="Dungeon\DungeonProcessorBase.h" />
+    <ClInclude Include="Dungeon\DungeonProcessorBrokenShipwrecked.h" />
+    <ClInclude Include="Dungeon\DungeonProcessorTempleofGreed.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\4DyuchiGRX_common\math.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\4DyuchiGXGFunc\SS3DGFunc.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
