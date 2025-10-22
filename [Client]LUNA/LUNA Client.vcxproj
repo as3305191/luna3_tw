@@ -202,7 +202,7 @@ xcopy /Y "$(TargetDir)$(TargetFileName)" "C:\Users\LUNA3\Desktop\luna_export"</C
     </ResourceCompile>
     <PostBuildEvent>
       <Command>xcopy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)\..\Output\Release\"
-</Command>
+xcopy /Y "$(TargetDir)$(TargetFileName)" "C:\Users\LUNA3\Desktop\luna_export"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug GM_TOOL|Win32'">

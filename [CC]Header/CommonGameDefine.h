@@ -550,9 +550,9 @@ enum eItemPointType
 #define MAX_NPC_NUM 300
 #define	MAX_MOVENPC_NUM	10						// 090227 ShinJS --- �̵�NPC �ִ� ���� 
 #define MAX_DROPITEM_NUM 20
-#define MAX_CHARACTER_LEVEL_NUM		150			// A��I�Ϩ���E����?AI �ˢ�ˢ���Ii��o��Ei��u�ˢ碮�� ����uo
+#define MAX_CHARACTER_LEVEL_NUM		120			// A��I�Ϩ���E����?AI �ˢ�ˢ���Ii��o��Ei��u�ˢ碮�� ����uo
 
-#define MAX_PLAYERLEVEL_NUM	151
+#define MAX_PLAYERLEVEL_NUM	121
 #define MAX_MONSTERLEVELPOINTRESTRICT_NUM	9
 #define MONSTERLEVELRESTRICT_LOWSTARTNUM	6
 
@@ -3073,7 +3073,7 @@ enum eLIMITDUNGEON_TYPE
  
 
 //  �ű����� ���� ������ ����ĳ������ ������ġ
-#define MAKE_DEVIL_LIMIT_LEVEL	50
+//#define MAKE_DEVIL_LIMIT_LEVEL	50
 
 // 100322 ONS ����Ʈ�˸��� �ڵ���� �������� ����
 #define MAX_QUICKVIEW_QUEST 10

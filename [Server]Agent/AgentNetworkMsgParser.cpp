@@ -5664,18 +5664,19 @@ void MP_NPROTECTUserMsgParser(DWORD dwConnectionIndex, char* pMsg, DWORD dwLengt
 // 100302 ONS ���� ĳ���� ������ �������� üũó�� �߰�
 BOOL CheckDevilMakeLevel( USERINFO* pUserInfo )
 {
-	if( !pUserInfo )
-		return FALSE;
+	//if( !pUserInfo )
+		//return FALSE;
 
-	for(BYTE count = 0; count < MAX_CHARACTER_NUM; ++count)
-	{
-		if( 0 == pUserInfo->SelectInfoArray[count].dwCharacterID ) 
-			continue;
+	//for(BYTE count = 0; count < MAX_CHARACTER_NUM; ++count)
+	//{
+		//if( 0 == pUserInfo->SelectInfoArray[count].dwCharacterID ) 
+			//continue;
 
 		// ����50�̻��� ĳ���Ͱ� �����Ұ�� ������������
-		if( MAKE_DEVIL_LIMIT_LEVEL <= pUserInfo->SelectInfoArray[count].Level )	
-			return TRUE;
-	}
+		//if( MAKE_DEVIL_LIMIT_LEVEL <= pUserInfo->SelectInfoArray[count].Level )	
+			//return TRUE;
+	//}
 
-	return FALSE;
+	//return FALSE;
+	return TRUE;
 }

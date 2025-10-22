@@ -85,7 +85,7 @@ m_SkillTree(new cSkillTree)
 	mTargetPosX = 0;
 	mTargetPosZ = 0;
 
-	// 071128 LYW --- Player : HPMP .
+	// 071128 LYW --- Player : HPMP ??.
 	m_byHP_Point = 0;
 	m_byMP_Point = 0;
 
@@ -116,10 +116,10 @@ void CPlayer::InitClearData()
 	m_ItemContainer.SetInit(eItemTable_Shop,		TP_SHOPITEM_START,		SLOT_SHOPITEM_NUM,		&m_ShopItemSlot);	
 	memset(&m_HeroCharacterInfo,0,sizeof(CHARACTER_TOTALINFO));
 	memset(&m_HeroInfo,0,sizeof(HERO_TOTALINFO));
-	// 090701 LUJ, ?? /?? ? ?  Init() ??  , ??
-	//		? ?´. purse   ??  ?? ÷??  ? (?)
-	//		 ?. ? ?? DB      ? ? , ? DB ???.
-	//		?   ü ??   ??? ?
+	// 090701 LUJ, ??? ???/???????? ????? Init()?? ???? ?? ?? ???
+	//		??????. purse? ? ?? ??? ?? ?????÷??? ??? ??????(???)?
+	//		?? ?? ??????DB?? ?? ???? ?? ??? ? ???????? ???? DB? ??????
+	//		???? ?? ???? ??? ?? ?????? ??
 	m_InventoryPurse.SetZeroMoney();
 	m_StoragePurse.SetZeroMoney();
 
@@ -129,20 +129,20 @@ void CPlayer::InitClearData()
 	m_SkillFailCount = 0;
 	mGravity = 0;
 
-	memset( &m_DateMatching, 0, sizeof(DATE_MATCHING_INFO));			// ? ? ?.
-	// desc_hseos_??01
-	// S ?? ? added by hseos 2007.06.09
+	memset( &m_DateMatching, 0, sizeof(DATE_MATCHING_INFO));			// ??? ?? ???
+	// desc_hseos_???01
+	// S ??? ??added by hseos 2007.06.09
 	m_DateMatching.nSerchTimeTick = gCurTime;
 	m_DateMatching.nRequestChatTimeTick = gCurTime;
-	// E ?? ? added by hseos 2007.06.09
+	// E ??? ??added by hseos 2007.06.09
 	memset( &mPassiveStatus, 0, sizeof( Status ) );
 	memset( &mBuffStatus, 0, sizeof( Status ) );
 	memset( &mRatePassiveStatus, 0, sizeof( Status ) );
 	memset( &mRateBuffStatus, 0, sizeof( Status ) );
 	memset( &mAbnormalStatus, 0, sizeof( AbnormalStatus ) );
 
-	// desc_hseos_?01
-	// S ? ? added by hseos 2007.05.23
+	// desc_hseos_????1
+	// S ??????added by hseos 2007.05.23
 	ZeroMemory(&m_stMonstermeterInfo, sizeof(m_stMonstermeterInfo));
 	m_stMonstermeterInfo.nPlayTimeTick = gCurTime;
 	m_pcFamilyEmblem = NULL;
@@ -208,7 +208,7 @@ void CPlayer::InitClearData()
 	m_wFireCount = 0;
 	m_dwLastCookTime = 0;
 	memset(m_MasterRecipe, 0, sizeof(m_MasterRecipe));
-	// 090316 LUJ, ?  ??
+	// 090316 LUJ, ? ? ??
 	SetSummonedVehicle( 0 );
 	SetMountedVehicle( 0 );
 	m_initState = 0;
@@ -239,7 +239,7 @@ BOOL CPlayer::Init(EObjectKind kind,DWORD AgentNum, BASEOBJECT_INFO* pBaseObject
 	m_bExit = FALSE;
 	m_bNormalExit = FALSE;
 //
-	CObject::Init(kind, AgentNum, pBaseObjectInfo); //?aA eObjectState_NoneAI cU.
+	CObject::Init(kind, AgentNum, pBaseObjectInfo); //??a???A eObjectState_NoneA??I ???c?U.
 
 //KES 040827
 	OBJECTSTATEMGR_OBJ->StartObjectState( this, eObjectState_Immortal, 0 );
@@ -284,7 +284,7 @@ BOOL CPlayer::Init(EObjectKind kind,DWORD AgentNum, BASEOBJECT_INFO* pBaseObject
 
 	m_bNoExpPenaltyByPK = FALSE;
 
-	// 080515 LUJ, Ÿ ü? ü ??
+	// 080515 LUJ, ????? ?????
 	ZeroMemory( &mCheckCoolTime, sizeof( mCheckCoolTime ) );
 
 	m_dwSkillCancelCount = 0;
@@ -311,9 +311,9 @@ void CPlayer::Release()
 	FishingData_Update(GetID(), GetFishingLevel(), GetFishingExp(), GetFishPoint());
 	Cooking_Update(this);
 
-	if(FISHINGMGR->GetActive())		// ı?? ?? (==2 ) .
+	if(FISHINGMGR->GetActive())		// ?ı???? ???????(==2? ???? ??
 	{
-		// 080808 LUJ,   ?? 
+		// 080808 LUJ, ?? ??? ?????
 		Log_Fishing(
 			GetID(),
 			eFishingLog_Regular,
@@ -395,7 +395,7 @@ void CPlayer::Release()
 			FALSE);
 	}
 
-	// 090316 LUJ,  ó?
+	// 090316 LUJ, ?? ????
 	{
 		CVehicle* const vehicleObject = ( CVehicle* )g_pUserTable->FindUser( GetMountedVehicle() );
 
@@ -424,7 +424,7 @@ void CPlayer::UpdateGravity()
 
 BOOL CPlayer::AddFollowList(CMonster * pMob)
 {
-	if( m_FollowMonsterList.GetDataNum() < 50 )		//max 50
+	if( m_FollowMonsterList.GetDataNum() < 50 )		//max 50??
 	{
 		m_FollowMonsterList.Add(pMob, pMob->GetID());
 		UpdateGravity();
@@ -506,7 +506,7 @@ void CPlayer::InitCharacterTotalInfo(CHARACTER_TOTALINFO* pTotalInfo)
 	else
 		m_HeroCharacterInfo.bVisible = TRUE;
 
-	// 071226 KTH -- ?? ?? ? ?.
+	// 071226 KTH -- ???? ?? ??????
 	m_InventorySlot.SetSlotNum( POSTYPE( SLOT_INVENTORY_NUM + GetInventoryExpansionSize() ) );
 
 }
@@ -609,7 +609,7 @@ void CPlayer::GetItemtotalInfo(ITEM_TOTALINFO& pRtInfo,DWORD dwFlag)
 	}
 }
 
-// 091026 LUJ,  ?? ?   ? 
+// 091026 LUJ, ?? ?? ??????? ? ?????
 DWORD CPlayer::SetAddMsg(DWORD dwReceiverID, BOOL isLogin, MSGBASE*& sendMessage)
 {
 	if(eUSERLEVEL_GM >= GetUserLevel() &&
@@ -630,7 +630,7 @@ DWORD CPlayer::SetAddMsg(DWORD dwReceiverID, BOOL isLogin, MSGBASE*& sendMessage
 	message.bLogin = BYTE(isLogin);
 	message.mMountedVehicle.mVehicleIndex = GetSummonedVehicle();
 
-	// 090316 LUJ,   
+	// 090316 LUJ, ???? ??
 	{
 		CVehicle* const vehicle = ( CVehicle* )g_pUserTable->FindUser( GetMountedVehicle() );
 
@@ -641,7 +641,7 @@ DWORD CPlayer::SetAddMsg(DWORD dwReceiverID, BOOL isLogin, MSGBASE*& sendMessage
 		}
 	}
 
-	// ?¡   
+	// ?¡ ???? ??
 	{
 		const stHouseRiderInfo* const houseRiderInfo = HOUSINGMGR->GetRiderInfo(GetID());
 
@@ -738,7 +738,7 @@ void CPlayer::SetStrength(DWORD val)
 
 	CHARCALCMGR->CalcCharStats(this);
 
-	// DB?? uAiIAIc
+	// DB?????u?A?i?IAI???c
 	CharacterHeroInfoUpdate(this);
 
 	MSG_DWORD msg;
@@ -755,7 +755,7 @@ void CPlayer::SetDexterity(DWORD val)
 
 	CHARCALCMGR->CalcCharStats(this);
 
-	// DB?? uAiIAIc
+	// DB?????u?A?i?IAI???c
 	CharacterHeroInfoUpdate(this);
 
 	MSG_DWORD msg;
@@ -769,10 +769,10 @@ void CPlayer::SetVitality(DWORD val)
 {
 	m_HeroInfo.Vit = val;
 
-	// iy?iA, o?uiA; ?UoA eie
+	// ?iy?i??A, ?o??ui??A; ?U?oA ??e?ie
 	CHARCALCMGR->CalcCharStats(this);
 
-	// DB?? uAiIAIc
+	// DB?????u?A?i?IAI???c
 	CharacterHeroInfoUpdate(this);
 
 	MSG_DWORD msg;
@@ -786,10 +786,10 @@ void CPlayer::SetWisdom(DWORD val)
 {
 	m_HeroInfo.Wis = val;
 
-	// ?iA; ?UoA eie
+	// ??i??A; ?U?oA ??e?ie
 	CHARCALCMGR->CalcCharStats(this);
 
-	// DB?? uAiIAIc
+	// DB?????u?A?i?IAI???c
 	CharacterHeroInfoUpdate(this);
 
 	MSG_DWORD msg;
@@ -849,44 +849,44 @@ CItemSlot * CPlayer::GetSlot(eITEMTABLE tableIdx)
 //-------------------------------------------------------------------------------------------------
 //	NAME : SetLifeForce
 //	DESC : 080625 LYW 
-//		   ??  ¿ ? ?  ?  , 
-//		   ?  50%  ? ?. ? °  ¸, 
-//		    ? return ó ??,   ?   ? ? ??.
+//		   ?????? ?¿???????? ??? ??? ?, 
+//		   ???? ??? 50%? ??? ?? ?? ????°??? ?¸? 
+//		   ?? ???return ?????? ??? ?? ?????? ? ?????????
 //-------------------------------------------------------------------------------------------------
 void CPlayer::SetLifeForce(DWORD Life, BYTE byForce, BOOL bSendMsg) 
 {
-	//   ? ??.
+	// ?? ?? ???????
 	if(byForce == FALSE)
 	{
-		// ??  ¶, return ó ?.
+		// ?????? ?¶?, return ?????
 		if(GetState() == eObjectState_Die) return ;
 	}
 
 
-	//  ?  ´ ?  ?´.
+	// ?? ??? ??? ´??????? ??.
 	DWORD maxlife = 0 ;
 	maxlife = GetMaxLife() ;
 
 
-	//  ? ? ü?.
+	// ??? ?? ?? ?.
 	if(Life > maxlife) Life = maxlife ;
 
 
-	// ? ?     , return ó ?.
+	// ????? ???? ?? ??? ?? ???, return ?????
 	if( m_HeroCharacterInfo.Life >= Life ) return ;
 
 	
-	//   / ? ?   ,
+	// ?? ??? / ????? ???? ?? ???,
 	if(m_HeroCharacterInfo.Life != Life)
 	{
-		// ?  ? ??,
+		// ????? ??????,
 		if(bSendMsg == TRUE)
 		{
-			//// ?  ?.
+			//// ??????? ????
 			//DWORD dwNewLife = 0 ;
 			//dwNewLife = Life - GetLife() ;
 
-			// ? ?.
+			// ????????
 			MSG_INT msg ;
 			msg.Category = MP_CHAR ;
 			msg.Protocol = MP_CHAR_LIFE_ACK ;
@@ -902,7 +902,7 @@ void CPlayer::SetLifeForce(DWORD Life, BYTE byForce, BOOL bSendMsg)
 	}
 		
 
-	// ?  ?.
+	// ???? ???? ????
 	m_HeroCharacterInfo.Life = Life ;
 }
 
@@ -919,11 +919,11 @@ void CPlayer::SetLife(DWORD val,BOOL bSendMsg)
 	if(val > maxlife)
 		val = maxlife;
 	
-	if(m_HeroCharacterInfo.Life != val)	// iIoIAo AI??i???A ?Aa???u iIA?U.
+	if(m_HeroCharacterInfo.Life != val)	// ?i?I?oIAo AI?????i????A ????Aa????u?? ?i?IA???U.
 	{
 		if(bSendMsg == TRUE)
 		{
-			// To AOoAIu??c -------------------------------
+			// To A???OoAI?u????c -------------------------------
 			MSG_INT msg;
 			msg.Category = MP_CHAR;
 			msg.Protocol = MP_CHAR_LIFE_BROADCAST;
@@ -968,40 +968,40 @@ void CPlayer::SendLifeToParty(DWORD val)
 //-------------------------------------------------------------------------------------------------
 //	NAME : SetLifeForce
 //	DESC : 080625 LYW 
-//		   ??  ¿ ? ?  ?  , 
-//		   ?  30%  ? ?. ? °  ¸, 
-//		    ? return ó ??,   ?   ? ? ??.
+//		   ?????? ?¿???????? ??? ??? ?, 
+//		   ???? ?? 30%? ??? ?? ?? ????°??? ?¸? 
+//		   ?? ???return ?????? ??? ?? ?????? ? ?????????
 //-------------------------------------------------------------------------------------------------
 void CPlayer::SetManaForce(DWORD Mana, BYTE byForce, BOOL bSendMsg) 
 {
-	//   ? ??.
+	// ?? ?? ???????
 	if(byForce == FALSE)
 	{
-		// ??  ¶, return ó ?.
+		// ?????? ?¶?, return ?????
 		if(GetState() == eObjectState_Die) return ;
 	}
 
 
-	// ?   ?  ? ?´.
+	// ???? ?? ??? ???? ??? ??.
 	DWORD MaxMana = 0 ;
 	MaxMana = GetMaxMana() ;
 
 
-	// ? ?  ?  ü?.
+	// ????? ??? ?? ??? ?.
 	if(Mana > MaxMana) Mana = MaxMana ;
 
 
-	// ? ?     , return ó ?.
+	// ????? ???? ?? ??? ?? ???, return ?????
 	if( m_HeroInfo.Mana >= Mana ) return ;
 
 
-	//  / ? ?   ,
+	// ???? / ????? ??? ?? ???,
 	if( m_HeroInfo.Mana != Mana)
 	{
-		// ?  ? TRUE ?,
+		// ????? ???TRUE ??
 		if(bSendMsg)
 		{
-			//  ?.
+			// ??? ????
 			MSG_DWORD msg ;
 			msg.Category = MP_CHAR ;
 			msg.Protocol = MP_CHAR_MANA_GET_ACK;
@@ -1015,7 +1015,7 @@ void CPlayer::SetManaForce(DWORD Mana, BYTE byForce, BOOL bSendMsg)
 	}
 	
 
-	// ?  ?.
+	// ???? ??? ????
 	m_HeroInfo.Mana = Mana ; 
 }
 
@@ -1034,7 +1034,7 @@ void CPlayer::SetMana(DWORD val,BOOL bSendMsg)
 
 	if( m_HeroInfo.Mana != val)
 	{
-		// 100223 ShinJS ---   ?    ? .
+		// 100223 ShinJS --- ?? ??? ????? ?? ??? ????? ??.
 		if(bSendMsg)
 		{
 			MSG_INT msg;
@@ -1077,7 +1077,7 @@ void CPlayer::SetMaxLife(DWORD val)
 {
 	m_HeroCharacterInfo.MaxLife = val;
 
-	// To AOoAIu??c -------------------------------
+	// To A???OoAI?u????c -------------------------------
 	MSG_DWORD msg;
 	msg.Category = MP_CHAR;
 	msg.Protocol = MP_CHAR_MAXLIFE_NOTIFY;
@@ -1090,7 +1090,7 @@ void CPlayer::SetMaxMana(DWORD val)
 {
 	m_HeroInfo.MaxMana= val;
 
-	// To AOoAIu??c -------------------------------
+	// To A???OoAI?u????c -------------------------------
 	MSG_DWORD msg;
 	msg.Category = MP_CHAR;
 	msg.Protocol = MP_CHAR_MAXMANA_NOTIFY;
@@ -1131,8 +1131,8 @@ void CPlayer::SetPlayerLevelUpPoint(LEVELTYPE val)
 	SendMsg(&msg,sizeof(msg));
 }
 /*****************************************************************/
-/* 1. AEa?? A???AI? iyuiCuu;O from DBResultQuery
-/* 2. SetPlayerExpPoint()???u AO?e ?CeA??| ?Nui uo; O calliE
+/* 1. AE??a????A????AI?????iy?u???iC?uu;?O?? from DBResultQuery
+/* 2. SetPlayerExpPoint()????u?? AO?e ???CeA??| ?N?ui ?u?o; ?O?? call?iE
 /*
 /*
 /*****************************************************************/
@@ -1164,7 +1164,7 @@ void CPlayer::SetLevel(LEVELTYPE level)
 
 			SetSkillPoint( skillpoint, FALSE );
 
-			// ??
+			// ???
 			// if( level == 10 )
 			// {
 			// 	WebEvent( GetUserID(), 1 );
@@ -1217,21 +1217,21 @@ void CPlayer::SetLevel(LEVELTYPE level)
 		this);
 }
 
-// 080611 LYW --- Player : ?? ? ó .
-// ( ? ? ??   .)
+// 080611 LYW --- Player : ????? ???? ??????.
+// (????? ?? ???? ????????????.)
 //void CPlayer::SetSkillPoint( DWORD point )
 void CPlayer::SetSkillPoint( DWORD point, BYTE byForced )
 {
-	//  ?  ü?.
+	// ?? ???? ?? ?.
 	ASSERT(byForced <= TRUE) ;
 	if(byForced > TRUE) return ;
 
 
-	// ? ? ?.
+	// ?? ??? ????.
 	GetHeroTotalInfo()->SkillPoint += point;
 
 
-	// ??? 
+	// ???? ??
 	MSG_DWORD msg;
 
 	msg.Category = MP_SKILLTREE;
@@ -1242,16 +1242,16 @@ void CPlayer::SetSkillPoint( DWORD point, BYTE byForced )
 	SendMsg(&msg, sizeof(msg));
 
 
-	// DB ?
+	// DB ????
 	SkillPointUpdate( GetID(), GetSkillPoint() );
 
 
-	// 071129 LYW --- Player :  ? ? ?.
+	// 071129 LYW --- Player : ?? ?? ??? ????.
 	//DB_UpdateAccumulateSkillPoint(GetID(), FALSE, point) ;
 	DB_UpdateAccumulateSkillPoint(GetID(), byForced, point) ;
 
 
-	// 071114 . ?
+	// 071114 ??. ??
 	{
 		const SKILL_BASE emptyData = { 0 };
 
@@ -1266,7 +1266,7 @@ DWORD CPlayer::GetSkillPoint()
 
 void CPlayer::SetPlayerExpPoint(EXPTYPE point)
 {
-	// 071119 , ?  ??   ? ? ?? ??
+	// 071119 ??, ????? ?? ???? ? ????????? ???
 
 	const LEVELTYPE& level = m_HeroCharacterInfo.Level;
 	
@@ -1275,16 +1275,16 @@ void CPlayer::SetPlayerExpPoint(EXPTYPE point)
 	if( level == MAX_CHARACTER_LEVEL_NUM )
 	{
 		const EXPTYPE& BeforeExp = m_HeroInfo.ExpPoint;
-		// Max? ? ?  ?  
-		// ? ? ??.
+		// Max??????? ????? ???? ??
+		// ??? ?????????.
 		if( point > BeforeExp )
 		{
 			return;
 		}
 	}	
 	
-	// ?  ?? ?? ? ?   ?,
-	//  ü?? 
+	// ???? ?? ??? ?????????? ? ????
+	// ??????????
 	{
 		EXPTYPE nextPoint = GAMERESRCMNGR->GetMaxExpPoint( level );
 
@@ -1320,7 +1320,7 @@ void CPlayer::AddPlayerExpPoint(EXPTYPE Exp)
 
 	EXPTYPE NewExp = 0 ;
 
-	// 090213 LYW --- Player : ??  ?  ? ? ?. (   ?  )
+	// 090213 LYW --- Player : ?????????? ?????? ???? ( ?? ?? ??? ?? )
 	if( GetFamilyIdx() )
 	{
 		NewExp = GetPlayerExpPoint() + Exp + m_dweFamilyRewardExp ;
@@ -1339,7 +1339,7 @@ void CPlayer::AddPlayerExpPoint(EXPTYPE Exp)
 	msg.dwObjectID	= GetID() ;
 	msg.dweData1	= GetPlayerExpPoint() ;
 
-	// 090213 LYW --- Player : ??  ?  ? ? ?. ( ? ?  )
+	// 090213 LYW --- Player : ?????????? ?????? ???? ( ?????? ?? )
 	if( GetFamilyIdx() )
 	{
 		msg.dweData2	= Exp + m_dweFamilyRewardExp ;
@@ -1356,14 +1356,14 @@ void CPlayer::ReduceExpPoint(EXPTYPE minusExp, BYTE bLogType)
 {
 	LEVELTYPE minuslevel = 0;
 
-	// 080602 LYW --- Player : ? ? (__int32)  (__int64)   ó.
+	// 080602 LYW --- Player : ??? ?? (__int32) ?? (__int64) ?????? ??
 	//DWORD CurExp = GetPlayerExpPoint();
 	EXPTYPE CurExp = GetPlayerExpPoint();
 
-	if(GetLevel() <= 1 && CurExp < minusExp)	//1A 0iAo iAIU.
+	if(GetLevel() <= 1 && CurExp < minusExp)	//????1A? 0?iAo?? ?iAI?U.
 		minusExp = CurExp;
 
-	InsertLogExp( bLogType, GetID(), GetLevel(), minusExp, GetPlayerExpPoint(), m_MurdererKind, m_MurdererIDX, 0/*?  - GetPlayerAbilityExpPoint()*/);
+	InsertLogExp( bLogType, GetID(), GetLevel(), minusExp, GetPlayerExpPoint(), m_MurdererKind, m_MurdererIDX, 0/*??? ?? - GetPlayerAbilityExpPoint()*/);
 	
 	while(1)
 	{
@@ -1372,8 +1372,8 @@ void CPlayer::ReduceExpPoint(EXPTYPE minusExp, BYTE bLogType)
 			minusExp -= CurExp;
 			++minuslevel;
 			CurExp = GAMERESRCMNGR->GetMaxExpPoint(GetLevel()-minuslevel) - 1;
-			ASSERT(minuslevel<2);	//EA C
-			if(minuslevel > 3)		//EA CIA... CNcCA Aoe
+			ASSERT(minuslevel<2);	//E??A?? C???
+			if(minuslevel > 3)		//E??A?? CI?A... ??CN?cCA ??Ao?e
 				break;
 		}
 		else
@@ -1416,7 +1416,7 @@ void CPlayer::OnEndObjectState(EObjectState State)
 
 }
 
-// 090204 LUJ, Ÿ ? 
+// 090204 LUJ, ?????? ?
 eWeaponType CPlayer::GetWeaponEquipType()
 {
 	const ITEM_INFO* const pItemInfo = ITEMMGR->GetItemInfo( GetWearedWeapon() );
@@ -1424,7 +1424,7 @@ eWeaponType CPlayer::GetWeaponEquipType()
 	return pItemInfo ? eWeaponType( pItemInfo->WeaponType ) : eWeaponType_None;
 }
 
-// 080703 LUJ, ? Ÿ enum 
+// 080703 LUJ, ?? ???enum?? ??
 eWeaponAnimationType CPlayer::GetWeaponAniType()
 {
 	const ITEM_INFO* leftInfo	= ITEMMGR->GetItemInfo( GetWearedItemIdx( eWearedItem_Weapon ) );
@@ -1433,7 +1433,7 @@ eWeaponAnimationType CPlayer::GetWeaponAniType()
 	const eWeaponAnimationType	leftType	= eWeaponAnimationType( leftInfo ? leftInfo->WeaponAnimation : eWeaponAnimationType_None );
 	const eWeaponAnimationType	rightType	= eWeaponAnimationType( rightInfo ? rightInfo->WeaponAnimation : eWeaponAnimationType_None );
 
-	// 080703 LUJ,  ? ? ? ??. ?? ?   ? ?.
+	// 080703 LUJ, ????? ?????????? ????? ? ????? ??????
 	if( leftType != rightType ||
 		leftType == eWeaponAnimationType_None )
 	{
@@ -1465,27 +1465,27 @@ void CPlayer::ReviveAfterShowdown( BOOL bSendMsg )
 
 	m_YYLifeRecoverTime.bStart = FALSE;
 	m_YYManaRecoverTime.bStart = FALSE;
-//	SetLife( GetMaxLife() * 30 / 100 );	//uoA? uiOiO COi.
+//	SetLife( GetMaxLife() * 30 / 100 );	//?uoA???ui?O?i??O CO??i.
 	SetLife( GetMaxLife() );
 	SetMana( GetMaxMana() );
 }
 
 
 	
-// 080602 LYW --- Player : ? ? (__int32)  (__int64)   ó.
-//DWORD CPlayer::RevivePenalty(BOOL bAdditionPenalty)								// ? ? ? ? ? ó? ?.
-EXPTYPE CPlayer::RevivePenalty(BOOL bAdditionPenalty)								// ? ? ? ? ? ó? ?.
+// 080602 LYW --- Player : ??? ?? (__int32) ?? (__int64) ?????? ??
+//DWORD CPlayer::RevivePenalty(BOOL bAdditionPenalty)								// ?????? ????? ?????????
+EXPTYPE CPlayer::RevivePenalty(BOOL bAdditionPenalty)								// ?????? ????? ?????????
 {
-	// desc_hseos_? _01
-	// S ?  ? added by hseos 2007.11.30
-	// ..ç  ?? ??  ? 
+	// desc_hseos_??? ?_01
+	// S ??? ? ??added by hseos 2007.11.30
+	// ..?????? ?? ?????? ?? ??
 	if (g_csDateManager.IsChallengeZoneHere())
 	{
 		return FALSE;
 	}
-	// E ?  ? added by hseos 2007.11.30
+	// E ??? ? ??added by hseos 2007.11.30
 
-	// ? ??  ?? .
+	// ?? ???? ?????? ??.
 	if( g_pServerSystem->GetMapNum() == GTMAPNUM)
 	{
 		return FALSE;
@@ -1493,7 +1493,7 @@ EXPTYPE CPlayer::RevivePenalty(BOOL bAdditionPenalty)								// ? ? ? 
 
 
 
-	DWORD PenaltyNum = 0 ;														// ? ? ? 2% ?.
+	DWORD PenaltyNum = 0 ;														// ????? ???2%? ????
 
 	if( bAdditionPenalty )
 	{
@@ -1504,7 +1504,7 @@ EXPTYPE CPlayer::RevivePenalty(BOOL bAdditionPenalty)								// ? ? ? 
 		PenaltyNum = random(1, 3) ;
 	}
 	
-	// 071217 KTH --- Status ProtectExp ? ? ?  ? ?´.//
+	// 071217 KTH --- Status? ProtectExp? ??? ???????? ?? ??? ??.//
 	Status* pStatus;
 	pStatus = this->GetBuffStatus();
 
@@ -1514,87 +1514,87 @@ EXPTYPE CPlayer::RevivePenalty(BOOL bAdditionPenalty)								// ? ? ? 
 	}
 	//////////////////////////////////////////////////////////////////////////////////////
 
-	LEVELTYPE CurLevel = GetLevel() ;											// ÷?   ?.
+	LEVELTYPE CurLevel = GetLevel() ;											// ÷?????? ??? ???
 
-	EXPTYPE CurExp	= GetPlayerExpPoint() ;										// ÷?  ? ?.
+	EXPTYPE CurExp	= GetPlayerExpPoint() ;										// ÷?????? ???? ???
 	
-	EXPTYPE GoalExp	= GAMERESRCMNGR->GetMaxExpPoint(CurLevel) ;					// ÷?  ? ?. 
+	EXPTYPE GoalExp	= GAMERESRCMNGR->GetMaxExpPoint(CurLevel) ;					// ÷??????? ???? ??? 
 
-	//---KES CHECK : GoalExp ? ? ?. * PeanltyNum   DWORD ??  ?.
-	// 080602 LYW --- Player : ? ? (__int32)  (__int64)   ó.
-	//DWORD dwExpA = GoalExp * PenaltyNum ;										// ?? ? ?.
-	EXPTYPE dwExpA = GoalExp * PenaltyNum ;										// ?? ? ?.
+	//---KES CHECK : GoalExp? ??? ??? * PeanltyNum? ?? ??DWORD? ?? ? ??
+	// 080602 LYW --- Player : ??? ?? (__int32) ?? (__int64) ?????? ??
+	//DWORD dwExpA = GoalExp * PenaltyNum ;										// ?? ??? ???
+	EXPTYPE dwExpA = GoalExp * PenaltyNum ;										// ?? ??? ???
 	
-	EXPTYPE PenaltyExp = (EXPTYPE)(dwExpA / 100) ;								// ?? ? ?.
+	EXPTYPE PenaltyExp = (EXPTYPE)(dwExpA / 100) ;								// ?? ???? ???
 
-	// 080602 LYW --- Player : ? ? (__int32)  (__int64)   ó.
-	//DWORD dwExp = 0 ;															//  ?  ? 0 ?.
-	EXPTYPE dwExp = 0 ;															//  ?  ? 0 ?.
+	// 080602 LYW --- Player : ??? ?? (__int32) ?? (__int64) ?????? ??
+	//DWORD dwExp = 0 ;															// ??? ??? ??? ????0?? ????
+	EXPTYPE dwExp = 0 ;															// ??? ??? ??? ????0?? ????
 
-	BOOL bLevelDown = FALSE ;													//  ??  ? FALSE  ?.
+	BOOL bLevelDown = FALSE ;													// ?? ??? ??? ????FALSE ??? ??
 
-	if( CurExp >= PenaltyExp )													//  ? ?? ? ? .
+	if( CurExp >= PenaltyExp )													// ?? ???? ?? ??? ?????
 	{
-		dwExp = CurExp - PenaltyExp ;											//  ? ?.
+		dwExp = CurExp - PenaltyExp ;											// ??? ???? ????
 
-		ASSERT( dwExp >= 0 ) ;													// ? 0??? ?.
+		ASSERT( dwExp >= 0 ) ;													// ???? 0???????
 
 		SetPlayerExpPoint( dwExp ) ;
 
 		MSG_DWORDEX3 msg ;
 
-		msg.Category	= MP_USERCONN ;											// ?? MP_USERCONN ?.
-		msg.Protocol	= MP_USERCONN_CHARACTER_DOWNEXP_NOTICE ;				//  ? ? ?.
-		msg.dwObjectID	= GetID() ;												// ÷? ? ?.
-		msg.dweData1	= (DWORD)PenaltyNum ;									// ?? ? ?.
-		msg.dweData2	= dwExp ;												//  ? ?.
+		msg.Category	= MP_USERCONN ;											// ?????MP_USERCONN? ????
+		msg.Protocol	= MP_USERCONN_CHARACTER_DOWNEXP_NOTICE ;				// ????? ??? ????????
+		msg.dwObjectID	= GetID() ;												// ÷???????????
+		msg.dweData1	= (DWORD)PenaltyNum ;									// ?? ??? ????
+		msg.dweData2	= dwExp ;												// ??? ???? ????
 
 		if( bAdditionPenalty )
 		{
-			msg.dweData3		= TRUE ;												// ? ? ? ? TRUE ?.
+			msg.dweData3		= TRUE ;												// ????? ?????TRUE? ????
 		}
 		else
 		{
-			msg.dweData3		= FALSE ;												// ? ? ? ? FALSE ?.
+			msg.dweData3		= FALSE ;												// ????? ?????FALSE? ????
 		}
 
-		SendMsg(&msg, sizeof(msg)) ;											// ÷?? ? ?.
+		SendMsg(&msg, sizeof(msg)) ;											// ÷???? ????????
 	}
-	else																		//  ÷? ? ?? ? .
+	else																		// ?? ÷???????? ?? ????? ????
 	{
-		bLevelDown = TRUE ;														//  ? ? TRUE ?.
+		bLevelDown = TRUE ;														// ?? ?????TRUE? ????
 
-		dwExp = PenaltyExp - CurExp ;											//  ? ?.
+		dwExp = PenaltyExp - CurExp ;											// ??? ???? ????
 
-		ASSERT( dwExp >= 0 ) ;													// ? 0??? ?.
+		ASSERT( dwExp >= 0 ) ;													// ???? 0???????
 
-		GoalExp = GAMERESRCMNGR->GetMaxExpPoint(CurLevel-1) ;					// ??    ? ? ?.
-		SetLevel( CurLevel -1 ) ;												// ÷?  ?  ?.
-		SetPlayerExpPoint(GoalExp-dwExp) ;										// ÷? ? ?.
+		GoalExp = GAMERESRCMNGR->GetMaxExpPoint(CurLevel-1) ;					// ????? ??? ??? ?? ???? ???
+		SetLevel( CurLevel -1 ) ;												// ÷??????? ?????? ????
+		SetPlayerExpPoint(GoalExp-dwExp) ;										// ÷???????? ????
 
 		MSG_DWORDEX4 msg ;
 
-		msg.Category	= MP_USERCONN ;											// ?? MP_USERCONN ?.
-		msg.Protocol	= MP_USERCONN_CHARACTER_DOWNLEVEL_NOTICE ;				//  ? ? ?.
-		msg.dwObjectID	= GetID() ;												// ÷? ? ?.
-		msg.dweData1	= (DWORDEX)GetLevel() ;									// ÷?  ?.
-		msg.dweData2	= GoalExp-dwExp ;										// ÷? ? ?.
-		msg.dweData3	= (DWORDEX)PenaltyNum ;									// ?? ? ?.
+		msg.Category	= MP_USERCONN ;											// ?????MP_USERCONN? ????
+		msg.Protocol	= MP_USERCONN_CHARACTER_DOWNLEVEL_NOTICE ;				// ????? ??? ????????
+		msg.dwObjectID	= GetID() ;												// ÷???????????
+		msg.dweData1	= (DWORDEX)GetLevel() ;									// ÷??????? ????
+		msg.dweData2	= GoalExp-dwExp ;										// ÷???????? ????
+		msg.dweData3	= (DWORDEX)PenaltyNum ;									// ?? ??? ????
 
 
 		if( bAdditionPenalty )
 		{
-			msg.dweData4		= TRUE ;												// ? ? ? ? TRUE ?.
+			msg.dweData4		= TRUE ;												// ????? ?????TRUE? ????
 		}
 		else
 		{
-			msg.dweData4		= FALSE ;												// ? ? ? ? FALSE ?.
+			msg.dweData4		= FALSE ;												// ????? ?????FALSE? ????
 		}
 
-		SendMsg(&msg, sizeof(msg)) ;											// ÷?? ? ?.
+		SendMsg(&msg, sizeof(msg)) ;											// ÷???? ????????
 	}
 
-	// 080414 LUJ, ? ?  ?? ? ? ?? 
+	// 080414 LUJ, ??? ??? ?????? ?? ??????
 	InsertLogExp(
 		eExpLog_LosebyRevivePresent,
 		GetID(),
@@ -1623,7 +1623,7 @@ void CPlayer::RevivePresentSpot()
 		return;
 	}
 
-	if( LOOTINGMGR->IsLootedPlayer( GetID() ) )	//cAA??I
+	if( LOOTINGMGR->IsLootedPlayer( GetID() ) )	//??c??AA????I
 	{
 		MSG_BYTE msg;
 		msg.Category	= MP_USERCONN;
@@ -1644,7 +1644,7 @@ void CPlayer::RevivePresentSpot()
 
 		return;
 	}
-	// 100111 LUJ, ? ÷?  ? ?  ?
+	// 100111 LUJ, ?? ÷????? ?? ?????? ??
 	else if(ReviveFlagTown == mReviveFlag)
 	{
 		MSG_BYTE message;
@@ -1680,7 +1680,7 @@ void CPlayer::RevivePresentSpot()
 	
 		if( !g_csDateManager.IsChallengeZoneHere() )
 		{
-			// 090204 LUJ,  ? 
+			// 090204 LUJ, ?? ??? ???
 			RemoveBuffCount( eBuffSkillCountType_Dead, 1 );
 		}
 	}
@@ -1719,7 +1719,7 @@ void CPlayer::RevivePresentSpot()
 	m_bDieForGFW = FALSE;
 }
 
-// 080602 LYW --- Player : ? ? (__int32)  (__int64)   ó.
+// 080602 LYW --- Player : ??? ?? (__int32) ?? (__int64) ?????? ??
 //DWORD CPlayer::ReviveBySkill()
 void CPlayer::ReviveBySkill( cSkillObject* pSkillObject )
 {	
@@ -1738,7 +1738,7 @@ void CPlayer::ReviveBySkill( cSkillObject* pSkillObject )
 		return;
 	}
 
-	if( LOOTINGMGR->IsLootedPlayer( GetID() ) )	//cAA??I
+	if( LOOTINGMGR->IsLootedPlayer( GetID() ) )	//??c??AA????I
 	{
 		MSG_BYTE msg;
 		msg.Category	= MP_USERCONN;
@@ -1760,11 +1760,11 @@ void CPlayer::ReviveBySkill( cSkillObject* pSkillObject )
 		return;
 	}
 
-	// 100211 ONS ??? ?? ´.
-	// ?? ?.
+	// 100211 ONS ????????????´?
+	// ????? ????
 	SetCurResurrectIndex( pSkillObject->GetSkillIdx() );
 	
-	// ?Operator? ?.
+	// ??Operator???????
 	CObject* pOperator = pSkillObject->GetOperator();
 	if( !pOperator || 
 		pOperator->GetObjectKind() != eObjectKind_Player )
@@ -1781,7 +1781,7 @@ void CPlayer::ReviveBySkill( cSkillObject* pSkillObject )
 	SendMsg( &msg, sizeof(msg) );
 }
 
-// 100211 ONS ??   ?ó ?.
+// 100211 ONS ????????? ???????????
 EXPTYPE CPlayer::OnResurrect()
 {
 	EXPTYPE exp = 0;
@@ -1805,7 +1805,7 @@ EXPTYPE CPlayer::OnResurrect()
 
 		if( !g_csDateManager.IsChallengeZoneHere() && g_pServerSystem->GetMapNum()!=GTMAPNUM)
 		{
-			// 090204 LUJ,  ? 
+			// 090204 LUJ, ?? ??? ???
 			RemoveBuffCount( eBuffSkillCountType_Dead, 1 );
 		}
 	}
@@ -1846,7 +1846,7 @@ EXPTYPE CPlayer::OnResurrect()
 
 void CPlayer::ReviveLogIn()
 {	
-	// ??  ° ??, ?  ó ?.
+	// ?????? ?°???? ?? ?? ?????
 	if(GetState() != eObjectState_Die)
 	{
 		ASSERT(0) ;
@@ -1860,7 +1860,7 @@ void CPlayer::ReviveLogIn()
 	}
 	
 
-	//  ¶, ? ó ?.
+	// ?? ?¶?, ?? ???????
 	if( LOOTINGMGR->IsLootedPlayer( GetID() ) )
 	{
 		MSG_BYTE msg ;
@@ -1873,7 +1873,7 @@ void CPlayer::ReviveLogIn()
 	}
 
 
-	// ?ó  ?,  ó ?.
+	// ?ó?? ?? ???? ?? ?????
 	if( IsExitStart() )
 	{
 		MSG_BYTE msg ;
@@ -1884,7 +1884,7 @@ void CPlayer::ReviveLogIn()
 
 		return ;
 	}
-	// 100111 LUJ, ? ÷?  ? ?  ?
+	// 100111 LUJ, ?? ÷????? ?? ?????? ??
 	else if(ReviveFlagHere == mReviveFlag)
 	{
 		MSG_BYTE message;
@@ -1900,7 +1900,7 @@ void CPlayer::ReviveLogIn()
 		return;
 	}
 
-	//    ??.
+	// ?? ?????? ????
 	if( SIEGEDUNGEONMGR->IsSiegeDungeon(g_pServerSystem->GetMapNum()) )
 	{
 		ReviveLogIn_GuildDungeon() ;
@@ -1915,20 +1915,20 @@ void CPlayer::ReviveLogIn()
 
 
 
-// 081210 LYW --- Player :    ?   ? ? ??.
+// 081210 LYW --- Player : ??? ??????? ?? ??? ?? ??????????
 //-------------------------------------------------------------------------------------------------
 //	NAME		: ReviveLogIn_Normal
-//	DESC		: ?  ? ?.
+//	DESC		: ???????? ?? ??
 //	PROGRAMMER	: Yongs Lee
 //	DATE		: December 10, 2008
 //-------------------------------------------------------------------------------------------------
 void CPlayer::ReviveLogIn_Normal()
 {
-	// ?â ??? ?.
+	// ?????????????
 	m_bNeedRevive = TRUE ;
 
 
-	// ? ? ?.
+	// ?? ????????
 	MOVE_POS msg ;
 
 	msg.Category	= MP_USERCONN ;
@@ -1938,7 +1938,7 @@ void CPlayer::ReviveLogIn_Normal()
 	msg.dwMoverID	= GetID() ;
 
 
-	// ? ? ?.
+	// ?? ??? ????
 	VECTOR3* ppos ;
 	VECTOR3 pos ;
 
@@ -1966,11 +1966,11 @@ void CPlayer::ReviveLogIn_Normal()
 	PACKEDDATA_OBJ->QuickSend(this,&msg,sizeof(msg)) ;
 		
 
-	// Player  ¸ ?.
+	// Player? ?? ?¸?????
 	OBJECTSTATEMGR_OBJ->EndObjectState(this,eObjectState_Die) ;
 
 
-	// ? ?? ?.
+	// ?? ??? ????
 	const LEVELTYPE curLevel = GetLevel() ;
 	
 	if(	curLevel >= 10 && !m_bDieForGFW && m_bNoExpPenaltyByPK == FALSE )
@@ -1979,19 +1979,19 @@ void CPlayer::ReviveLogIn_Normal()
 		
 		if( !g_csDateManager.IsChallengeZoneHere() && g_pServerSystem->GetMapNum()!=GTMAPNUM )
 		{
-			// 090204 LUJ,  ? 
+			// 090204 LUJ, ?? ??? ???
             RemoveBuffCount( eBuffSkillCountType_Dead, 1 );
 		}
 	}
 
 
-	//  ??  ó ?.
+	// ????? ?? ?????
 	m_bDieForGFW = FALSE ;
 	m_dwRespawnTimeOnGTMAP = 0 ;
 	m_dwImmortalTimeOnGTMAP = 0 ;
 	
 
-	// ?   ?.
+	// ??? ?? ???? ????
 	DWORD CurLife = GetMaxLife() ;
 
 	int nReviveVal = 0 ;
@@ -2010,7 +2010,7 @@ void CPlayer::ReviveLogIn_Normal()
 	m_HeroCharacterInfo.Life = nReviveVal ;
 
 
-	// ?   ?.
+	// ??? ?? ???? ????
 	DWORD MaxMana = GetMaxMana() ;
 
 	DWORD dwManaRate = 0 ;
@@ -2026,14 +2026,14 @@ void CPlayer::ReviveLogIn_Normal()
 	}
 
 
-	//  ?? ? ó?.
+	// ????? ???????
 	if(g_pServerSystem->GetMapNum() == GTMAPNUM )
 	{
 		WORD wCode = GetJobCodeForGT() ;
 		m_dwImmortalTimeOnGTMAP = GTMGR->GetImmortalTimeByClass(wCode) ;
 	}
 
-	//  ó ?.
+	// ???? ?????
 	OBJECTSTATEMGR_OBJ->StartObjectState(this,eObjectState_Immortal,0) ;
 	// 06.08.29. RaMa.
 	OBJECTSTATEMGR_OBJ->EndObjectState( this, eObjectState_Immortal, 30000 ) ;
@@ -2069,7 +2069,7 @@ void CPlayer::ReviveLogIn_Normal()
 
 //-------------------------------------------------------------------------------------------------
 //	NAME		: ReviveLogIn_GuildDungeon
-//	DESC		:    ? ?.
+//	DESC		: ?? ?????? ???? ?? ??
 //	PROGRAMMER	: Yongs Lee
 //	DATE		: December 10, 2008
 //-------------------------------------------------------------------------------------------------
@@ -2077,11 +2077,11 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 {
 	BYTE byCheckRevivePoint = TRUE ;
 
-	// ?â ??? ?.
+	// ?????????????
 	m_bNeedRevive = TRUE ;
 
 
-	// ? ? ?.
+	// ?? ????????
 	MOVE_POS msg ;
 
 	msg.Category	= MP_USERCONN ;
@@ -2091,7 +2091,7 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 	msg.dwMoverID	= GetID() ;
 
 	
-	// Player ?  ? ?  ? ??.
+	// Player? ?? ???????? ??????????
 	VillageWarp* pRevivePoint	= NULL ;
 
 	DWORD dwGuildID				= GetGuildIdx() ;
@@ -2101,7 +2101,7 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 		sprintf( szMsg, "This player is not in guild! - %s,%d", GetObjectName(), GetID() ) ;
 		SIEGEWARFAREMGR->WriteLog(szMsg) ;
 
-		// 081217 LYW --- Player :     ?  , ?  ? ?? ó ?.
+		// 081217 LYW --- Player : ?? ?????? ?????? ??? ??? ?? ???? ????????
 		MSGBASE msg ;
 
 		msg.Category	= MP_SIEGEWARFARE ;
@@ -2117,12 +2117,12 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 	DWORD dwGuildID_Rushen		= SIEGEWARFAREMGR->GetCastleGuildIdx(eNeraCastle_Lusen) ;
 	DWORD dwGuildID_Zevyn		= SIEGEWARFAREMGR->GetCastleGuildIdx(eNeraCastle_Zebin) ;
 
-	// ? ,
+	// ?? ???
 	if( dwGuildID_Rushen == dwGuildID )
 	{
 		pRevivePoint = SIEGEWARFAREMGR->GetDGRP_Rushen() ;
 	}
-	// ? ,
+	// ?? ???
 	else
 	{
 		if( dwGuildID_Zevyn == dwGuildID )
@@ -2136,7 +2136,7 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 			dwGuildID, dwGuildID_Rushen, dwGuildID_Zevyn ) ;
 			SIEGEWARFAREMGR->WriteLog(szMsg) ;
 
-			// 081217 LYW --- Player :     ?  , ?  ? ?? ó ?.
+			// 081217 LYW --- Player : ?? ?????? ?????? ??? ??? ?? ???? ????????
 			MSGBASE msg ;
 
 			msg.Category	= MP_SIEGEWARFARE ;
@@ -2151,7 +2151,7 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 	}
 
 
-	// ? ? ?.
+	// ?? ??? ????
 	VECTOR3 pos ;
 	int temp ;
 
@@ -2184,11 +2184,11 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 	PACKEDDATA_OBJ->QuickSend(this,&msg,sizeof(msg)) ;
 		
 
-	// Player  ¸ ?.
+	// Player? ?? ?¸?????
 	OBJECTSTATEMGR_OBJ->EndObjectState(this,eObjectState_Die) ;
 
 
-	// ? ?? ?.
+	// ?? ??? ????
 	const LEVELTYPE curLevel = GetLevel() ;
 	
 	if(	curLevel >= 10 && !m_bDieForGFW && m_bNoExpPenaltyByPK == FALSE )
@@ -2197,13 +2197,13 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 		
 		if( !g_csDateManager.IsChallengeZoneHere() && g_pServerSystem->GetMapNum()!=GTMAPNUM )
 		{
-			// 090204 LUJ,  ? 
+			// 090204 LUJ, ?? ??? ???
             RemoveBuffCount( eBuffSkillCountType_Dead, 1 );
 		}
 	}
 
 
-	// ?   ?.
+	// ??? ?? ???? ????
 	DWORD CurLife = GetMaxLife() ;
 	int nReviveVal = (int)(CurLife*0.3) ;
 
@@ -2217,7 +2217,7 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 	m_HeroCharacterInfo.Life = nReviveVal ;
 
 
-	// ?   ?.
+	// ??? ?? ???? ????
 	DWORD MaxMana = GetMaxMana() ;
 
 	DWORD dwManaRate = (DWORD)(MaxMana*0.3) ;
@@ -2227,7 +2227,7 @@ void CPlayer::ReviveLogIn_GuildDungeon()
 	}
 
 
-	//  ó ?.
+	// ???? ?????
 	OBJECTSTATEMGR_OBJ->StartObjectState(this,eObjectState_Immortal,0) ;
 	OBJECTSTATEMGR_OBJ->EndObjectState( this, eObjectState_Immortal, 30000 ) ;
 	
@@ -2269,30 +2269,30 @@ void CPlayer::ReviveLogInPenelty()
 		
 		if( !g_csDateManager.IsChallengeZoneHere() )
 		{
-			// 090204 LUJ,  ? ?			RemoveBuffCount( eBuffSkillCountType_Dead, 1 );
+			// 090204 LUJ, ?? ??? ???			RemoveBuffCount( eBuffSkillCountType_Dead, 1 );
 		}
 	}
 
 	DWORD CurLife = GetMaxLife();
 	DWORD CurMana = GetMaxMana();
 
-	// 080625 LYW --- Player :   ? ?, ??  ? , 
-	//   ?    ?´. ,   ? 
-	// ? ?.
+	// 080625 LYW --- Player : ??? ??? ?? ?? ?????? ???????, 
+	// ??? ?? ??????????? ??. ???, ??? ???? ????
+	// ???????
 	//SetLife((DWORD)(CurLife*0.3));
 	//SetMana(0);
 
-	//  .
+	// ??? ??.
 	DWORD dwNewLife = 0 ;
-	// 080710 LYW --- Player :  ? 50% .
+	// 080710 LYW --- Player : ??? ?? 50%? ??.
 	//dwNewLife = (DWORD)(CurLife * 0.3f) ;
 	dwNewLife = (DWORD)(CurLife * 0.5f) ;
 
 	SetLifeForce(dwNewLife, TRUE) ;
 
-	//  .
+	// ?? ??.
 	DWORD dwNewMana = 0 ;
-	// 080710 LYW --- Player :  ? 50% .
+	// 080710 LYW --- Player : ?? ?? 50%? ??.
 	//dwNewMana = (DWORD)(CurMana* 0.3f) ;
 	dwNewMana = (DWORD)(CurMana* 0.5f) ;
 
@@ -2358,10 +2358,10 @@ void CPlayer::DoDie(CObject* pAttacker)
 	{
 		m_MurdererKind = ((CMonster*)pAttacker)->GetMonsterKind();
 			
-		// 080616 LUJ,  ? ?  ? ?
+		// 080616 LUJ, ??? ??? ??? ?? ?????
 		if( pAttacker->GetObjectKind() != eObjectKind_Trap )
 		{
-			//SW060831    //  ü? 
+			//SW060831 ?? ? ? //?? ???? ??
 			SetPenaltyByDie(TRUE);
 		}
 
@@ -2383,8 +2383,8 @@ void CPlayer::DoDie(CObject* pAttacker)
 	PKMGR->DiePanelty( this, pAttacker );
 
 //---KES Aggro 070918
-//---? ? 
-	RemoveAllAggroed();	//*: ? FollowMonsterList?  ?,  ?? Ÿ   ?.
+//---?????? ???
+	RemoveAllAggroed();	//*??: ??FollowMonsterList??????? ???, ?? ?????????? ? ??
 //-------------------
 
 	CMonster * pObject = NULL;
@@ -2395,7 +2395,7 @@ void CPlayer::DoDie(CObject* pAttacker)
 	}
 	m_FollowMonsterList.RemoveAll();
 
-	//---KES  ? ? ?.
+	//---KES ??? ??????? ??
 	if( CCharMove::IsMoving(this) )
 	{
 		VECTOR3 pos;
@@ -2405,10 +2405,10 @@ void CPlayer::DoDie(CObject* pAttacker)
 
 	QUESTMAPMGR->DiePlayer( this );
 
-	// desc_hseos_? _01
-	// S ?  ? added by hseos 2007.11.29
+	// desc_hseos_??? ?_01
+	// S ??? ? ??added by hseos 2007.11.29
 	g_csDateManager.SRV_EndChallengeZone(this, CSHDateManager::CHALLENGEZONE_END_ALL_DIE);
-	// E ?  ? added by hseos 2007.11.29
+	// E ??? ? ??added by hseos 2007.11.29
 
 	// 080725 KTH
 	SIEGEWARFAREMGR->CancelWaterSeedUsing(this);
@@ -2424,7 +2424,7 @@ void CPlayer::DoDie(CObject* pAttacker)
 		}
 	}
 
-	// 081020 LYW --- Player :  ? , A B ??   ?? ó ?. - ?.
+	// 081020 LYW --- Player : ??? ??? ??? A? B? ????? ?? ????? ???? - ???
 	if( SIEGEWARFAREMGR->IsSiegeWarfareZone(g_pServerSystem->GetMapNum()) )
 	{
 		MSG_DWORD2 msg ;
@@ -2444,7 +2444,7 @@ void CPlayer::DoDie(CObject* pAttacker)
 	SetSummonedVehicle( 0 );
 	SetMountedVehicle( 0 );
 
-	// 100621 ShinJS    ? ??.
+	// 100621 ShinJS ????? ???? ??? ????.
 	CancelCurrentCastingSkill( FALSE );
 }
 
@@ -2455,7 +2455,7 @@ float CPlayer::DoGetMoveSpeed()
 		return 0;
 	}
 
-	// 090422 ShinJS --- ? Master?   ? ?? ?
+	// 090422 ShinJS --- ??? Master??????????? ??????
 	{
 		CObject* const vehicleObject = g_pUserTable->FindUser( GetSummonedVehicle() );
 
@@ -2468,7 +2468,7 @@ float CPlayer::DoGetMoveSpeed()
 
 	float speed = float( m_MoveInfo.MoveMode == eMoveMode_Run ? RUNSPEED : WALKSPEED );
 
-	// 080630 LUJ, ?  ? ? 
+	// 080630 LUJ, ?? ??? ??? ??????
 	float addrateval = ( GetRateBuffStatus()->MoveSpeed + GetRatePassiveStatus()->MoveSpeed ) / 100.f + m_itemBaseStats.mMoveSpeed.mPercent + m_itemOptionStats.mMoveSpeed.mPercent + m_SetItemStats.mMoveSpeed.mPercent;
 	float addval = GetBuffStatus()->MoveSpeed + GetPassiveStatus()->MoveSpeed + m_itemBaseStats.mMoveSpeed.mPlus + m_itemOptionStats.mMoveSpeed.mPlus + m_SetItemStats.mMoveSpeed.mPlus;
 
@@ -2502,17 +2502,17 @@ void CPlayer::SetInitedGrid()
 		QUESTMGR->AddQuestEvent( this, &QEvent );
 	}
 
-	// 090316 LUJ, ??  ä  ?  ? ¿   ´
+	// 090316 LUJ, ????????? ?????????¿? ?? ??? ??´?
 	LoadVehicleFromDb( GetID(), g_pServerSystem->GetMapNum() );
 }
-// RaMa - 04.11.10    -> ShopItemOption ?   AvatarOption?(05.02.16)
+// RaMa - 04.11.10    -> ShopItemOption ??  AvatarOption??05.02.16)
 DWORD CPlayer::DoGetCritical()
 {	
 	return (DWORD)mCriticalRate;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// 06. 07  (?) - ?
+// 06. 07 ?? ??(?? - ???
 DWORD CPlayer::DoGetDecisive()
 {	
 	return (DWORD)mCriticalRate;
@@ -2543,7 +2543,7 @@ void CPlayer::DoDamage(CObject* pAttacker,RESULTINFO* pDamageInfo,DWORD beforeLi
 		EndBuffSkillByStatus( eStatusKind_Slip );
 	}
 
-	// 090109 LUJ, ?  ?  ? ?  ?
+	// 090109 LUJ, ??? ??? ?? ??? ???? ??
 	CancelCurrentCastingSkill( TRUE );
 }
 
@@ -2560,7 +2560,7 @@ void CPlayer::DoManaDamage( CObject* pAttacker, RESULTINFO* pDamageInfo, DWORD b
 		EndBuffSkillByStatus( eStatusKind_Slip );
 	}
 
-	// 090109 LUJ, ?  ?  ? ?  ?
+	// 090109 LUJ, ??? ??? ?? ??? ???? ??
 	CancelCurrentCastingSkill( TRUE );
 }
 
@@ -2570,7 +2570,7 @@ void CPlayer::InitBaseObjectInfo(BASEOBJECT_INFO* pBaseInfo)
 	memcpy(&m_BaseObjectInfo,pBaseInfo,sizeof(BASEOBJECT_INFO));
 }
 
-/* oC?E?c Return */
+/* ?oC???E????c Return */
 MONEYTYPE CPlayer::SetMoney( MONEYTYPE ChangeValue, BYTE bOper, BYTE MsgFlag, eITEMTABLE tableIdx, BYTE LogType, DWORD TargetIdx )
 {
 	CPurse* pPurse = m_ItemContainer.GetPurse(tableIdx);
@@ -2595,7 +2595,7 @@ MONEYTYPE CPlayer::SetMoney( MONEYTYPE ChangeValue, BYTE bOper, BYTE MsgFlag, eI
 	return Real;
 }
 
-/* i; ?O; A?CN ?IAI AO?AAo?| o??A?U.*/
+/* ?i??; ?O; A?????CN ??????IAI AO?AAo?| ?o??A?U.*/
 BOOL CPlayer::IsEnoughAdditionMoney(MONEYTYPE money, eITEMTABLE tableIdx )
 {
 	CPurse* pPurse = m_ItemContainer.GetPurse(tableIdx);
@@ -2614,7 +2614,7 @@ MONEYTYPE CPlayer::GetMaxPurseMoney(eITEMTABLE TableIdx)
 
 void CPlayer::SetMaxPurseMoney(eITEMTABLE TableIdx, DWORDEX MaxMoney)
 {
-	//CIo; ic?e i ?u ?oA??? ?Aui???U.
+	//C?I???o; ?ic?e ?i?? ?????u ????o??A??????A?ui?????U.
 	if(TableIdx != eItemTable_Storage)
 	{
 		ASSERT(0);
@@ -2645,7 +2645,7 @@ BOOL CPlayer::SetQuestState(DWORD QuestIdx, QSTATETYPE value)
 	if( !pQuest ) 
 	{
 //		char buff[256] = {0,};
-//		sprintf(buff, "?aa?A Auoc? xAc uECN?U?? CI?II oyuc???O uEAAa? [QUEST ID : %d]", QuestIdx);
+//		sprintf(buff, "??a??a?A Au?o?????c????xAc ?uECN?U????CI???I???I ?oy?u?c?????O ?uE??AAa???? [QUEST ID : %d]", QuestIdx);
 //		ASSERTMSG(0, buff);
 		return FALSE;
 	}
@@ -2653,7 +2653,7 @@ BOOL CPlayer::SetQuestState(DWORD QuestIdx, QSTATETYPE value)
 	pQuest->SetValue(value);
 	BOOL bEnd = pQuest->IsComplete();
 
-	// DB?? uAACN?U.
+	// DB?????uA??ACN?U.
 	QuestUpdateToDB( GetID(), QuestIdx, value, (BYTE)bEnd );
 
 	if( bEnd )
@@ -2678,7 +2678,7 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 	m_initState |= initstate;
 
 
-	// 091106 LUJ,  if ó ?
+	// 091106 LUJ, ??? if? ??????
 	if(FALSE == (m_initState & PLAYERINITSTATE_ONLY_ADDED))
 	{
 		return;
@@ -2756,7 +2756,7 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 
 	m_dwProgressTime = gCurTime;
 
-	// LUJ, ??? ?  ??
+	// LUJ, ????? ?????? ??????
 	CHARCALCMGR->Initialize(
 		this);
 
@@ -2800,7 +2800,7 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 	srand( GetTickCount());
 	GetLocalTime(&msg.ServerTime);
 
-	// 080827 LYW --- Player :  ¸ (Client) ?.
+	// 080827 LYW --- Player : ?? ?¸?????(Client)? ????
 	msg.Category	= MP_USERCONN;
 	msg.Protocol	= MP_USERCONN_GAMEIN_ACK;
 	
@@ -2815,14 +2815,14 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 	msgFishingExp.dweData2 = m_dwFishingExp;
 	SendMsg( &msgFishingExp, sizeof(msgFishingExp) );
 
-	// 080424 NYJ --- ?
+	// 080424 NYJ --- ??????
 	MSG_DWORDEX msgFishPoint;
 	msgFishPoint.Category = MP_FISHING;
 	msgFishPoint.Protocol = MP_FISHING_POINT_ACK;
 	msgFishPoint.dweData   = m_dwFishPoint;
 	SendMsg( &msgFishPoint, sizeof(msgFishPoint) );
 
-	// ?õ
+	// ??õ?
 	MSG_DWORD4 msgCookState;
 	msgCookState.Category = MP_COOK;
 	msgCookState.Protocol = MP_COOK_STATE;
@@ -2832,7 +2832,7 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 	msgCookState.dwData4 = GetFireCount();
 	SendMsg( &msgCookState, sizeof(msgCookState) );
 
-	// ??
+	// ??????
 	int i;
 	for(i=0; i<MAX_RECIPE_LV4_LIST; i++)
 	{
@@ -2853,7 +2853,7 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 	msgMapDesc.Category		= MP_USERCONN;
 	msgMapDesc.Protocol		= MP_USERCONN_MAPDESC;
 	msgMapDesc.wData1		= (WORD)g_pServerSystem->GetMap()->IsVillage();
-	// 090824 ONS GM PK  PK?.
+	// 090824 ONS GM??? PK?????? PK??.
 	msgMapDesc.wData2		= (WORD)PKMGR->IsPKAllow();
 	msgMapDesc.wData3		= (WORD)GetCurChannel();
 	SendMsg( &msgMapDesc, sizeof(msgMapDesc) );
@@ -2875,7 +2875,7 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 	QUICKMNGR->SendQuickInfo(
 		this);
 
-	// S ? ? added by hseos 2007.05.29
+	// S ??????added by hseos 2007.05.29
 	{
 		MSG_DWORD2 msg;
 		msg.Category	= MP_CHAR;
@@ -2889,13 +2889,13 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 		msg.dwData1		= m_stMonstermeterInfo.nKillMonsterNum;
 		msg.dwData2		= m_stMonstermeterInfo.nKillMonsterNumTotal;
 		SendMsg(&msg, sizeof(msg));
-		// ?Ÿ ??
+		// ????????
 		TRIGGERMGR->LoadTrigger(*this);
 	}
 
 	g_csFarmManager.SRV_SendPlayerFarmInfo(this);
 	g_csDateManager.SRV_SendChallengeZoneEnterFreq(this);
-	// 091106 LUJ, ?  ??
+	// 091106 LUJ, ??? ??? ????
 	LIMITDUNGEONMGR->AddPlayer(*this);
 	GUILDMGR->AddPlayer( this );
 	GUILDWARMGR->AddPlayer( this );
@@ -2917,7 +2917,7 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 			CCharMove::GetPosition(this));
 	}
 
-	// 100408 ShinJS ---  ğ 
+	// 100408 ShinJS --- ?? ğ???
 	stTime64t serverTimeMsg;
 	ZeroMemory( &serverTimeMsg, sizeof(serverTimeMsg) );
 	serverTimeMsg.Category = MP_USERCONN;
@@ -2938,32 +2938,32 @@ void CPlayer::SetInitState(int initstate,DWORD protocol)
 			g_pServerSystem->GetMapNum());
 	}
 
-	// 100525 NYJ - ?? ??  ğü? 
+	// 100525 NYJ - ???????? ?? ğ??? ??
 	Consignment_CheckDate(GetID());
 	Note_CheckDate(GetID());
 
-	// 100611 ONS ?? äñ  ??.
+	// 100611 ONS ??????? ??? ????
 	ForbidChatLoad(GetID());
 
 }
 
-int CPlayer::CanExitStart()	//~avC
+int CPlayer::CanExitStart()	//~??av??C
 {
 //	if( GetState() != eObjectState_None && GetState() != eObjectState_Move )
 //		return FALSE;
 	if( IsPKMode() )
 		return eEXITCODE_PKMODE;
-	if( LOOTINGMGR->IsLootedPlayer(GetID()) )	//PKcA; ?cCI?A A?AI??
+	if( LOOTINGMGR->IsLootedPlayer(GetID()) )	//PK??c??A; ?cCI?A A?AI????
 		return eEXITCODE_LOOTING;
 
-	if( GetState() == eObjectState_Exchange )	//E?A AaCO o U.
+	if( GetState() == eObjectState_Exchange )	//??E?A??? A??aCO ?o ???U.
 		return eEXITCODE_NOT_ALLOW_STATE;
 
 	if( GetState() == eObjectState_StreetStall_Owner ||
-		GetState() == eObjectState_StreetStall_Guest )	//eAA AaCO o U.
+		GetState() == eObjectState_StreetStall_Guest )	//?eA?A??? A??aCO ?o ???U.
 		return eEXITCODE_NOT_ALLOW_STATE;
 
-	if( GetState() == eObjectState_Deal )	//oA AIeA AaCO o U.
+	if( GetState() == eObjectState_Deal )	//?oA? AI?eA??? A??aCO ?o ???U.
 		return eEXITCODE_NOT_ALLOW_STATE;
 	
 	return eEXITCODE_OK;
@@ -2978,12 +2978,12 @@ void CPlayer::SetExitStart( BOOL bExit )
 int CPlayer::CanExit()
 {
 	DWORD lCurTime = MHTIMEMGR_OBJ->GetNewCalcCurTime();
-	if( lCurTime - m_dwExitStartTime < EXIT_COUNT*1000 - 2000 )	//8.0	//?  
+	if( lCurTime - m_dwExitStartTime < EXIT_COUNT*1000 - 2000 )	//8.0	//????????
 		return eEXITCODE_SPEEDHACK;
 
-	if( IsPKMode() )							//PK???iaAI??
+	if( IsPKMode() )							//PK????iaAI????
 		return eEXITCODE_PKMODE;
-	if( LOOTINGMGR->IsLootedPlayer(GetID()) )	//PKcA; ?cCI?A A?AI??
+	if( LOOTINGMGR->IsLootedPlayer(GetID()) )	//PK??c??A; ?cCI?A A?AI????
 		return eEXITCODE_LOOTING;
 
 //---KES AUTONOTE
@@ -3009,21 +3009,21 @@ void CPlayer::ExitCancel()
 
 int CPlayer::PKModeOn()
 {
-	if( IsPKMode() ) return ePKCODE_ALREADYPKMODEON;		//AIoI PK???ia
-	if( IsShowdown() ) return ePKCODE_SHOWDOWN;		//noiA?AI?e uEiE?U
+	if( IsPKMode() ) return ePKCODE_ALREADYPKMODEON;		//AI?oI PK????ia
+	if( IsShowdown() ) return ePKCODE_SHOWDOWN;		//??n?o?iA?AI?e ?uE?iE?U
 
-	//pka A?e AuoAA CA|
+	//pk???a A?e ??Au?oAA C?A|
 	if( GetState() == eObjectState_Immortal )
 		OBJECTSTATEMGR_OBJ->EndObjectState( this, eObjectState_Immortal );
 
 	if( GetState() == eObjectState_Die )
-		return ePKCODE_STATECONFLICT;	//?U?IioAAAIO?A uEiE?U.
+		return ePKCODE_STATECONFLICT;	//?U??I?ioAAAI?O???A ?uE?iE?U.
 	
 	m_HeroCharacterInfo.bPKMode = TRUE;
 	m_dwPKModeStartTime			= gCurTime;
 
 //---KES PK 071124
-	m_dwPKContinueTime			= 20*60*1000 + ( GetBadFame() / 75 ) * 5*60*1000;	//? 30 + ?? 75 5
+	m_dwPKContinueTime			= 20*60*1000 + ( GetBadFame() / 75 ) * 5*60*1000;	//? 30? + ?? 75?? 5?
 //----------------
 
 	return ePKCODE_OK;
@@ -3136,7 +3136,7 @@ void CPlayer::StateProcess()
 		break;
 	case eObjectState_Die:
 		{
-			//---KES PK 071202	  ğ   (ğ ?)
+			//---KES PK 071202	?? ??ğ?????? (ğ??????
 			SetPKStartTimeReset();
 			
 			if(FALSE == m_bNeedRevive )
@@ -3260,7 +3260,7 @@ void CPlayer::SpeedHackCheck()
 {
 	++m_nHackCount;
 
-	if( gCurTime - m_dwHackStartTime >= 60*1000 )	//1
+	if( gCurTime - m_dwHackStartTime >= 60*1000 )	//1?
 	{
 		if( m_nHackCount >= g_nHackCheckWriteNum )
 		{
@@ -3300,7 +3300,7 @@ DWORD CPlayer::Damage(CObject* pAttacker,RESULTINFO* pDamageInfo)
 	{
 		if( GetUserLevel() == eUSERLEVEL_GM || m_God ) // && g_pServerSystem->GetNation() == eNATION_KOREA )
 		{
-			life = 1;		//gm  ??  ?
+			life = 1;		//gm? ???? ????? ???
 		}
 		else
 		{
@@ -3323,7 +3323,7 @@ DWORD CPlayer::ManaDamage( CObject* pAttacker, RESULTINFO* pDamageInfo )
 	
 	SetMana( mana, FALSE );
  
-	//   ? 
+	// ?? ???? ????
 	if( pDamageInfo->RealDamage == 0 )
 		DoManaDamage( pAttacker, pDamageInfo, beforemana );
 
@@ -3496,7 +3496,7 @@ void CPlayer::SetJob( BYTE jobGrade, BYTE jobIdx )
 						m_HeroCharacterInfo.Job[5] );
 
 
-	// 071112 , ? ?? 
+	// 071112 ??, ??? ??????
 	InsertLogJob( this, m_HeroCharacterInfo.Job[0], jobGrade, jobIdx );
 
 	// 081022 KTH -- 
@@ -3505,7 +3505,7 @@ void CPlayer::SetJob( BYTE jobGrade, BYTE jobIdx )
 	// WebEvent( GetUserID(), 2 );
 
 
-	// 100113 ONS ?? ? ?  ? ?.
+	// 100113 ONS ?????? ?????? ???????????? ????
 	CHARACTER_TOTALINFO TotalInfo;
 	ZeroMemory(&TotalInfo, sizeof(TotalInfo));
 	GetCharacterTotalInfo(&TotalInfo);
@@ -3525,7 +3525,7 @@ void CPlayer::SetJob( BYTE jobGrade, BYTE jobIdx )
 	Packet.dwData = dwClass;
 	g_Network.Broadcast2AgentServer( ( char* )&Packet, sizeof( Packet ) );
 
-	// 080225 LUJ,  ?       ??
+	// 080225 LUJ, ????? ???? ?? ??? ? ??? ??????
 	{
 		CGuild* guild = GUILDMGR->GetGuild( GetGuildIdx() );
 
@@ -3559,19 +3559,19 @@ void CPlayer::SetJob( BYTE jobGrade, BYTE jobIdx )
 
 void CPlayer::SendPlayerToMap(MAPTYPE mapNum, float xpos, float zpos)
 {
-	MSG_DWORD3 msg ;														// ? ü ?.
-	memset(&msg, 0, sizeof(MSG_DWORD3)) ;									// ? ??.
+	MSG_DWORD3 msg ;														// ???????????
+	memset(&msg, 0, sizeof(MSG_DWORD3)) ;									// ?????.
 
 	msg.Category	= MP_USERCONN ;
-	msg.Protocol	= MP_USERCONN_QUEST_CHANGEMAP_SYN ;						// ??  ?.
+	msg.Protocol	= MP_USERCONN_QUEST_CHANGEMAP_SYN ;						// ?????????? ????
 
-	msg.dwObjectID	= GetID() ;												// ? ? ?.
+	msg.dwObjectID	= GetID() ;												// ???? ???????
 
-	msg.dwData1		= (DWORD)mapNum ;										//    ? ?.
-	msg.dwData2		= (DWORD)xpos ;											// X? ?.
-	msg.dwData3		= (DWORD)zpos ;											// Z? ?.
+	msg.dwData1		= (DWORD)mapNum ;										// ?? ??? ? ??? ????
+	msg.dwData2		= (DWORD)xpos ;											// X??? ????
+	msg.dwData3		= (DWORD)zpos ;											// Z??? ????
 
-	SendMsg( &msg, sizeof(MSG_DWORD3) ) ;									// ? ?.
+	SendMsg( &msg, sizeof(MSG_DWORD3) ) ;									// ????????
 }
 
 DOUBLE CPlayer::GetPlayerTotalExpPoint()
@@ -3745,19 +3745,19 @@ float CPlayer::GetManaRecover()
 }
 
 ////////////////////////////////////////////////////////////////////////////
-// 06. 07. ° - ?
-// ? ? ? ? ¸   ´  ??
-//  ¿  ??
-// ?  ?´.
-//  ?ÿ 
+// 06. 07. ?°????- ???
+// ?????? ??????? ?¸???? ??? ?´?????
+// ???? ?¿????? ??
+// ???????? ??.
+// ?? ??ÿ??????
 BOOL CPlayer::CanSkillState()
 {
-	// 5? ? ?
+	//?? 5? ?????
 	if(m_SkillFailCount >= 5)
 	{
 		switch(m_BaseObjectInfo.ObjectState)
 		{
-		// ? ? ? ¸  ??? TRUE 
+		// ??? ???????¸??? ????TRUE ??
 		case eObjectState_None:
 		case eObjectState_Move:
 		case eObjectState_TiedUp_CanSkill:
@@ -3766,8 +3766,8 @@ BOOL CPlayer::CanSkillState()
 				return TRUE;
 			}
 			break;
-		// ? ?   ??  ¸  ?? ?
-		// ¸ ?? ? TRUE 
+		// ??? ?????? ??? ??? ??? ?¸??? ?? ??
+		// ?¸??? ??TRUE ??
 		case eObjectState_SkillStart:
 		case eObjectState_SkillSyn:	
 		case eObjectState_SkillBinding:
@@ -3782,7 +3782,7 @@ BOOL CPlayer::CanSkillState()
 				return TRUE;
 			}
 			break;
-		//   ?  ?? ? FALSE 
+		// ? ?? ?? ?? ?? ??FALSE ??
 		default:
 			{
 				m_SkillFailCount = 0;
@@ -3792,8 +3792,8 @@ BOOL CPlayer::CanSkillState()
 		}
 	}
 
-	// 5?  ? ? ?  ¸
-	//  ? FALSE 
+	// 5? ?? ????? ?????? ?¸?
+	// ?? ????FALSE ??
 	if(m_BaseObjectInfo.ObjectState != eObjectState_None &&
 	   m_BaseObjectInfo.ObjectState != eObjectState_Move &&
 	   m_BaseObjectInfo.ObjectState != eObjectState_TiedUp_CanSkill )
@@ -3802,7 +3802,7 @@ BOOL CPlayer::CanSkillState()
 		return FALSE;
 	}
 
-	//  ?  ??? TRUE 
+	// ?? ?????? ????TRUE ??
 	m_SkillFailCount = 0;
 	return TRUE;
 }
@@ -3818,8 +3818,8 @@ SLOT_INFO*	CPlayer::GetQuick( BYTE sheet, WORD pos )
 	return m_QuickSlot[ sheet ].GetQuick( pos );
 }
 
-// desc_hseos_?01
-// S ? ? added by hseos 2007.05.23	2007.07.08
+// desc_hseos_????1
+// S ??????added by hseos 2007.05.23	2007.07.08
 void CPlayer::ProcMonstermeterPlayTime()
 {
 	if (gCurTime - m_stMonstermeterInfo.nPlayTimeTick > SHMath_MINUTE(1))
@@ -3828,14 +3828,14 @@ void CPlayer::ProcMonstermeterPlayTime()
 		m_stMonstermeterInfo.nPlayTime++;
 		m_stMonstermeterInfo.nPlayTimeTotal++;
 
-		// DB 
+		// DB? ??
 		//MonsterMeter_Save(GetID(), m_stMonstermeterInfo.nPlayTime, m_stMonstermeterInfo.nKillMonsterNum, m_stMonstermeterInfo.nPlayTimeTotal, m_stMonstermeterInfo.nKillMonsterNumTotal);
 
-		// ÷?ğ ???  ?? ??? ? ?
-		// ?   10?  ? ?.
+		// ÷???? ??????? ????????????? ???????
+		// ?? ? ????? 10?????? ??? ????
 		if ((m_stMonstermeterInfo.nPlayTime%10) == 0)
 		{
-			// ??? ?
+			// ????? ???
 			MSG_DWORD2 msg;
 			msg.Category = MP_CHAR;
 			msg.Protocol = MP_CHAR_MONSTERMETER_PLAYTIME;
@@ -3849,23 +3849,23 @@ void CPlayer::ProcMonstermeterPlayTime()
 		// {
 		// 	WebEvent( GetUserID(), 6 );
 		// }
-		//  ó
+		// ?? ??
 		g_csMonstermeterManager.ProcessReward(this, CSHMonstermeterManager::RBT_PLAYTIME, m_stMonstermeterInfo.nPlayTimeTotal);
 	}
 }
-// E ? ? added by hseos 2007.05.23	2007.07.08
+// E ??????added by hseos 2007.05.23	2007.07.08
 
-// desc_hseos_?01
-// S ? ? added by hseos 2007.05.23	2007.07.08
+// desc_hseos_????1
+// S ??????added by hseos 2007.05.23	2007.07.08
 void CPlayer::ProcMonstermeterKillMon()
 {
 	m_stMonstermeterInfo.nKillMonsterNum++;
 	m_stMonstermeterInfo.nKillMonsterNumTotal++;
 
-	// DB 
+	// DB? ??
 	//MonsterMeter_Save(GetID(), m_stMonstermeterInfo.nPlayTime, m_stMonstermeterInfo.nKillMonsterNum, m_stMonstermeterInfo.nPlayTimeTotal, m_stMonstermeterInfo.nKillMonsterNumTotal);
 
-	// ??? ?
+	// ????? ???
 	MSG_DWORD2 msg;
 	msg.Category = MP_CHAR;
 	msg.Protocol = MP_CHAR_MONSTERMETER_KILLMONSTER;
@@ -3879,7 +3879,7 @@ void CPlayer::ProcMonstermeterKillMon()
 	// 	WebEvent( GetUserID(), 9 );
 	// }
 
-	//  ó
+	// ?? ??
 	g_csMonstermeterManager.ProcessReward(this, CSHMonstermeterManager::RBT_MONSTERKILL, m_stMonstermeterInfo.nKillMonsterNumTotal);
 }
 
@@ -3895,7 +3895,7 @@ void CPlayer::ProcFarmTime()
 			m_stFarmInfo.nCropPlantRetryTimeTick = gCurTime;
 			m_stFarmInfo.nCropPlantRetryTime--;
 
-			// DB 
+			// DB? ??
 			Farm_SetTimeDelay(GetID(), CSHFarmManager::FARM_TIMEDELAY_KIND_PLANT, m_stFarmInfo.nCropPlantRetryTime);
 		}
 	}
@@ -3907,11 +3907,11 @@ void CPlayer::ProcFarmTime()
 			m_stFarmInfo.nCropManureRetryTimeTick = gCurTime;
 			m_stFarmInfo.nCropManureRetryTime--;
 
-			// DB ?			Farm_SetTimeDelay(GetID(), CSHFarmManager::FARM_TIMEDELAY_KIND_MANURE, m_stFarmInfo.nCropManureRetryTime);
+			// DB? ??			Farm_SetTimeDelay(GetID(), CSHFarmManager::FARM_TIMEDELAY_KIND_MANURE, m_stFarmInfo.nCropManureRetryTime);
 		}
 	}
 
-	// 080430 KTH Animal Delay Add  () ? ? Decrease ?±...
+	// 080430 KTH Animal Delay Add  (?)??? ?? ??? Decrease ???...
 	if( m_stFarmInfo.nAnimalCleanRetryTime )
 	{
 		if( gCurTime - m_stFarmInfo.nAnimalCleanRetryTimeTick > SHMath_MINUTE(1) )
@@ -3934,7 +3934,7 @@ void CPlayer::ProcFarmTime()
 		}
 	}
 }
-// E ı ? added by hseos 2007.08.23
+// E ???? ??added by hseos 2007.08.23
 
 BOOL CPlayer::IsInventoryPosition( POSTYPE position )
 {
@@ -4034,7 +4034,7 @@ void CPlayer::RemoveSetSkill(DWORD skillIndex, LEVELTYPE level)
 		skill);
 }
 
-// 090217 LUJ,  µ ? ? 
+// 090217 LUJ, ??? µ????????
 void CPlayer::SetHideLevel( WORD level )
 { 
 	m_HeroCharacterInfo.HideLevel = level; 
@@ -4057,7 +4057,7 @@ void CPlayer::SetHideLevel( WORD level )
 	PACKEDDATA_OBJ->QuickSend( this, &msg, sizeof( msg ) );	
 }
 
-// 090217 LUJ,  ° ? ? 
+// 090217 LUJ, ??? °???????
 void CPlayer::SetDetectLevel( WORD level )
 { 
 	m_HeroCharacterInfo.DetectLevel = level; 
@@ -4117,13 +4117,13 @@ void CPlayer::AddAggroToMyMonsters(int nAggroAdd, DWORD targetObjectIndex, DWORD
 	}
 }
 
-// 080910 LUJ,   ??
+// 080910 LUJ, ??? ??? ????
 DWORD CPlayer::GetShieldDefense()
 {
 	return mShieldDefense;
 }
 
-// 080910 LUJ,   ?
+// 080910 LUJ, ??? ??? ????
 void CPlayer::SetShieldDefence( DWORD shieldDefense )
 {
 	mShieldDefense = shieldDefense;
@@ -4172,7 +4172,7 @@ void CPlayer::ProcCoolTime()
 		if( ( time.mBeginTick < time.mEndTick && time.mEndTick < tick ) ||
 			( time.mBeginTick > time.mEndTick && time.mBeginTick > tick && time.mEndTick < tick ) )
 		{
-			// :  ? ?? ???  .   ? ó? ?.
+			// ??: ??? ??????????????????. ?? ?? ????????????
 			group.insert( it->first );
 		}
 	}
@@ -4343,7 +4343,7 @@ void CPlayer::ProcessTimeCheckItem( BOOL bForceDBUpdate )
 			{
 				pItemBase->nRemainSecond -= dwElapsedSecond;
 
-				// 071125 KTH --- Player "RemainSecond 1 ?  ???  ?."
+				// 071125 KTH --- Player "RemainSecond? 1? ??????????? ??? ????"
 				if( pItemBase->nRemainSecond <= 60 )
 				{
 					MSG_DWORD2 msg;
@@ -4381,7 +4381,7 @@ void CPlayer::ProcessTimeCheckItem( BOOL bForceDBUpdate )
 				{
 					CVehicle* const vehicle = ( CVehicle* )g_pUserTable->FindUser( GetSummonedVehicle() );
 
-					// 090316 LUJ, ?  ? ?  ? ?
+					// 090316 LUJ, ??????? ??? ? ?? ?? ????
 					if( vehicle &&
 						vehicle->GetObjectKind() == eObjectKind_Vehicle )
 					{
@@ -4422,7 +4422,7 @@ void CPlayer::ProcessTimeCheckItem( BOOL bForceDBUpdate )
 		}
 	}
 
-	// NYJ - ğ ? ğ?
+	// NYJ - ğ?????? ğ???
 	ProcessRecipeTimeCheck(dwElapsedMili);
 
 	{
@@ -4437,13 +4437,13 @@ void CPlayer::ProcessTimeCheckItem( BOOL bForceDBUpdate )
 		}
 	}
 
-	// 100525 NYJ - ?? ??  ğü? 
+	// 100525 NYJ - ???????? ?? ğ??? ??
 	Consignment_CheckDate(GetID());
 	Note_CheckDate(GetID());
 }
 
-// desc_hseos_?_01
-// S ? ? added by hseos 2008.01.29
+// desc_hseos_??_01
+// S ?? ??added by hseos 2008.01.29
 BOOL CPlayer::RemoveItem(DWORD nItemID, DWORD nItemNum, eLogitemmoney eLogKind)
 {
 	int iCheckItemMaxNum = TP_WEAR_END;
@@ -4496,7 +4496,7 @@ BOOL CPlayer::RemoveItem(DWORD nItemID, DWORD nItemNum, eLogitemmoney eLogKind)
 
 	return TRUE;
 }
-// E ? ? added by hseos 2008.01.29
+// E ?? ??added by hseos 2008.01.29
 
 
 BOOL CPlayer::IncreaseInventoryExpansion()
@@ -4593,8 +4593,8 @@ void CPlayer::SetFishingExp(EXPTYPE dwExp)
 		return;
 	}
 	
-	// ?  ?? ?? ? ?   ?,
-	//  ü?? 
+	// ???? ?? ??? ?????????? ? ????
+	// ??????????
 	{
 		EXPTYPE nextPoint = 0 ;
 		nextPoint = GAMERESRCMNGR->GetFishingMaxExpPoint( level ) ;
@@ -4634,14 +4634,14 @@ void CPlayer::SetFishingExp(EXPTYPE dwExp)
 				dwExp - nextPoint,
 				GetFishingLevel() );
 
-			// 100607 NYJ   
+			// 100607 NYJ ???????? ?????
 			DWORD dwRewardItem = GAMERESRCMNGR->GetFishingLevelUpReward(level);
 			if(dwRewardItem)
 			{
 				ITEM_INFO* pInfo = ITEMMGR->GetItemInfo(dwRewardItem);
 				if(pInfo)
 				{
-					// 2286, 2287, "2288"  SystemMsg.bin ?
+					// 2286, 2287, "2288" ? SystemMsg.bin? ???
 					ItemInsertToNote(GetID(), dwRewardItem, 1, pInfo->wSeal, 0, eNoteParsing_FishingLevelUp, 2286, 2287, "2288");
 				}
 			}
@@ -4665,37 +4665,37 @@ void CPlayer::SetFishingExp(EXPTYPE dwExp)
 	}
 }
 
-// 080509 LUJ, ? Ÿ  ?  ??
-// 080514 LUJ, ? ??? ğ ü?
-// 080515 LUJ, Ÿ? ??? ğ ü?  ? ?? ? ?  ?? ??
-// 080516 LUJ, Ÿ ü? ?   ?   ?
+// 080509 LUJ, ?? ??????? ?????? ????
+// 080514 LUJ, ?? ?????ğ??
+// 080515 LUJ, ?????????ğ??? ?? ??? ?????????????? ???????
+// 080516 LUJ, ???? ??????? ???? ??? ???
 BOOL CPlayer::IsCoolTime( const ACTIVE_SKILL_INFO& skill )
 {
-	// 080516 LUJ, Ÿ ? ??  ? ? ?.  ? ??   ?
+	// 080516 LUJ, ???????????? ?? ??????? ? ?????????? ??? ????
 	struct
 	{
 		void operator() ( CPlayer& player, CPlayer::CheckCoolTime& checkCoolTime )
 		{
 			const DWORD maxCheckTick = 1000 * 60;
 
-			// 080516 LUJ, Ÿ ? ?   ğ  ü? ? ???
-			// 080519 LUJ, maxCheckTick  ?  ü?  ?  
+			// 080516 LUJ, ?????????? ??? ğ?????? ? ????????
+			// 080519 LUJ, maxCheckTick ?? ????? ?? ?? ???? ??
 			if( maxCheckTick < ( checkCoolTime.mCheckedTick - gCurTime ) )
 			{
-				// 080519 LUJ, ü? ğ ? maxCheckTick ?
+				// 080519 LUJ, ? ğ??????maxCheckTick???? ??
 				checkCoolTime.mCheckedTick	= gCurTime + maxCheckTick;
 				checkCoolTime.mFailureCount	= 0;
 			}
 
 			const DWORD maxCheckCount = 10;
 
-			// 080516 LUJ, Ÿ ?  ? ?, ó ?´
+			// 080516 LUJ, ?????????? ???? ??????
 			if( maxCheckCount > ++checkCoolTime.mFailureCount )
 			{
 				return;
 			}
 
-			// 080516 LUJ,  ??    ?
+			// 080516 LUJ, ?? ??????? ????? ????
 			{
 				MSG_DWORD message;
 				ZeroMemory( &message, sizeof( message ) );
@@ -4705,21 +4705,21 @@ BOOL CPlayer::IsCoolTime( const ACTIVE_SKILL_INFO& skill )
 				
 				g_Network.Broadcast2AgentServer( (char*)&message, sizeof( message ) );
 
-				// 100812 NYJ -  ???? .
+				// 100812 NYJ - ???? ????????.
 				g_Console.LOG(4, "Force KickOut!! (CoolTime Check Failed.) : ID: %d, NAME: %s",  player.GetID(), player.GetObjectName() );
 			}
 		}
 	}
 	Punish;
 
-	// 080514 LUJ, ??? ?õ?  ?   
+	// 080514 LUJ, ???????õ?????? ??? ???? ??
 	const SkillAnimTimeMap::const_iterator itAnim = mSkillAnimTimeMap.find( skill.Index );
 	if(mSkillAnimTimeMap.end() != itAnim &&
 		itAnim->second > gCurTime)
 	{
-		// 080516 LUJ, Ÿ ü?   ?   ? ??
+		// 080516 LUJ, ????? ?? ?? ?????? ? ??? ????
 		Punish( *this, mCheckCoolTime );
-		// 080519 LUJ, Ÿ ü?    ? ??.  ? ?   ? ?? 
+		// 080519 LUJ, ???? ?? ?? ?????????? ?? ?? ???? ? ??? ??????
 		return FALSE;
 	}
 
@@ -4735,23 +4735,23 @@ BOOL CPlayer::IsCoolTime( const ACTIVE_SKILL_INFO& skill )
 
 	if( isCoolTime )
 	{
-		// 080516 LUJ, Ÿ ü?   ?   ? ??
+		// 080516 LUJ, ????? ?? ?? ?????? ? ??? ????
 		Punish( *this, mCheckCoolTime );
 	}
 	
-	// 080519 LUJ, Ÿ ü?    ? ??.  ? ?   ? ?? 
+	// 080519 LUJ, ???? ?? ?? ?????????? ?? ?? ???? ? ??? ??????
 	return FALSE;
 }
 
-// 080511 LUJ, ? Ÿ ??
-// 080514 LUJ, ? ???  ğ 
-// 080605 LUJ, ?   ??? ğ ?
+// 080511 LUJ, ?? ????????
+// 080514 LUJ, ?? ??????? ğ???
+// 080605 LUJ, ?? ??? ?? ?????ğ??????
 void CPlayer::SetCoolTime( const ACTIVE_SKILL_INFO& skill )
 {
-	// 080605 LUJ, ??? Ÿ ?   ?   
+	// 080605 LUJ, ?????????? ??? ?? ????? ?? ?? ??
 	float animationTime = float( skill.AnimationTime );
 
-	// 080605 LUJ, ?   ??? Ÿ  ?.
+	// 080605 LUJ, ?? ??? ?? ??????????? ????
 	{
 		const Status* ratePassiveStatus = GetRatePassiveStatus();
 		const Status* rateBuffStatus	= GetRateBuffStatus();
@@ -4782,9 +4782,9 @@ void CPlayer::SetCoolTime( const ACTIVE_SKILL_INFO& skill )
 		}
 	}
 	
-	// 080514 LUJ, ???  ğ ?. ??  ? 0.1  ?
-	// 080520 LUJ, ??  0.1->0.3?  ğ 
-	// 080605 LUJ, ? 0  ?. animationTime ? ? ÷  ? 
+	// 080514 LUJ, ????????? ğ?????? ???? ??? ????0.1? ??? ????
+	// 080520 LUJ, ?? ???0.1->0.3????ğ???
+	// 080605 LUJ, ??0? ?? ???? animationTime? ?????????÷???? ????
 	mSkillAnimTimeMap[ skill.Index ] = DWORD( max( 0, animationTime ) ) + gCurTime - 300;
 	mSkillCoolTimeMap[ skill.Index ] = skill.CoolTime + gCurTime - 300;	
 }
@@ -4797,7 +4797,7 @@ void CPlayer::ResetCoolTime( const ACTIVE_SKILL_INFO& skill )
 
 BOOL CPlayer::IsCanCancelSkill()
 {
-	// 100618 ShinJS ğ ??(3?)? û ?û  ?.
+	// 100618 ShinJS ??ğ???????(??3?)???????û? ??? ??
 	if( m_dwSkillCancelLastTime > gCurTime )
 	{
 		if( ++m_dwSkillCancelCount >= eSkillCancelLimit_Count )
@@ -4820,13 +4820,13 @@ const DWORD CPlayer::GetSkillCancelDelay() const
 	return eSkillCancelLimit_CheckTime;
 }
 
-// 100621 ShinJS  ? ? 
+// 100621 ShinJS ?? ????? ?? ??
 void CPlayer::CancelCurrentCastingSkill( BOOL bUseSkillCancelRate )
 {
 	cActiveSkillObject* const activeSkillObject = ( cActiveSkillObject* )SKILLMGR->GetSkillObject( mCurrentSkillID );
 
-	// 090109 LUJ, ? ? ?  ?
-	// 090109 LUJ, ? ? ?  ? ü??
+	// 090109 LUJ, ??? ??? ???? ??
+	// 090109 LUJ, ??? ??????? ??????
 	if( ! activeSkillObject || 
 		cSkillObject::TypeActive != activeSkillObject->GetType() ||
 		! activeSkillObject->IsCasting() )
@@ -4865,7 +4865,7 @@ eArmorType CPlayer::GetArmorType(EWEARED_ITEM wearType) const
 
 void CPlayer::AddSpecialSkill(const cBuffSkillInfo* buffSkillInfo)
 {
-	// 090204 LUJ, ó ? ?. ?  ??? ?    ?
+	// 090204 LUJ, ?????????? ????? ???? ????? ?? ??????
 	buffSkillInfo->AddBuffStatus( this );
 
 	SpecialSkillData specialSkillData = { 0 };
@@ -4895,7 +4895,7 @@ void CPlayer::RemoveSpecialSkill(const cBuffSkillInfo* buffSkillInfo)
 
 	const SpecialSkillData& specialSkillData = *it;
 
-	// 090204 LUJ, ?     ? ?  ? ?
+	// 090204 LUJ, ????? ??? ??? ? ??????? ??????
 	if( specialSkillData.mIsTurnOn )
 	{
 		buffSkillInfo->RemoveBuffStatus( this );
@@ -4904,7 +4904,7 @@ void CPlayer::RemoveSpecialSkill(const cBuffSkillInfo* buffSkillInfo)
 	mSpecialSkillList.erase(it);
 }
 
-// 090204 LUJ, ? ? ? Ÿ? ü??
+// 090204 LUJ, ?? ??? ??????????
 void CPlayer::ProcSpecialSkill()
 {
 	if(true == mSpecialSkillList.empty())
@@ -4912,7 +4912,7 @@ void CPlayer::ProcSpecialSkill()
 		return;
 	}
 
-	// 090204 LUJ, ?  ?   ? ?   ? 
+	// 090204 LUJ, ???? ?? ????? ?? ??? ???? ? ?????
 	SpecialSkillData specialSkillData = mSpecialSkillList.front();
 	mSpecialSkillList.pop_front();
 
@@ -4932,7 +4932,7 @@ void CPlayer::ProcSpecialSkill()
 		specialSkillData.mIsTurnOn = FALSE;
 	}
 
-	// 090204 LUJ,  ??  ??
+	// 090204 LUJ, ?? ?? ?? ????
 	mSpecialSkillList.push_back(
 		specialSkillData);
 }
@@ -4977,7 +4977,7 @@ void CPlayer::ProcessRecipeTimeCheck(DWORD dwElapsedTime)
 		{
 			if(dwElapsedMili > m_MasterRecipe[i].dwRemainTime)
 			{
-				// 
+				// ??
 				DWORD dwRecipeIdx = m_MasterRecipe[i].dwRecipeIdx;
 				SetMasterRecipe(i, 0, 0);
 				Cooking_Recipe_Update(GetID(), eCOOKRECIPE_DEL, dwRecipeIdx, i, 0);
@@ -4995,7 +4995,7 @@ void CPlayer::ProcessRecipeTimeCheck(DWORD dwElapsedTime)
 			}
 			else
 			{
-				// 
+				// ??
 				DWORD dwRemainTime = m_MasterRecipe[i].dwRemainTime - dwElapsedMili;
 				SetMasterRecipe(i, m_MasterRecipe[i].dwRecipeIdx, dwRemainTime);
 				Cooking_Recipe_Update(GetID(), eCOOKRECIPE_UPDATE, m_MasterRecipe[i].dwRecipeIdx, i, dwRemainTime);
@@ -5021,14 +5021,14 @@ void CPlayer::ProceedToTrigger()
 		return;
 	}
 
-	//  ? ?? ?´.
+	// ?????? ???????? ??.
 	if(m_bDungeonObserver)
 		return;
 
-	// 091116 LUJ, ? ?? ?  ø(0.5 -> 1.0)
+	// 091116 LUJ, ??????????????? ø?0.5 -> 1.0?)
 	const DWORD stepTick = 1000;
 	mNextCheckedTick = gCurTime + stepTick;
-	// 091116 LUJ, ä? ?? ? ?? ?
+	// 091116 LUJ, ?????????????????
 	Trigger::CMessage* const message = TRIGGERMGR->AllocateMessage(GetGridID());
 	message->AddValue(Trigger::eProperty_ObjectIndex, GetID());
 	message->AddValue(Trigger::eProperty_ObjectKind, GetObjectKind());
@@ -5319,7 +5319,7 @@ void CPlayer::SetPartyIdx( DWORD PartyIDx )
 		return;
 	}
 
-	// ?   ? ? ?
+	// ?? ??? ???? ??? ????
 	{
 		cPtrList templist;
 		m_BuffSkillList.SetPositionHead();
@@ -5363,7 +5363,7 @@ CObject* CPlayer::GetTObject() const
 
 void CPlayer::AddToAggroed(DWORD objectIndex)
 {
-	//     ? ? ? ?. ? ? ??  ? 
+	// ??? ???? ?? ????????????? ?????????????? ?? ??
 	if(GetID() == objectIndex)
 	{
 		return;
@@ -5375,7 +5375,7 @@ void CPlayer::AddToAggroed(DWORD objectIndex)
 
 	if( pObject->GetObjectKind() & eObjectKind_Monster )
 	{
-		// 100616 ShinJS --- ? ? ? ? Die/Release ?? ? ? ?.
+		// 100616 ShinJS --- ??? ??????????Die/Release? ?????????????
 		((CMonster*)pObject)->AddToAggroed( GetID() );
 	}
 
@@ -5466,7 +5466,7 @@ void CPlayer::LogOnRelease()
 	}
 }
 
-// 100624 ONS HP? ó ?
+// 100624 ONS HP?????? ????
 void CPlayer::AddLifeRecoverTime( const YYRECOVER_TIME& recoverTime )
 {
 	m_YYLifeRecoverTimeQueue.push( recoverTime );
@@ -5485,7 +5485,7 @@ void CPlayer::UpdateLife()
 	{
 		if( FALSE == m_YYLifeRecoverTimeQueue.empty() )
 		{
-			// ? ?  ?? ?.
+			// ?????? ??? ???????? ??
 			m_YYLifeRecoverTime = m_YYLifeRecoverTimeQueue.front();
 			m_YYLifeRecoverTimeQueue.pop();
 		}
@@ -5495,7 +5495,7 @@ void CPlayer::UpdateLife()
 	{
 		if( m_YYLifeRecoverTime.lastCheckTime < gCurTime )
 		{
-			// HP  ?  ?  ?.
+			// HP? ??? ?? ?????????????
 			if( GetMaxLife() <= GetLife() )
 			{
 				while( !m_YYLifeRecoverTimeQueue.empty() )
@@ -5506,7 +5506,7 @@ void CPlayer::UpdateLife()
 				return;
 			}
 
-			// HP??.
+			// HP??????
 			m_YYLifeRecoverTime.lastCheckTime = gCurTime + m_YYLifeRecoverTime.recoverDelayTime;
 			AddLife( m_YYLifeRecoverTime.recoverUnitAmout, NULL );
 			--m_YYLifeRecoverTime.count;
@@ -5514,7 +5514,7 @@ void CPlayer::UpdateLife()
 	}
 }
 
-// 100624 ONS MP? ó ?
+// 100624 ONS MP?????? ????
 void CPlayer::AddManaRecoverTime( const YYRECOVER_TIME& recoverTime )
 {
 	m_YYManaRecoverTimeQueue.push( recoverTime );
@@ -5559,7 +5559,7 @@ void CPlayer::UpdateMana()
 	}
 }
 
-// 100611 ONS äñ  ?.
+// 100611 ONS ????? ?? ??
 BOOL CPlayer::IsForbidChat() const
 {
 	__time64_t time = 0;

@@ -257,8 +257,8 @@ void CCharMakeNewDlg::RefreshPushUpBtn()
 	m_pST_Class->SetStaticText( str ) ;
 
 	// 090504 ONS �ű����� ���� ���� Ȯ��(Ư��(50)���� �̻�)
-	m_bMakeDevil = CHARSELECT->HasLevelOfChar( MAKE_DEVIL_LIMIT_LEVEL );
-	DisableDevilRace( !m_bMakeDevil );
+	//m_bMakeDevil = CHARSELECT->HasLevelOfChar( MAKE_DEVIL_LIMIT_LEVEL );
+	//DisableDevilRace( !m_bMakeDevil );
 }
 
 
@@ -623,8 +623,11 @@ void CCharMakeNewDlg::ChangeRace( LONG lID, BYTE race )
 			m_pPushupBtn[ e_PB_ELF ]->SetPush( FALSE ) ;
 			m_pPushupBtn[ e_PB_ELF ]->SetDisable( FALSE ) ;
 
+			m_pPushupBtn[e_PB_DEVIL]->SetPush(FALSE);
+			m_pPushupBtn[e_PB_DEVIL]->SetDisable(FALSE);
 			// 090423 ONS �ű����� ��ư / ������ư Ȱ��ȭ
-			ChangeDevilButton(FALSE);
+			//ChangeDevilButton(FALSE);
+			DisableJob(FALSE);
 
 			m_byCurRacial = RaceType_Human ;
 			m_pST_Racial->SetStaticText(RESRCMGR->GetMsg(247)) ;
@@ -682,8 +685,11 @@ void CCharMakeNewDlg::ChangeRace( LONG lID, BYTE race )
 			m_pPushupBtn[ e_PB_HUMAN ]->SetPush( FALSE ) ;
 			m_pPushupBtn[ e_PB_HUMAN ]->SetDisable( FALSE ) ;
 
+			m_pPushupBtn[e_PB_DEVIL]->SetPush(FALSE);
+			m_pPushupBtn[e_PB_DEVIL]->SetDisable(FALSE);
 			// 090423 ONS �ű����� ��ư / ������ư Ȱ��ȭ
-			ChangeDevilButton(FALSE);
+			//ChangeDevilButton(FALSE);
+			DisableJob(FALSE);
 
 			m_byCurRacial = RaceType_Elf ;
 			m_pST_Racial->SetStaticText(RESRCMGR->GetMsg(248)) ;
