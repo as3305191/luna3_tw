@@ -672,10 +672,15 @@ void CServerSystem::SetMapChangeInfo()
 	if(!file.Init(filename, "rb"))
 		return;
 
-	int n =0;
+	int n = 0;
 
 	while(FALSE == file.IsEOF())
 	{
+		if( n >= MAX_POINT_NUM )
+		{
+			ASSERTMSG( FALSE, "MapMoveList.bin has more entries than MAX_POINT_NUM" );
+			break;
+		}
 		m_MapChange[n].Kind = file.GetWord();
 //		file.GetString(m_MapChange[n].CurMapName);
 //		file.GetString(m_MapChange[n].ObjectName);

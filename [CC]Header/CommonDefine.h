@@ -125,7 +125,7 @@ typedef unsigned int	UINT;
 
 #define ABSD(n)			(((n)<0) ? (n)*=-1 : (n))
 
-#define MAX_POINT_NUM	300
+#define MAX_POINT_NUM	512
 
 #define MAKEDWORD(a, b)		((DWORD)(((WORD)((DWORD_PTR)(a) & 0xffff)) | ((DWORD)((WORD)((DWORD_PTR)(b) & 0xffff))) << 16))
 

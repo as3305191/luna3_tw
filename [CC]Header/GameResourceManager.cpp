@@ -559,8 +559,14 @@ BOOL CGameResourceManager::LoadMapChangeArea()
 		return FALSE;
 	}
 
-	for( int i = 0; ! file.IsEOF(); ++i  )
+	int i = 0;
+	for( ; ! file.IsEOF(); ++i  )
 	{
+		if( i >= MAX_POINT_NUM )
+		{
+			ASSERTMSG( FALSE, "MapMoveList.bin has more entries than MAX_POINT_NUM" );
+			break;
+		}
 		MAPCHANGE_INFO& info = m_MapChangeArea[ i ];
 
 		info.Kind			= file.GetWord();
@@ -607,8 +613,14 @@ BOOL CGameResourceManager::LoadMapChangeArea(MAPCHANGE_INFO* pMapChangeArea)
 		return FALSE;
 	}
 
-	for( ; ! file.IsEOF(); ++pMapChangeArea  )
+	int count = 0;
+	for( ; ! file.IsEOF(); ++pMapChangeArea, ++count  )
 	{
+		if( count >= MAX_POINT_NUM )
+		{
+			ASSERTMSG( FALSE, "MapMoveList.bin has more entries than MAX_POINT_NUM" );
+			break;
+		}
 		MAPCHANGE_INFO& info = *pMapChangeArea;
 
 		info.Kind			= file.GetWord();
