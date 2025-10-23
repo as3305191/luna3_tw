@@ -265,13 +265,6 @@ BYTE CBattle::IsEnemy_NormalTimes(CObject* pOperator,CObject* pTarget)
 					return FALSE;
 				}
 
-				if(pOperator->GetObjectKind() == eObjectKind_Player &&
-					ownerObject->GetObjectKind() == eObjectKind_Player &&
-					ownerObject->GetID() != pOperator->GetID())
-				{
-					return FALSE;
-				}
-
 				return BYTE(IsEnemy(
 					pOperator,
 					ownerObject));
@@ -302,12 +295,6 @@ BYTE CBattle::IsEnemy_NormalTimes(CObject* pOperator,CObject* pTarget)
 				return FALSE;
 			}
 
-			if(pOperator->GetObjectKind() == eObjectKind_Player &&
-				ownerObject->GetObjectKind() == eObjectKind_Player &&
-				ownerObject->GetID() != pOperator->GetID())
-			{
-				return FALSE;
-			}
 			return BYTE(IsEnemy(
 				ownerObject,
 				pTarget));
@@ -469,13 +456,6 @@ BYTE CBattle::IsEnemy_SiegeWarning(CObject* pOperator,CObject* pTarget)
 					return FALSE;
 				}
 
-				if(pOperator->GetObjectKind() == eObjectKind_Player &&
-					ownerObject->GetObjectKind() == eObjectKind_Player &&
-					ownerObject->GetID() != pOperator->GetID())
-				{
-					return FALSE;
-				}
-
 				return BYTE(IsEnemy(
 					pOperator,
 					ownerObject));
@@ -503,13 +483,6 @@ BYTE CBattle::IsEnemy_SiegeWarning(CObject* pOperator,CObject* pTarget)
 				pTarget->GetOwnerIndex());
 
 			if(0 == ownerObject)
-			{
-				return FALSE;
-			}
-
-			if(pOperator->GetObjectKind() == eObjectKind_Player &&
-				ownerObject->GetObjectKind() == eObjectKind_Player &&
-				ownerObject->GetID() != pOperator->GetID())
 			{
 				return FALSE;
 			}
