@@ -119,6 +119,42 @@ LPTSTR GetMapName( MAPTYPE mapIndex )
 #else
 		return _T( "Nera Farm" );
 #endif
+		case map4:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2694 );
+#else
+		return _T( "map4" );
+#endif
+				case map8:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2695 );
+#else
+		return _T( "map8" );
+#endif
+				case map9:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2696 );
+#else
+		return _T( "map9" );
+#endif
+				case map10:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2697 );
+#else
+		return _T( "map10" );
+#endif
+				case map11:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2698 );
+#else
+		return _T( "map11" );
+#endif
+				case map12:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2699 );
+#else
+		return _T( "map12" );
+#endif
 	case Moon_Blind_Swamp:
 #ifdef _CLIENT_
 		return CHATMGR->GetChatMsg( 142 );
@@ -149,6 +185,12 @@ LPTSTR GetMapName( MAPTYPE mapIndex )
 #else
 		return _T( "Haunted Mine 2F" );
 #endif
+				case map18:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2700 );
+#else
+		return _T( "map18" );
+#endif
 	case The_Gate_Of_Alker:
 #ifdef _CLIENT_
 		return CHATMGR->GetChatMsg( 137 );
@@ -178,6 +220,12 @@ LPTSTR GetMapName( MAPTYPE mapIndex )
 		return CHATMGR->GetChatMsg( 144 );
 #else
 		return _T( "Tarintus" );
+#endif
+				case map24:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2701 );
+#else
+		return _T( "map24" );
 #endif
 	case Mont_Blanc_Port:
 #ifdef _CLIENT_
@@ -245,6 +293,48 @@ LPTSTR GetMapName( MAPTYPE mapIndex )
 #else
 		return _T( "Lair of Kierra" );
 #endif
+						case map43:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2702 );
+#else
+		return _T( "map43" );
+#endif
+						case map44:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2703 );
+#else
+		return _T( "map44" );
+#endif
+						case map45:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2704 );
+#else
+		return _T( "map45" );
+#endif
+						case map46:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2705 );
+#else
+		return _T( "map46" );
+#endif
+						case map47:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2706 );
+#else
+		return _T( "map47" );
+#endif
+						case map48:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2707 );
+#else
+		return _T( "map48" );
+#endif
+						case map49:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2708 );
+#else
+		return _T( "map49" );
+#endif
 	case The_Valley_Of_Fairy:
 #ifdef _CLIENT_
 		return CHATMGR->GetChatMsg( 1426 );
@@ -287,7 +377,12 @@ LPTSTR GetMapName( MAPTYPE mapIndex )
 #else
 		return _T( "Broken_Shipwrecked" );
 #endif
-
+	case map58:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2709 );
+#else
+		return _T( "map58" );
+#endif
 	case The_tower_of_wizardly_Low:
 #ifdef _CLIENT_
 		return CHATMGR->GetChatMsg( 1758 );
@@ -324,23 +419,29 @@ LPTSTR GetMapName( MAPTYPE mapIndex )
 #else
 		return _T( "The Cristal Empire" );
 #endif
-	case TreeOfKenai:
+			case map66:
 #ifdef _CLIENT_
-		return CHATMGR->GetChatMsg( 2331 );
+		return CHATMGR->GetChatMsg( 2710 );
+#else
+		return _T( "map66" );
+#endif
+			case TreeOfKenai:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2711 );
 #else
 		return _T( "Tree Of Kenai" );
 #endif
-	case TheCryingTavern:
+			case TheCryingTavern:
 #ifdef _CLIENT_
-		return CHATMGR->GetChatMsg( 2332 );
+		return CHATMGR->GetChatMsg( 2712 );
 #else
 		return _T( "The Crying Tavern" );
 #endif
-	case TheUndergroundPassage:
+			case TheUndergroundPassage:
 #ifdef _CLIENT_
-		return CHATMGR->GetChatMsg(2324);
+		return CHATMGR->GetChatMsg( 2713 );
 #else
-		return _T("The underground passage");
+		return _T( "The Underground Passage" );
 #endif
 	case SahelZone:
 #ifdef _CLIENT_
@@ -372,6 +473,24 @@ LPTSTR GetMapName( MAPTYPE mapIndex )
 #else
 		return _T( "Dragonian's Tomb #2" );
 #endif
+	case map76:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2714 );
+#else
+		return _T( "map76" );
+#endif
+	case map77:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2715 );
+#else
+		return _T( "map77" );
+#endif
+	case map78:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2716 );
+#else
+		return _T( "map78" );
+#endif
 	case The_Castle_of_Rushen:
 #ifdef _CLIENT_
 		return CHATMGR->GetChatMsg( 1675 );
@@ -395,6 +514,24 @@ LPTSTR GetMapName( MAPTYPE mapIndex )
 		return CHATMGR->GetChatMsg( 1676 );
 #else
 		return _T( "Advanced Dungeon" );
+#endif
+	case map85:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2717 );
+#else
+		return _T( "map85" );
+#endif
+	case map86:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2718 );
+#else
+		return _T( "map86" );
+#endif
+	case map87:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2719 );
+#else
+		return _T( "map87" );
 #endif
 	case DateDungeon_Cemetery:
 #ifdef _CLIENT_
@@ -437,6 +574,49 @@ LPTSTR GetMapName( MAPTYPE mapIndex )
 		return CHATMGR->GetChatMsg( 1917 );
 #else
 		return _T( "Alker residence" );
+
+#endif
+	case map100:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2720 );
+#else
+		return _T( "map100" );
+
+#endif
+	case map101:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2721 );
+#else
+		return _T( "map101" );
+
+#endif
+	case map102:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2722 );
+#else
+		return _T( "map102" );
+
+#endif
+	case map103:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2723 );
+#else
+		return _T( "map103" );
+
+#endif
+	case map200:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2724 );
+#else
+		return _T( "map200" );
+
+#endif
+	case map5001:
+#ifdef _CLIENT_
+		return CHATMGR->GetChatMsg( 2725 );
+#else
+		return _T( "map5001" );
+
 #endif
 	}
 
