@@ -1601,7 +1601,7 @@ enum MapName
 	map200 = 200,
 	map5001 = 5001,
 	// 090626 NYJ �ִ� �� ���� 200���� Ȯ��
-	MAX_MAP_NUM = 200,
+	MAX_MAP_NUM = 5001,
 	//MAX_MAP_NUM,
 };
 
