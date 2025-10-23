@@ -227,7 +227,7 @@ void cMapMoveDialog::MoveMapSyn()
 	{
 	case eNormalStyle :
 		{
-			if( m_nSelectedMapNum <= 0 || m_nSelectedMapNum >= 100 )
+			if( m_nSelectedMapNum <= 0 || m_nSelectedMapNum >= 5002 )
 			{
 				WINDOWMGR->MsgBox( MBI_MAPMOVE_NOTICE, MBT_OK, CHATMGR->GetChatMsg( 56 ) ) ;	
 				break;
