@@ -1815,6 +1815,11 @@ CPet* CObjectManager::AddPet(DWORD MasterIdx, BASEOBJECT_INFO* pBaseObjectInfo,B
 	ApplyOverInfoOption( pPet );
 	ApplyShadowOption( pPet );
 
+	if( MasterIdx != HEROID )
+	{
+		pPet->GetEngineObject()->DisablePick();
+	}
+
 	return pPet;
 }
 
@@ -1841,6 +1846,7 @@ CHeroPet* CObjectManager::AddHeroPet(BASEOBJECT_INFO* pBaseObjectInfo,BASEMOVE_I
 
 	ApplyOverInfoOption( mpHeroPet );
 	ApplyShadowOption( mpHeroPet );
+	mpHeroPet->GetEngineObject()->EnablePick();
 
 	return mpHeroPet;
 }
