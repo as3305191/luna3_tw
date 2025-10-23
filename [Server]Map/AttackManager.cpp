@@ -221,6 +221,12 @@ void CAttackManager::PhysicAttack( CObject* pAttacker, CObject* pTarget, RESULTI
 	if( !pAttacker || !pTarget )
 		return;
 
+	if( pAttacker->GetObjectKind() == eObjectKind_Player &&
+		pTarget->GetObjectKind() == eObjectKind_Pet )
+	{
+		return;
+	}
+
 	if( pTarget->GetAbnormalStatus()->IsGod )
 	{
 		return;
@@ -611,6 +617,16 @@ void CAttackManager::MagicAttack( CObject* pAttacker, CObject* pTarget, RESULTIN
 	if( !pAttacker || !pTarget )
 		return;
 
+	if( pAttacker->GetObjectKind() == eObjectKind_Player &&
+		pTarget->GetObjectKind() == eObjectKind_Pet )
+	{
+		return;
+	}
+	if( pAttacker->GetObjectKind() == eObjectKind_Player &&
+		pTarget->GetObjectKind() == eObjectKind_Pet )
+	{
+		return;
+	}
 	if( pTarget->GetAbnormalStatus()->IsGod )
 	{
 		return;

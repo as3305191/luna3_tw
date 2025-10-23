@@ -691,7 +691,29 @@ SKILL_RESULT cSkillManager::OnSkillStartSyn(MSG_SKILL_START_SYN* pmsg, ITEMBASE*
 	case eObjectKind_ChallengeZoneMonster:
 		{
 			pOperator->SetLastActionTime(gCurTime);
-			
+			break;
+		}
+	case eObjectKind_Pet:
+		{
+			if( pOperator->GetObjectKind() == eObjectKind_Player )
+			{
+				CPet* const targetPet = (CPet*)pTargetObject;
+				if( targetPet )
+				{
+					const DWORD ownerIndex = targetPet->GetOwnerIndex();
+
+					if( ownerIndex != pOperator->GetID() )
+					{
+						CObject* const ownerObject = g_pUserTable->FindUser( ownerIndex );
+
+						if( ownerObject && ownerObject->GetObjectKind() == eObjectKind_Player )
+						{
+							return SKILL_TARGET_INVALUED;
+						}
+					}
+				}
+			}
+
 			break;
 		}
 	}
