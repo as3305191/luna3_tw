@@ -20,7 +20,7 @@
 #include "ItemManager.h"
 
 #include "..\[CC]Header\CommonCalcFunc.h"
-// 080616 LUJ, ?? ? ÿ ? ? ?  
+// 080616 LUJ, ?? ??????? ???????? ??
 #include "Event.h"
 
 CAttackManager::CAttackManager()
@@ -63,7 +63,7 @@ void CAttackManager::sendDieMsg(CObject * pAttacker,CObject* pTarget)
 	}
 	else if(pTarget->GetObjectKind() & eObjectKind_Pet)
 	{
-		// 091110 ONS  ??? ?
+		// 091110 ONS ? ???????
 		m2c.Protocol = MP_USERCONN_PET_DIE;
 
 		m2c.dwObjectID	= pAttacker->GetID();
@@ -77,10 +77,10 @@ void CAttackManager::sendDieMsg(CObject * pAttacker,CObject* pTarget)
 void CAttackManager::RecoverLife(CObject* pOperator,CObject* pObject, float RecoverLifeVal,RESULTINFO* pResultInfo)
 /*{
 	DWORD realAddVal = 0;
-	DWORD val = 0;	//KES 070918 val; --> val = 0;  (val ? · AddLife   ??. RecoverMana()? )
+	DWORD val = 0;	//KES 070918 val; --> val = 0;  (val? ???? ?·?AddLife? ? ?????. RecoverMana()?????)
 
-	// 100219 ShinJS ---    
-	//  ? = ( ( ( * 11) + (  * 4 ) + (  * 20 ) ) * ? ) / 800 + 100
+	// 100219 ShinJS --- ?? ?? ?? 
+	// ? ??? = ( ( (?? * 11) + ( ?? * 4 ) + ( ?? * 20 ) ) * ???? ) / 800 + 100
 	if( pOperator->GetObjectKind() == eObjectKind_Player )
 	{
 		CPlayer* pPlayer = (CPlayer*)pOperator;
@@ -96,7 +96,7 @@ void CAttackManager::RecoverLife(CObject* pOperator,CObject* pObject, float Reco
 		val = DWORD(RecoverLifeVal);
 	}
 
-	// 080728 KTH --   ?  
+	// 080728 KTH -- ??? ?????? ??
 	if( SIEGEWARFAREMGR->Is_CastleMap() == FALSE &&
   		SIEGEWARFAREMGR->IsSiegeWarfareZone() &&
   		SIEGEWARFAREMGR->GetState() > eSiegeWarfare_State_Before )
@@ -108,7 +108,7 @@ void CAttackManager::RecoverLife(CObject* pOperator,CObject* pObject, float Reco
   	}
 
 	if(g_pServerSystem->GetMapNum() == GTMAPNUM)
-		val = DWORD( val * 0.5f );	// ??  50%
+		val = DWORD( val * 0.5f );	// ???? ??? 50%?
 
 	pObject->AddLife( val, &realAddVal, FALSE );
 	pResultInfo->HealLife = realAddVal;
@@ -132,13 +132,13 @@ void CAttackManager::RecoverLife(CObject* pOperator,CObject* pObject, float Reco
 		}
 	}
 
-	// 090204 LUJ, ??  ? ? ??
+	// 090204 LUJ, ??? ??? ????? ??????
 	pOperator->RemoveBuffCount( eBuffSkillCountType_HealVolumn, val );
 	pObject->RemoveBuffCount( eBuffSkillCountType_BeHealedVolumn, val );
 */
 {
 	DWORD realAddVal = 0;
-	DWORD val = 0;	//KES 070918 val; --> val = 0;  (val ? · AddLife   ??. RecoverMana()? )
+	DWORD val = 0;	//KES 070918 val; --> val = 0;  (val? ???? ?·?AddLife? ? ?????. RecoverMana()?????)
 
 	if( pOperator->GetObjectKind() == eObjectKind_Player )
 	{
@@ -146,8 +146,8 @@ void CAttackManager::RecoverLife(CObject* pOperator,CObject* pObject, float Reco
 		val = ( DWORD )( RecoverLifeVal + fPlus );
 
 		//---KES Aggro 070918
-		//? 50% ?? ?. ( ? ??, ??  50%. ?  ?? ? ? ?.)
-		//?  ?? ? ? 
+		//???? 50%? ???????? (?? ???? ??? ??????? 50%?. ????? ??? ????????? ???)
+		//?? ???? ???????????
 		//if( val && pObject->GetObjectKind() == eObjectKind_Player )
 		//{
 		//	((CPlayer*)pObject)->AddAggroToMyMonsters( (int)RecoverLifeVal / 2, (CPlayer*)pOperator );
@@ -171,13 +171,13 @@ void CAttackManager::RecoverLife(CObject* pOperator,CObject* pObject, float Reco
   	}
 
 	if(g_pServerSystem->GetMapNum() == GTMAPNUM)
-		val = DWORD( val * 0.5f );	// ??  50%
+		val = DWORD( val * 0.5f );	// ???? ??? 50%?
 
 	pObject->AddLife( val, &realAddVal, FALSE );
 	pResultInfo->HealLife = realAddVal;
 
 	//---KES Aggro 071005
-	// ? 1/3  ?? .
+	//?? ???? 1/3 ? ????????.
 	if(pObject->GetObjectKind() == eObjectKind_Player)
 		{
 			((CPlayer*)pObject)->AddAggroToMyMonsters(
@@ -201,7 +201,7 @@ void CAttackManager::RecoverMana(CObject* pOperator,CObject* pObject, float Reco
 
 	if( pOperator->GetObjectKind() == eObjectKind_Player )
 	{
-		//  ? = ( ( ( * 11) + (  * 4 ) + (  * 20 ) ) * ? ) / 800 + 100
+		// ?? ??? = ( ( (?? * 11) + ( ?? * 4 ) + ( ?? * 20 ) ) * ???? ) / 800 + 100
 		CPlayer* pPlayer = (CPlayer*)pOperator;
 		val = ( DWORD )( ( ( (pPlayer->GetWisdom() * 11) + ( pPlayer->GetIntelligence() * 4 ) + ( pPlayer->GetLevel() * 20 ) ) * RecoverManaVal ) / 800.f + 100.f );
 	}
@@ -1084,7 +1084,7 @@ void CAttackManager::SpecialAttack( CObject* pAttacker, CObject* pTarget, RESULT
 }
 
 
-// 090204 LUJ, ?  MP ???
+// 090204 LUJ, ??? MP? ????
 void CAttackManager::BurnMana( CObject* offenseObject, CObject* defenseObject, const BUFF_SKILL_INFO* buffSkillInfo )
 {
 	if( ! offenseObject || ! defenseObject || ! buffSkillInfo )
@@ -1098,7 +1098,7 @@ void CAttackManager::BurnMana( CObject* offenseObject, CObject* defenseObject, c
 
 	SKILL_INFO::Value damage = { 0 };
 
-	// 090204 LUJ, ?   ? ?
+	// 090204 LUJ, ??? ?? ?? ??? ???
 	switch( buffSkillInfo->StatusDataType )
 	{
 	case BUFF_SKILL_INFO::StatusTypeAdd:
@@ -1113,7 +1113,7 @@ void CAttackManager::BurnMana( CObject* offenseObject, CObject* defenseObject, c
 		}
 	}
 
-	// 090204 LUJ, MP ? ?
+	// 090204 LUJ, MP ??? ????
 	{
 		const float manaDamage	= damage.mPlus * ( 1.0f + damage.mPercent );
 		const float currentMana = float( defenseObject->GetMana() ) + manaDamage;

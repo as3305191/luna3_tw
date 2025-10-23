@@ -691,6 +691,7 @@ SKILL_RESULT cSkillManager::OnSkillStartSyn(MSG_SKILL_START_SYN* pmsg, ITEMBASE*
 	case eObjectKind_ChallengeZoneMonster:
 		{
 			pOperator->SetLastActionTime(gCurTime);
+			
 			break;
 		}
 	}

@@ -158,7 +158,8 @@ xcopy /Y "$(TargetDir)$(TargetFileName)" "C:\Luna2025\Server"</Command>
       <Culture>0x0412</Culture>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>xcopy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)\..\Output\Release\"</Command>
+      <Command>xcopy /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)\..\Output\Release\"
+xcopy /Y "$(TargetDir)$(TargetFileName)" "C:\Users\LUNA3\Desktop\luna_export"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

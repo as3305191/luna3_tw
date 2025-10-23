@@ -853,15 +853,27 @@ void CPet::FriendlyProcess()
 	mpPetObjectInfo.FriendlyCheckTime += gCurTime - mCheckTime;
 	mCheckTime = gCurTime;
 
-	if( mpPetObjectInfo.FriendlyCheckTime > PETMGR->GetFriendlyReduceTime() )
+	//if( mpPetObjectInfo.FriendlyCheckTime > PETMGR->GetFriendlyReduceTime() )
+	bool friendlyChanged = false;
+
+	if( mpPetObjectInfo.Friendly < 100 )
+	{
+		//mpPetObjectInfo.FriendlyCheckTime = 0;
+		//mpPetObjectInfo.Friendly = BYTE( mpPetObjectInfo.Friendly - PETMGR->GetFriendlyReducePoint() );
+		mpPetObjectInfo.Friendly = 100;
+		friendlyChanged = true;
+	}
+		//if( mpPetObjectInfo.Friendly == 0 )
+		//{
+		//	DoDie( NULL );
+		//}
+	if( mpPetObjectInfo.FriendlyCheckTime )
 	{
 		mpPetObjectInfo.FriendlyCheckTime = 0;
-		mpPetObjectInfo.Friendly = BYTE( mpPetObjectInfo.Friendly - PETMGR->GetFriendlyReducePoint() );
+	}
 
-		if( mpPetObjectInfo.Friendly == 0 )
-		{
-			DoDie( NULL );
-		}
+	if( friendlyChanged )
+	{
 
 		CObject* const ownerObject = g_pUserTable->FindUser(
 			GetOwnerIndex());
