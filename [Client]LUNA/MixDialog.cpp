@@ -716,7 +716,6 @@ void CMixDialog::OnActionEvent( LONG lId, void * p, DWORD we )
 				}
 				else if(	( eEquipType_Accessary	!= itemInfo->EquipType ) &&
 							( eEquipType_Weapon		!= itemInfo->EquipType ) &&
-							( eEquipType_Card		!= itemInfo->EquipType ) &&
 							( eEquipType_Armor		!= itemInfo->EquipType ) )
 				{
 					WINDOWMGR->MsgBox(

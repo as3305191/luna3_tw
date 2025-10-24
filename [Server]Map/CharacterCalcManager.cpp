@@ -1313,7 +1313,6 @@ void CCharacterCalcManager::Initialize( CPlayer* player )
 
 		switch( info->EquipType )
 		{
-		case eEquipType_Card:
 		case eEquipType_Weapon:
 			{
 				if( TP_WEAR_START + eWearedItem_Shield == part )
@@ -1581,7 +1580,6 @@ void CCharacterCalcManager::AddItem( CPlayer* player, const ITEMBASE& item )
 
 	switch( info->EquipType )
 	{
-	case eEquipType_Card:
 	case eEquipType_Weapon:
 		{
 			const ITEMBASE* weaponItem = ITEMMGR->GetItemInfoAbsIn( player, TP_WEAR_START + eWearedItem_Weapon );
@@ -1717,7 +1715,6 @@ void CCharacterCalcManager::RemoveItem( CPlayer* player, const ITEMBASE& item )
 
 	switch( info->EquipType )
 	{
-	case eEquipType_Card:
 	case eEquipType_Weapon:
 		{
 			const ITEMBASE* weaponItem = ITEMMGR->GetItemInfoAbsIn( player, TP_WEAR_START + eWearedItem_Weapon );

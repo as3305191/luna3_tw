@@ -142,8 +142,7 @@ void CWearedExDialog::RefreshArmorItem()
 {
 	if( !HERO ) return;
 
-	//for( WORD i = 0 ; i < 16 ; ++i )	//아바타 빼고 16개.... 디파인 어디 띘어 있나?
-	for( WORD i = 0 ; i < GetCellNum() ; ++i )
+	for( WORD i = 0 ; i < 16 ; ++i )	//아바타 빼고 16개.... 디파인 어디 띘어 있나?
 	{
 		cIcon* pIcon = GetIconForIdx( i );
 		if( !pIcon ) continue;

@@ -1026,7 +1026,6 @@ void CCharacterCalcManager::AddItem( CHero* hero, const ITEMBASE& item )
 
 	switch( info->EquipType )
 	{
-	case eEquipType_Card:
 	case eEquipType_Weapon:
 		{
 			const ITEMBASE* weaponItem = ITEMMGR->GetItemInfoAbsIn( hero, TP_WEAR_START + eWearedItem_Weapon );
@@ -1139,7 +1138,6 @@ void CCharacterCalcManager::RemoveItem( CHero* hero, const ITEMBASE& item )
 
 	switch( info->EquipType )
 	{
-	case eEquipType_Card:
 	case eEquipType_Weapon:
 		{
 			const ITEMBASE* weaponItem = ITEMMGR->GetItemInfoAbsIn( hero, TP_WEAR_START + eWearedItem_Weapon );

@@ -209,7 +209,6 @@ void CGMToolManager::ShowGMDialog( BOOL bShow, BOOL bUpdate )
 				{
 					switch( pInfo->EquipType )
 					{
-					case eEquipType_Card:
 					case eEquipType_Weapon:
 						{
 //							if( pInfo->Grade == 0 )

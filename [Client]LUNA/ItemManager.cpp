@@ -1048,7 +1048,6 @@ void CItemManager::AddNametoolTip( cIcon& icon, const ITEMBASE& item )
 		{
 			switch( eWeaponType( info->WeaponType ) )
 			{
-			case eEquipType_Card:
 			case eWeaponType_Sword:
 				{
 					sprintf( line, "%s", CHATMGR->GetChatMsg( 660 ) );
@@ -3484,7 +3483,6 @@ void CItemManager::ItemDropEffect( DWORD wItemIdx )
 	{
 		switch(GetItemInfo(wItemIdx)->EquipType)
 		{
-		case eEquipType_Card:
 		case eEquipType_Weapon:
 			{
 				EFFECTMGR->StartHeroEffectProcess(eEffect_GetItem_Weapon);

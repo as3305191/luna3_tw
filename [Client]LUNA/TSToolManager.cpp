@@ -232,7 +232,6 @@ void CTSToolManager::ShowTSDialog( BOOL bShow, BOOL bUpdate )
 				{
 					switch( pInfo->EquipType )
 					{
-					case eEquipType_Card:
 					case eEquipType_Weapon:
 						{
 							SendDlgItemMessage( m_hWndSub[eTSMenu_Item], IDC_TSITEM_CMB_WEAPON, CB_ADDSTRING, 0, (LPARAM)cbItemString );
