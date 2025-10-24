@@ -60,24 +60,24 @@ void CCharacterCalcManager::StartUpdateLife( CObject* pObject, DWORD plusLife, B
 	if(DamagedVal < plusLife)
 		plusLife = DamagedVal;
 
-	// 100624 ONS HP?ó ? ?.
-	// Ÿ   , ?   HP õ? 
-	//  ? ? ? ? .(MP )
+	// 100624 ONS HP????????? ????
+	// ?????? ??? ?? ??????? ?? HP? ?õ???? 
+	// ??? ?????? ???????????.(MP? ??)
 	if( DamagedVal > 0)
 	{
 		if( 0 == recoverTime )
 		{
-			// 100729 ONS  HP ??  ó ?.
+			// 100729 ONS ??HP? ????????????
 			pObject->SetLifeRecoverDirectly( plusLife );
 		}
 		else
 		{
 			YYRECOVER_TIME YYLifeRecoverTime;
 			YYLifeRecoverTime.bStart = TRUE;
-			YYLifeRecoverTime.count = recoverInterval;											// recoverInterval  ??
-			YYLifeRecoverTime.recoverUnitAmout = plusLife/YYLifeRecoverTime.count;				// ? ? 
-			YYLifeRecoverTime.recoverDelayTime = recoverTime/YYLifeRecoverTime.count;			// recoverTime? ? ??
-			YYLifeRecoverTime.lastCheckTime = 0;												// ó ? ??.
+			YYLifeRecoverTime.count = recoverInterval;											// recoverInterval?? ?? ????
+			YYLifeRecoverTime.recoverUnitAmout = plusLife/YYLifeRecoverTime.count;				// ?????? ?
+			YYLifeRecoverTime.recoverDelayTime = recoverTime/YYLifeRecoverTime.count;			// recoverTime????? ???
+			YYLifeRecoverTime.lastCheckTime = 0;												// ?????????
 
 			pObject->AddLifeRecoverTime( YYLifeRecoverTime );
 		}
@@ -98,17 +98,17 @@ void CCharacterCalcManager::StartUpdateMana( CPlayer* pPlayer, DWORD plusMana, B
 	{
 		if( 0 == recoverTime )
 		{
-			// 100729 ONS  MP ??  ó ?.
+			// 100729 ONS ??MP? ????????????
 			pPlayer->SetManaRecoverDirectly( plusMana );
 		}
 		else
 		{
 			YYRECOVER_TIME YYManaRecoverTime;
 			YYManaRecoverTime.bStart = TRUE;
-			YYManaRecoverTime.count = recoverInterval;												// recoverInterval  ??
-			YYManaRecoverTime.recoverUnitAmout = plusMana/YYManaRecoverTime.count;					// ? ? 
-			YYManaRecoverTime.recoverDelayTime = recoverTime/YYManaRecoverTime.count;				// recoverTime? ? ??
-			YYManaRecoverTime.lastCheckTime = 0;													// ó ? ??.
+			YYManaRecoverTime.count = recoverInterval;												// recoverInterval?? ?? ????
+			YYManaRecoverTime.recoverUnitAmout = plusMana/YYManaRecoverTime.count;					// ?????? ?
+			YYManaRecoverTime.recoverDelayTime = recoverTime/YYManaRecoverTime.count;				// recoverTime????? ???
+			YYManaRecoverTime.lastCheckTime = 0;													// ?????????
 
 			pPlayer->AddManaRecoverTime( YYManaRecoverTime );
 		}
@@ -1082,7 +1082,7 @@ void CCharacterCalcManager::General_PetLifeCount(CPet * pPet, DWORD curTime, LEV
 
 void CCharacterCalcManager::General_LifeCountBoss(CBossMonster * pBoss, DWORD curTime, DWORD life, DWORD maxlife)
 {
-	// 	 ? (5?) ü : ü 1%
+	// 	?? ?? (5?? ??: ???1%
 	if(curTime - pBoss->m_LifeRecoverTime.lastCheckTime > 5000)
 	{
 		pBoss->SetLife(life+(DWORD)(maxlife*0.001f), TRUE);
@@ -1313,6 +1313,7 @@ void CCharacterCalcManager::Initialize( CPlayer* player )
 
 		switch( info->EquipType )
 		{
+		case eEquipType_Card:
 		case eEquipType_Weapon:
 			{
 				if( TP_WEAR_START + eWearedItem_Shield == part )
@@ -1360,7 +1361,7 @@ void CCharacterCalcManager::Initialize( CPlayer* player )
 			break;
 		}
 
-		//    ù? 
+		// ??? ??? ?? ?ù???? ??
 		stFishingRate* pFishingRate = FISHINGMGR->GetFishingUtilityRate(info->ItemIdx);
 		if(pFishingRate)
 		{
@@ -1379,7 +1380,7 @@ void CCharacterCalcManager::Initialize( CPlayer* player )
 
 	}
 
-	// ? ? .  ? ? ? ?
+	// ?? ????. ?? ??? ????? ??????
 	for(
 		SetItemSize::const_iterator it = setItemSize.begin();
 		setItemSize.end() != it;
@@ -1432,10 +1433,10 @@ void CCharacterCalcManager::CalcCharStats(CPlayer* player)
 
 void CCharacterCalcManager::AddSetItemStats( CPlayer* player, const SetScript& script, int setItemSize )
 {
-	// ?    ?. ? ?  ? ?,  ?    ? ? ??.
+	// ?? ???? ??? ?? ???? ??? ??????? ??? ?? ????? ??? ??? ?? ??????????
 
-	// ? ?? ?  ?   
-	// ? ?? ? ?? ?    ? ? ?
+	// ?? ????? ?????? ????? ???? ??
+	// ?? ????? ???????? ??? ?? ??? ????????
 
 	typedef CPlayer::SetItemLevel SetItemLevel;
 
@@ -1458,11 +1459,11 @@ void CCharacterCalcManager::AddSetItemStats( CPlayer* player, const SetScript& s
 			break;
 		}
 
-		// ? ?
+		// ???????
 		{
 			const SetScript::Element&	element = it->second;
 
-			// 080313 LUJ, ?  ? ó
+			// 080313 LUJ, ?? ??? ?????
 			AddStat( element.mStat, player->GetSetItemStats() );
 
 			for(	SetScript::Element::Skill::const_iterator inner = element.mSkill.begin();
@@ -1485,16 +1486,16 @@ void CCharacterCalcManager::AddSetItemStats( CPlayer* player, const SetScript& s
 
 void CCharacterCalcManager::RemoveSetItemStats( CPlayer* player, const SetScript& script, int setItemSize )
 {
-	// ? ÷??  ? ?? ?  ´.
-	//  ? ? ? .  ? 
-	// ? ? ?  
-	// ? ? ?  û
+	// ??÷??? ?? ?? ????? ?????? ??´?
+	// ??? ??? ?????????. ??? ???
+	// ??? ?? ?????? ??
+	// ??? ????? ?? ?? ??
 
 	typedef CPlayer::SetItemLevel SetItemLevel;
 
 	CPlayer::SetItemLevel& setLevel = player->GetSetItemLevel();
 
-	// ? ??   ?   ? ? ? 
+	// ??????? ?????? ???? ????? ???????
 	if( setLevel.end() == setLevel.find( &script ) )
 	{
 		return;
@@ -1507,7 +1508,7 @@ void CCharacterCalcManager::RemoveSetItemStats( CPlayer* player, const SetScript
 		return;
 	}
 
-	// 080602 LUJ,    ???  ?  
+	// 080602 LUJ, ?? ?? ??? ?????? ??? ???
 	int& level = level_it->second;
 
 	if( level > int( script.mAbility.size() ) )
@@ -1527,11 +1528,11 @@ void CCharacterCalcManager::RemoveSetItemStats( CPlayer* player, const SetScript
 			break;
 		}
 
-		// ? 
+		// ???????
 		{
 			const SetScript::Element&	element = it->second;
 			
-			// 080313 LUJ, ?  ? ó
+			// 080313 LUJ, ?? ??? ?????
 			RemoveStat( element.mStat, player->GetSetItemStats() );
 
 			for(
@@ -1580,6 +1581,7 @@ void CCharacterCalcManager::AddItem( CPlayer* player, const ITEMBASE& item )
 
 	switch( info->EquipType )
 	{
+	case eEquipType_Card:
 	case eEquipType_Weapon:
 		{
 			const ITEMBASE* weaponItem = ITEMMGR->GetItemInfoAbsIn( player, TP_WEAR_START + eWearedItem_Weapon );
@@ -1671,11 +1673,11 @@ void CCharacterCalcManager::AddItem( CPlayer* player, const ITEMBASE& item )
 		}
 	}
 
-	// TODO :  
+	// TODO : ??? ??
 	player->PassiveSkillCheckForWeareItem();
 	CalcCharStats( player );	
 
-	//    ù? 
+	// ??? ??? ?? ?ù???? ??
 	stFishingRate* pFishingRate = FISHINGMGR->GetFishingUtilityRate(info->ItemIdx);
 	if(pFishingRate)
 	{
@@ -1715,6 +1717,7 @@ void CCharacterCalcManager::RemoveItem( CPlayer* player, const ITEMBASE& item )
 
 	switch( info->EquipType )
 	{
+	case eEquipType_Card:
 	case eEquipType_Weapon:
 		{
 			const ITEMBASE* weaponItem = ITEMMGR->GetItemInfoAbsIn( player, TP_WEAR_START + eWearedItem_Weapon );
@@ -1803,11 +1806,11 @@ void CCharacterCalcManager::RemoveItem( CPlayer* player, const ITEMBASE& item )
 		}
 	}
 
-	// TODO :  
+	// TODO : ??? ??
 	player->PassiveSkillCheckForWeareItem();
 	CalcCharStats( player );
 	
-	//    ù? 
+	// ??? ??? ?? ?ù???? ??
 	stFishingRate* pFishingRate = FISHINGMGR->GetFishingUtilityRate(info->ItemIdx);
 	if(pFishingRate)
 	{
@@ -1844,8 +1847,8 @@ void CCharacterCalcManager::AddStat( const ITEM_INFO& info, PlayerStat& stat )
 }
 
 
-// 080319 LUJ, ? æ? ? ??
-// 080320 LUJ, ?    
+// 080319 LUJ, ???? ??? ????
+// 080320 LUJ, ????? ?? ????? ?
 void CCharacterCalcManager::AddStat( const ITEM_INFO& info, const ITEM_OPTION& option, PlayerStat& stat )
 {
 	const ITEM_OPTION::Reinforce&	reinforce	= option.mReinforce;
@@ -1876,7 +1879,7 @@ void CCharacterCalcManager::AddStat( const ITEM_INFO& info, const ITEM_OPTION& o
 	{
 		const ITEM_OPTION::Drop::Value& value = drop.mValue[ i ];
 
-		// 080410 LUJ, ?  ?  ? ? ? ?
+		// 080410 LUJ, ????? ????? ?????????????
 		switch( value.mKey )
 		{
 		case ITEM_OPTION::Drop::KeyPlusStrength:
@@ -2216,8 +2219,8 @@ void CCharacterCalcManager::RemoveStat( const ITEM_INFO& info, PlayerStat& stat 
 }
 
 
-// 080319 LUJ, ? æ? ? 
-// 080320 LUJ,  ? æ? ? ? 
+// 080319 LUJ, ???? ??? ???
+// 080320 LUJ, ??? ???? ??? ??????
 void CCharacterCalcManager::RemoveStat( const ITEM_INFO& info, const ITEM_OPTION& option, PlayerStat& stat )
 {
 	const ITEM_OPTION::Reinforce&	reinforce	= option.mReinforce;
@@ -2248,7 +2251,7 @@ void CCharacterCalcManager::RemoveStat( const ITEM_INFO& info, const ITEM_OPTION
 	{
 		const ITEM_OPTION::Drop::Value& value = drop.mValue[ i ];
 
-		// 080410 LUJ, ?  ?  ? ? ? ?
+		// 080410 LUJ, ????? ????? ?????????????
 		switch( value.mKey )
 		{
 		case ITEM_OPTION::Drop::KeyPlusStrength:

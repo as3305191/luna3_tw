@@ -4183,6 +4183,7 @@ eLogitemmoney CItemManager::Mix( CPlayer* player, const MSG_ITEM_MIX_SYN2& input
 			}
 			else if(	( itemInfo->EquipType	!= eEquipType_Accessary ) &&
 						( itemInfo->EquipType	!= eEquipType_Weapon	) &&
+						( itemInfo->EquipType   != eEquipType_Card      ) &&
 						( itemInfo->EquipType	!= eEquipType_Armor		) )
 			{
 				return eLog_ItemMixBadCondition;
@@ -11630,6 +11631,7 @@ ITEM_OPTION CItemManager::LimiterItemOption(ITEM_OPTION option, const ITEM_INFO 
 
 	switch (info->EquipType)
 	{
+		case eEquipType_Card:
 		case eEquipType_Weapon:
 			{
 				maxreinpatk += enchantbonus;
@@ -12107,6 +12109,7 @@ ITEM_OPTION CItemManager::LoadLimiterItemOption(ITEM_OPTION option, const ITEM_I
 
 	switch (info->EquipType)
 	{
+		case eEquipType_Card:
 		case eEquipType_Weapon:
 			{
 				maxreinpatk += enchantbonus;

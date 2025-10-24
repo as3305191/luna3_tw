@@ -445,6 +445,7 @@ enum eEquipType
 	eEquipType_Armor,
 	eEquipType_Accessary,
 	eEquipType_Pet,
+	eEquipType_Card,
 	eEquipType_Max,
 };
 
@@ -690,6 +691,15 @@ enum EWEARED_ITEM
 	eWearedItem_Costume_Shoes,
 
 	eWearedItem_Costume_Wing,
+	// Card equipment slots
+	eWearedItem_CardWeapon1,
+	eWearedItem_CardWeapon2,
+	eWearedItem_CardHead,
+	eWearedItem_CardHand1,
+	eWearedItem_CardHand2,
+	eWearedItem_CardBelt,
+	eWearedItem_CardFoot1,
+	eWearedItem_CardFoot2,
 
 	eWearedItem_Max,
 	eWearedItem_None = 999,
@@ -908,7 +918,7 @@ enum
 	SLOT_EXTENDED_INVENTORY1_NUM = TABCELL_INVENTORY_NUM,
 	SLOT_EXTENDED_INVENTORY2_NUM = TABCELL_INVENTORY_NUM,
 	SLOT_MAX_INVENTORY_NUM		= SLOT_INVENTORY_NUM + SLOT_EXTENDED_INVENTORY1_NUM + SLOT_EXTENDED_INVENTORY2_NUM,	// 80
-	SLOT_WEAR_NUM				= 21,
+	SLOT_WEAR_NUM				= 29,
 	SLOT_MUNPAWAREHOUSE_NUM		= TAB_MUNPAWAREHOUSE_NUM * TABCELL_MUNPAWAREHOUSE_NUM,	//315
 	SLOT_STORAGE_NUM			= TAB_STORAGE_NUM * TABCELL_STORAGE_NUM,				//180
 	SLOT_GUILDWAREHOUSE_NUM		= TAB_GUILDWAREHOUSE_NUM * TABCELL_GUILDWAREHOUSE_NUM,	//72

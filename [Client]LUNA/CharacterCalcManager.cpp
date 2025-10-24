@@ -64,15 +64,15 @@ void CCharacterCalcManager::NetworkMsgParse(BYTE Protocol,void* pMsg)
 	case MP_CHAR_YOUAREDIED:						Char_YouAreDied( pMsg ) ;				break;
 	case MP_CHAR_STAGE_NOTIFY :						Char_Stage_Notify( pMsg ) ;				break ;
 
-	// desc_hseos_?01
-	// S ? ? added by hseos 2007.05.23
+	// desc_hseos_????1
+	// S ??????added by hseos 2007.05.23
 	case MP_CHAR_MONSTERMETER_KILLMONSTER:			Char_Monstermeter_KillMonster( pMsg );	break;
 	case MP_CHAR_MONSTERMETER_PLAYTIME:				Char_Monstermeter_PlayTime( pMsg );		break;
-	// E ? ? added by hseos 2007.05.23
+	// E ??????added by hseos 2007.05.23
 
 	case MP_CHAR_HIDE_NOTIFY:						Char_Hide_Notify( pMsg );				break;
 	case MP_CHAR_DETECT_NOTIFY:						Char_Detect_Notify( pMsg );				break;
-		// 090507 LUJ, û/ ?  HP ? 
+		// 090507 LUJ, ???????? ???HP? ???????
 	case MP_CHAR_LIFE_GET_ACK:
 		{
 			const MSG_DWORD3* const message = ( MSG_DWORD3* )pMsg;
@@ -89,7 +89,7 @@ void CCharacterCalcManager::NetworkMsgParse(BYTE Protocol,void* pMsg)
 			HERO->SetLife( requestObjectLife );
 			break;
 		}
-		// 100223 ShinJS ---  û?
+		// 100223 ShinJS --- ?? ????
 	case MP_CHAR_MANA_GET_ACK:
 		{
 			const MSG_DWORD* const pmsg = (MSG_DWORD*)pMsg;
@@ -134,7 +134,7 @@ void CCharacterCalcManager::Char_Mana_Ack( void* pMsg )
 	MSG_DWORD * msg = (MSG_DWORD *)pMsg;
 	if(HERO)
 	{
-		// 100223 ShinJS ---   ?    ? .
+		// 100223 ShinJS --- ?? ??? ????? ?? ??? ????? ??.
 		HERO->ChangeMana(msg->dwData);
 	}		
 }
@@ -144,7 +144,7 @@ void CCharacterCalcManager::Char_Exppoint_Ack( void* pMsg )
 {
 	MSG_EXPPOINT* pmsg = ( MSG_EXPPOINT* )pMsg ;
 
-    // 080930 LYW --- CharacterCalcManager : ?  ?  HERO  NULL?? ?.
+    // 080930 LYW --- CharacterCalcManager : ??? ????? ?? HERO ??? NULL?? ??
 	//HERO->SetExpPoint(pmsg->dwData) ;
 	if( HERO )
 	{
@@ -156,7 +156,7 @@ void CCharacterCalcManager::Char_Exppoint_Ack( void* pMsg )
 void CCharacterCalcManager::Char_MaxLife_Notify( void* pMsg )
 {
 	MSG_DWORD * msg = (MSG_DWORD *)pMsg;
-	// Player MaxLife 
+	// Player? MaxLife? ???
 	CPlayer*	pPlayer	=	(CPlayer*)OBJECTMGR->GetObject( msg->dwObjectID );
 	if( pPlayer )
 	{
@@ -246,12 +246,12 @@ void CCharacterCalcManager::Char_Level_Notify( void* pMsg )
 void CCharacterCalcManager::Char_LevelupPoint_Notify( void* pMsg )
 {
 	MSG_WORD * msg = (MSG_WORD *)pMsg;
-	//   msg->dwData1
+	// ?? ?? msg->dwData1
 	if(HERO)
 	{
 		if(msg->wData != 0)
 		{				
-			GAMEIN->GetCharacterDialog()->SetPointLeveling(TRUE, msg->wData);		// ? 
+			GAMEIN->GetCharacterDialog()->SetPointLeveling(TRUE, msg->wData);		// ??? ??
 		}
 		else
  		{
@@ -259,7 +259,7 @@ void CCharacterCalcManager::Char_LevelupPoint_Notify( void* pMsg )
  		}
 	}
 
-	// 080506 LYW --- CharacterCalcManager :    tutorial ü?? ? ?.
+	// 080506 LYW --- CharacterCalcManager : ???? ?? ? tutorial? ???????.
 	TUTORIALMGR->Check_LevelUp() ;
 }
 
@@ -428,7 +428,7 @@ int CCharacterCalcManager::Notify_SecondJob( BYTE jobType, BYTE byIndex )
 			}
 		}
 		break ;
-	// 090930 ONS ? ? ?
+	// 090930 ONS ???????????
 	case 4 :
 		{
 			nMsgNum = 1133 ;
@@ -477,7 +477,7 @@ int CCharacterCalcManager::Notify_ThirdJob( BYTE jobType, BYTE byIndex )
 			}
 		}
 		break ;
-	// 090930 ONS ? ? ?
+	// 090930 ONS ???????????
 	case 4 :
 		{
 			nMsgNum = 1134 ;
@@ -529,7 +529,7 @@ int CCharacterCalcManager::Notify_FourthJob( BYTE jobType, BYTE byIndex )
 			}
 		}
 		break ;
-	// 090930 ONS ? ? ?
+	// 090930 ONS ???????????
 	case 4 :
 		{
 			nMsgNum = 1135 ;
@@ -568,7 +568,7 @@ int CCharacterCalcManager::Notify_FifthJob( BYTE jobType, BYTE byIndex )
 			case 2 : nMsgNum = 394 ; break ;
 			case 3 : nMsgNum = 395 ; break ;
 			case 4 : nMsgNum = 396 ; break ;
-			// 080709 LYW --- CharacterCalcManager : ?  ?.
+			// 080709 LYW --- CharacterCalcManager : ????? ?? ??
 			case 5 : nMsgNum = 1004 ; break ;
 			}
 		}
@@ -586,7 +586,7 @@ int CCharacterCalcManager::Notify_FifthJob( BYTE jobType, BYTE byIndex )
 			}
 		}
 		break ;
-	// 090930 ONS ? ? ?
+	// 090930 ONS ???????????
 	case 4 :
 		{
 			nMsgNum = 1136 ;
@@ -640,8 +640,8 @@ int CCharacterCalcManager::Notify_SixthJob( BYTE jobType, BYTE byIndex )
 	return nMsgNum ;
 }
 
-// desc_hseos_?01
-// S ? ? added by hseos 2007.05.23	2008.01.11:CPlayer->CHero
+// desc_hseos_????1
+// S ??????added by hseos 2007.05.23	2008.01.11:CPlayer->CHero
 void CCharacterCalcManager::Char_Monstermeter_KillMonster(void* pMsg)
 {
 	MSG_DWORD2* pmsg = (MSG_DWORD2*)pMsg;
@@ -661,14 +661,14 @@ void CCharacterCalcManager::Char_Monstermeter_PlayTime(void* pMsg)
 		HERO->SetMonstermeterPlaytime(pmsg->dwData1, pmsg->dwData2);
 	}
 }
-// E ? ? added by hseos 2007.05.23	2008.01.11:CPlayer->CHero
+// E ??????added by hseos 2007.05.23	2008.01.11:CPlayer->CHero
 
 
 void CCharacterCalcManager::Initialize( CHero* hero )
 {
 	PlayerStat& stat = hero->GetItemStats();
 
-	// ??
+	// ??
 	{
 		ZeroMemory( &stat, sizeof( PlayerStat ) );
 
@@ -680,7 +680,7 @@ void CCharacterCalcManager::Initialize( CHero* hero )
 			setLevel.clear();
 		}
 
-		// 080313 LUJ, ?  ? ??
+		// 080313 LUJ, ?? ??? ????
 		PlayerStat& setItemStat = hero->GetSetItemStats();
 
 		ZeroMemory( &setItemStat, sizeof( setItemStat ) );
@@ -705,9 +705,9 @@ void CCharacterCalcManager::Initialize( CHero* hero )
 		{
 			continue;
 		}
-		// 091211 LUJ, ? ?  ? ?? ?    ?´
-		//			?  ÷?, ? ???    ?
-		//			??ÿ ó?
+		// 091211 LUJ, ?????????? ?? ????? ?? ?????? ??
+		//			????? ÷???? ?? ??????? ??? ?? ????
+		//			?????????
 		else if(TP_WEAR_START + eWearedItem_Shield == part)
 		{
 			const BOOL isNoShield = (info->Part3DType != ePartType_Shield);
@@ -720,7 +720,7 @@ void CCharacterCalcManager::Initialize( CHero* hero )
 			}
 		}
 
-		// ?  ? ? ,   ? ??    ?
+		// ?? ??? ???????, ?? ??? ?? ????? ?? ??? ??? ?????
 		{
 			const SetScript* script = GAMERESRCMNGR->GetSetScript( item->wIconIdx );
 
@@ -754,7 +754,7 @@ void CCharacterCalcManager::Initialize( CHero* hero )
 		AddStat( *info, ITEMMGR->GetOption( *item ), stat );
 	}
 
-	// ? ? .  ? ? ? ?
+	// ?? ????. ?? ??? ????? ??????
 	for(
 		SetItemSize::const_iterator it = setItemSize.begin();
 		setItemSize.end() != it;
@@ -780,7 +780,7 @@ void CCharacterCalcManager::CalcCharStats( CHero* hero )
 	HERO_TOTALINFO pHeroInfo;
 	hero->GetHeroTotalInfo(&pHeroInfo);
 
-	//  ??  ? ? 
+	// ??? ??????? ??? ?? ??
 	char_stats.mDexterity.mPlus		= float( pHeroInfo.Dex );
 	char_stats.mStrength.mPlus		= float( pHeroInfo.Str );
 
@@ -800,10 +800,10 @@ void CCharacterCalcManager::CalcCharStats( CHero* hero )
 
 void CCharacterCalcManager::AddSetItemStats( CHero* hero, const SetScript& script, int setItemSize )
 {
-	// ?    ?. ? ?  ? ?,  ?    ? ? ??.
+	// ?? ???? ??? ?? ???? ??? ??????? ??? ?? ????? ??? ??? ?? ??????????
 
-	// ? ?? ?  ?   
-	// ? ?? ? ?? ?    ? ? ?
+	// ?? ????? ?????? ????? ???? ??
+	// ?? ????? ???????? ??? ?? ??? ????????
 
 	typedef CPlayer::SetItemLevel SetItemLevel;
 
@@ -826,13 +826,13 @@ void CCharacterCalcManager::AddSetItemStats( CHero* hero, const SetScript& scrip
 			break;
 		}
 
-		// ? ?
+		// ???????
 		{
 			const SetScript::Element& element = it->second;
 
 			AddStat( element.mStat, hero->GetSetItemStats() );
 			
-			// !   ? ? ? ? 
+			// ??! ? ????? ??? ??? ???????
 			for(
 				SetScript::Element::Skill::const_iterator inner = element.mSkill.begin();
 				element.mSkill.end() != inner;
@@ -901,13 +901,13 @@ void CCharacterCalcManager::AddPlayerJobSkill(CHero* pHero)
 	{
 		byJobType = 0 ;
 
-		//  ? ? ü?.
+		// ?? ?? ??? ?.
 		if( grade == 1 ) byJobType = 1 ;
 		else byJobType = HERO->GetCharacterTotalInfo()->Job[ grade - 1 ] ;
 
 		if(!byJobType) return;
 
-		//   ´  ? ?´.
+		// ?? ??? ´??? ??????.
 		wJobIdx = 0 ;											
 		wJobIdx = ( HERO->GetCharacterTotalInfo()->Job[ 0 ] * 1000 ) +
 				( ( HERO->GetCharacterTotalInfo()->Race + 1 ) * 100 ) + 
@@ -929,16 +929,16 @@ void CCharacterCalcManager::AddPlayerJobSkill(CHero* pHero)
 
 void CCharacterCalcManager::RemoveSetItemStats( CHero* hero, const SetScript& script, int setItemSize )
 {
-	// ? ÷??  ? ?? ?  ´.
-	//  ? ? ? .  ? 
-	// ? ? ?  
-	// ? ? ?  û
+	// ??÷??? ?? ?? ????? ?????? ??´?
+	// ??? ??? ?????????. ??? ???
+	// ??? ?? ?????? ??
+	// ??? ????? ?? ?? ??
 
 	typedef CPlayer::SetItemLevel SetItemLevel;
 
 	CPlayer::SetItemLevel& setLevel = hero->GetSetItemLevel();
 
-	// ? ??   ?   ? ? ? 
+	// ??????? ?????? ???? ????? ???????
 	if( setLevel.end() == setLevel.find( &script ) )
 	{
 		return;
@@ -960,7 +960,7 @@ void CCharacterCalcManager::RemoveSetItemStats( CHero* hero, const SetScript& sc
 			break;
 		}
 
-		// ? 
+		// ???????
 		{
 			const SetScript::Element& element = it->second;
 
@@ -1026,6 +1026,7 @@ void CCharacterCalcManager::AddItem( CHero* hero, const ITEMBASE& item )
 
 	switch( info->EquipType )
 	{
+	case eEquipType_Card:
 	case eEquipType_Weapon:
 		{
 			const ITEMBASE* weaponItem = ITEMMGR->GetItemInfoAbsIn( hero, TP_WEAR_START + eWearedItem_Weapon );
@@ -1116,7 +1117,7 @@ void CCharacterCalcManager::AddItem( CHero* hero, const ITEMBASE& item )
 		}
 	}
 
-	// TODO :  
+	// TODO : ??? ??
 	CalcCharStats( hero );
 }
 
@@ -1138,6 +1139,7 @@ void CCharacterCalcManager::RemoveItem( CHero* hero, const ITEMBASE& item )
 
 	switch( info->EquipType )
 	{
+	case eEquipType_Card:
 	case eEquipType_Weapon:
 		{
 			const ITEMBASE* weaponItem = ITEMMGR->GetItemInfoAbsIn( hero, TP_WEAR_START + eWearedItem_Weapon );
@@ -1222,7 +1224,7 @@ void CCharacterCalcManager::RemoveItem( CHero* hero, const ITEMBASE& item )
 		}
 	}
 
-	// TODO :  
+	// TODO : ??? ??
 	CalcCharStats( hero );
 }
 
@@ -1243,8 +1245,8 @@ void CCharacterCalcManager::AddStat(const ITEM_INFO& info, PlayerStat& stat )
 }
 
 
-// 080319 LUJ, ? æ? ? ??
-// 080320 LUJ, ? æ? ? ? 
+// 080319 LUJ, ???? ??? ????
+// 080320 LUJ, ???? ??? ??????
 void CCharacterCalcManager::AddStat( const ITEM_INFO& info,  const ITEM_OPTION& option, PlayerStat& stat )
 {
 	const ITEM_OPTION::Reinforce&	reinforce	= option.mReinforce;
@@ -1525,7 +1527,7 @@ void CCharacterCalcManager::AddStat( const ITEM_INFO& info,  const ITEM_OPTION& 
 					stat.mMagicDefense.mPlus += GetBonusEnchantValue( info, option, info.MagicDefense );
 					break;
 				}
-				// 080319 LUJ, ? æ? ? ?   ?
+				// 080319 LUJ, ???? ??? ???? ?? ???
 			case ReinforceScript::eTypeMoveSpeed:
 			case ReinforceScript::eTypeEvade:
 			case ReinforceScript::eTypeAccuracy:
@@ -1623,8 +1625,8 @@ void CCharacterCalcManager::RemoveStat( const ITEM_INFO& info, PlayerStat& stat 
 }
 
 
-// 080319 LUJ, ? æ? ? 
-// 080320 LUJ, ? æ? ? ?  
+// 080319 LUJ, ???? ??? ???
+// 080320 LUJ, ???? ??? ????? ???
 void CCharacterCalcManager::RemoveStat( const ITEM_INFO& info, const ITEM_OPTION& option, PlayerStat& stat )
 {
 	const ITEM_OPTION::Reinforce&	reinforce	= option.mReinforce;
@@ -1905,7 +1907,7 @@ void CCharacterCalcManager::RemoveStat( const ITEM_INFO& info, const ITEM_OPTION
 					stat.mMagicDefense.mPlus -= GetBonusEnchantValue( info, option, info.MagicDefense );
 					break;
 				}
-				// 080319 LUJ, ? æ? ? ?   ?
+				// 080319 LUJ, ???? ??? ???? ?? ???
 			case ReinforceScript::eTypeMoveSpeed:
 			case ReinforceScript::eTypeEvade:
 			case ReinforceScript::eTypeAccuracy:
