@@ -58,6 +58,33 @@
 
 extern int g_nServerSetNum;
 
+namespace
+{
+        POSTYPE AdjustItemPositionForCardSlots(
+                POSTYPE position,
+                const ITEM_INFO* itemInfo )
+        {
+                const POSTYPE cardSlotStart = TP_WEAR_START + eWearedItem_Card_Weapon1;
+                const POSTYPE cardSlotEnd   = TP_WEAR_START + eWearedItem_Max;
+
+                if( cardSlotStart <= position && position < cardSlotEnd )
+                {
+                        const bool isCardItem =
+                                itemInfo &&
+                                eWearedItem_Card_Weapon1 <= itemInfo->EquipSlot &&
+                                itemInfo->EquipSlot < eWearedItem_Max;
+
+                        if( !isCardItem )
+                        {
+                                const POSTYPE cardSlotCount = eWearedItem_Max - eWearedItem_Card_Weapon1;
+                                position += cardSlotCount;
+                        }
+                }
+
+                return position;
+        }
+}
+
 DBMsgFunc g_DBMsgFunc[MaxQuery] =
 {
 	RCharacterNumSendAndCharacterInfo,
@@ -2085,56 +2112,59 @@ void RCharacterItemInfo(LPQUERY pData, LPDBMESSAGE pMessage)
 	ITEMBASE OverLapItem[maxoverlap];
 	memset(&OverLapItem, 0, sizeof(ITEMBASE)*maxoverlap);
 	memset(&Iteminfo, 0, sizeof(ITEM_TOTALINFO));
-	for(DWORD  i = 0; i < pMessage->dwResult; i++)
-	{
-		POSTYPE ItemPos = POSTYPE( atoi((char*)pData[i].Data[3]) );
-		ITEMBASE* pItemBase = NULL;
-		// ���������ˡ���c��ia(AI������IAa�ˡ���c)��u����AIAU ��uA����A
-		//if(ItemPos >= TP_INVENTORY_START && ItemPos < TP_INVENTORY_END)
-		// 071210 KTH -- Fix "TP_INVENTORY_END���� TP_EXTENDED_INVENTORY2_END�� ����� �ø���."
-		if(ItemPos >= TP_INVENTORY_START && ItemPos < TP_EXTENDED_INVENTORY2_END)
-		{
-			ItemPos -= TP_INVENTORY_START;
-			pItemBase = &Iteminfo.Inventory[ItemPos];
-		}
-		// AaA¨Ý¨£¡§u¡§¢®AIAU ¡§uA¡§¢®A
-		else if(ItemPos >= TP_WEAR_START && ItemPos < TP_WEAR_END)
-		{				
-			POSTYPE ItemGrid = POSTYPE( ItemPos - TP_WEAR_START );
-			pItemBase = &Iteminfo.WearedItem[ItemGrid];
-		}
+	 for(DWORD  i = 0; i < pMessage->dwResult; i++)
+        {
+                POSTYPE itemPos = POSTYPE( atoi((char*)pData[i].Data[3]) );
+                const DWORD itemIndex = atoi((char*)pData[i].Data[2]);
+                ITEM_INFO* const itemInfo = ITEMMGR->GetItemInfo( itemIndex );
+                itemPos = AdjustItemPositionForCardSlots( itemPos, itemInfo );
 
-		if(pItemBase == NULL)
-		{
-			// ��?��I����a��?�ˢ� ��ie��ui��?8e ��u����AIAU ������AAo��uC ��?�ˢ碮��?AO
-			ASSERT(0);
-			continue;
-		}
+                ITEMBASE* pItemBase = NULL;
+                // ���������ˡ���c��ia(AI������IAa�ˡ���c)��u����AIAU ��uA����A
+                //if(ItemPos >= TP_INVENTORY_START && ItemPos < TP_INVENTORY_END)
+                // 071210 KTH -- Fix "TP_INVENTORY_END���� TP_EXTENDED_INVENTORY2_END�� ����� �ø���."
+                if(itemPos >= TP_INVENTORY_START && itemPos < TP_EXTENDED_INVENTORY2_END)
+                {
+                        const POSTYPE inventoryIndex = itemPos - TP_INVENTORY_START;
+                        pItemBase = &Iteminfo.Inventory[inventoryIndex];
+                }
+                // AaA¨Ý¨£¡§u¡§¢®AIAU ¡§uA¡§¢®A
+                else if(itemPos >= TP_WEAR_START && itemPos < TP_WEAR_END)
+                {
+                        const POSTYPE itemGrid = itemPos - TP_WEAR_START;
+                        pItemBase = &Iteminfo.WearedItem[itemGrid];
+                }
 
-		//������ �������� ���ƴ�.
-		BOOL bOverlap = FALSE;
+                if(pItemBase == NULL)
+                {
+                        // ��?��I����a��?�ˢ� ��ie��ui��?8e ��u����AIAU ������AAo��uC ��?�ˢ碮��?AO
+                        ASSERT(0);
+                        continue;
+                }
 
-		if(pItemBase->dwDBIdx != 0 && overlapcount < maxoverlap)
-		{
-			pItemBase = &OverLapItem[overlapcount];
-			++overlapcount;
+                //������ �������� ���ƴ�.
+                BOOL bOverlap = FALSE;
 
-			bOverlap = TRUE;
-		}
-		
-		pItemBase->dwDBIdx = atoi((char*)pData[i].Data[1]);
-		pItemBase->wIconIdx = atoi((char*)pData[i].Data[2]);
-		pItemBase->Position = POSTYPE( atoi((char*)pData[i].Data[3]) );
-		pItemBase->QuickPosition = POSTYPE( atoi((char*)pData[i].Data[4]) );
-		pItemBase->Durability = atoi((char*)pData[i].Data[5]);
-		pItemBase->ItemParam = atoi((char*)pData[i].Data[6]);
-		pItemBase->nSealed = ITEM_SEAL_TYPE(atoi((char*)pData[i].Data[7]));
+                if(pItemBase->dwDBIdx != 0 && overlapcount < maxoverlap)
+                {
+                        pItemBase = &OverLapItem[overlapcount];
+                        ++overlapcount;
 
-		ITEM_INFO* ItemInfo = ITEMMGR->GetItemInfo( pItemBase->wIconIdx );
+                        bOverlap = TRUE;
+                }
 
-		if( ItemInfo == NULL )
-			continue;
+                pItemBase->dwDBIdx = atoi((char*)pData[i].Data[1]);
+                pItemBase->wIconIdx = itemIndex;
+                pItemBase->Position = itemPos;
+                pItemBase->QuickPosition = POSTYPE( atoi((char*)pData[i].Data[4]) );
+                pItemBase->Durability = atoi((char*)pData[i].Data[5]);
+                pItemBase->ItemParam = atoi((char*)pData[i].Data[6]);
+                pItemBase->nSealed = ITEM_SEAL_TYPE(atoi((char*)pData[i].Data[7]));
 
+                ITEM_INFO* const ItemInfo = itemInfo;
+
+                if( ItemInfo == NULL )
+                        continue;
 		// 080820 LUJ, ȹ�� �� ��Ÿ���� ���� �������� itemParam�� ������ �ð��� �����ؼ�, ����� �ð��� ����Ѵ�
 		if( ItemInfo &&
 			ItemInfo->SupplyType == ITEM_KIND_COOLTIME )
@@ -2817,7 +2847,8 @@ void RCharacterStorageItemInfo(LPQUERY pData, LPDBMESSAGE pMessage)
 		item.QuickPosition = POSTYPE( atoi((char*)pData[i].Data[4]));
 		item.Durability	= atoi((char*)pData[i].Data[5]);
 		
-		const ITEM_INFO* const ItemInfo = ITEMMGR->GetItemInfo( item.wIconIdx );
+		const ITEM_INFO* ItemInfo = ITEMMGR->GetItemInfo( item.wIconIdx );
+		item.Position = AdjustItemPositionForCardSlots( item.Position, ItemInfo );
 
 		if(NULL == ItemInfo)
 		{
