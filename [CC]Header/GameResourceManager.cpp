@@ -1987,12 +1987,45 @@ void CGameResourceManager::ParseSetScript(std::list< std::string >& text, SetScr
 			data.mSlotNameMap[ eWearedItem_Costume_Glove ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
 		}
 		// 080916 LUJ, ���� �̸� ������
-		else if( ! _tcsicmp( "costume_shoes", token ) )
-		{
-			data.mSlotNameMap[ eWearedItem_Costume_Shoes ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
-		}
-		// ������ �ɷ� �Ľ�
-		else if( ! _tcsicmp( "size", token ) )
+		 // 080916 LUJ, ���� �̸� ������
+                else if( ! _tcsicmp( "costume_shoes", token ) )
+                {
+                        data.mSlotNameMap[ eWearedItem_Costume_Shoes ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
+                }
+                else if( ! _tcsicmp( "card_weapon_main", token ) || ! _tcsicmp( "card_weapon1", token ) )
+                {
+                        data.mSlotNameMap[ eWearedItem_Card_Weapon1 ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
+                }
+                else if( ! _tcsicmp( "card_weapon_sub", token ) || ! _tcsicmp( "card_weapon2", token ) )
+                {
+                        data.mSlotNameMap[ eWearedItem_Card_Weapon2 ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
+                }
+                else if( ! _tcsicmp( "card_head", token ) )
+                {
+                        data.mSlotNameMap[ eWearedItem_Card_Head ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
+                }
+                else if( ! _tcsicmp( "card_glove_left", token ) || ! _tcsicmp( "card_glove1", token ) )
+                {
+                        data.mSlotNameMap[ eWearedItem_Card_Glove1 ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
+                }
+                else if( ! _tcsicmp( "card_glove_right", token ) || ! _tcsicmp( "card_glove2", token ) )
+                {
+                        data.mSlotNameMap[ eWearedItem_Card_Glove2 ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
+                }
+                else if( ! _tcsicmp( "card_belt", token ) )
+                {
+                        data.mSlotNameMap[ eWearedItem_Card_Belt ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
+                }
+                else if( ! _tcsicmp( "card_shoes_left", token ) || ! _tcsicmp( "card_shoes1", token ) )
+                {
+                        data.mSlotNameMap[ eWearedItem_Card_Shoes1 ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
+                }
+                else if( ! _tcsicmp( "card_shoes_right", token ) || ! _tcsicmp( "card_shoes2", token ) )
+                {
+                        data.mSlotNameMap[ eWearedItem_Card_Shoes2 ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
+                }
+                // ������ �ɷ� �Ľ�
+                else if( ! _tcsicmp( "size", token ) )
 		{
 			// 081231 LUJ, ��Ʈ/������ �ɷ� �� ������ ��Ʈ ��ũ��Ʈ���� ó���ϹǷ�, ���� ����� ���� ������ �� �ֵ��� �����͸� �ʱ�ȭ���Ѿ��Ѵ�.
 			setElement	= 0;
@@ -4099,65 +4132,124 @@ void CGameResourceManager::LoadEnchantScript()
 					}
 				}
 
-				// ���� ������ ������ ���� ����
-				{
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Weapon);
-					}
+			  // ���� ������ ������ ���� ����
+                                {
+                                        const char* slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Weapon);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Shield);
-					}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Shield);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Dress);
-					}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Dress);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Hat);
-					}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Hat);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Glove);
-					}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Glove);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Shoes);
-					}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Shoes);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Ring1);
-						script.mSlot.insert(eWearedItem_Ring2);
-					}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Ring1);
+                                                script.mSlot.insert(eWearedItem_Ring2);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Necklace);
-					}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Necklace);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Earring1);
-						script.mSlot.insert(eWearedItem_Earring2);
-					}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Earring1);
+                                                script.mSlot.insert(eWearedItem_Earring2);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Belt);
-					}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Belt);
+                                        }
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Band);
-					}
-				}
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Band);
+                                        }
+
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Card_Weapon1);
+                                        }
+
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Card_Weapon2);
+                                        }
+
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Card_Head);
+                                        }
+
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Card_Glove1);
+                                        }
+
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Card_Glove2);
+                                        }
+
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Card_Belt);
+                                        }
+
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Card_Shoes1);
+                                        }
+
+                                        slotToken = strtok(0, separator);
+                                        if(slotToken && std::string("1") == slotToken)
+                                        {
+                                                script.mSlot.insert(eWearedItem_Card_Shoes2);
+                                        }
+                                }
 
 				break;
 			}
@@ -4717,6 +4809,38 @@ void CGameResourceManager::LoadDropOptionScript()
 							else if( ! stricmp( token, "wing" ) )
 							{
 								mDropOptionScriptMap.insert( std::make_pair( GetItemKey( eWearedItem_Wing, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ), script ) );
+							}
+							else if( ! stricmp( token, "card_weapon_main" ) || ! stricmp( token, "card_weapon1" ) )
+							{
+								mDropOptionScriptMap.insert( std::make_pair( GetItemKey( eWearedItem_Card_Weapon1, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ), script ) );
+							}
+							else if( ! stricmp( token, "card_weapon_sub" ) || ! stricmp( token, "card_weapon2" ) )
+							{
+								mDropOptionScriptMap.insert( std::make_pair( GetItemKey( eWearedItem_Card_Weapon2, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ), script ) );
+							}
+							else if( ! stricmp( token, "card_head" ) )
+							{
+								mDropOptionScriptMap.insert( std::make_pair( GetItemKey( eWearedItem_Card_Head, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ), script ) );
+							}
+							else if( ! stricmp( token, "card_glove_left" ) || ! stricmp( token, "card_glove1" ) )
+							{
+								mDropOptionScriptMap.insert( std::make_pair( GetItemKey( eWearedItem_Card_Glove1, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ), script ) );
+							}
+							else if( ! stricmp( token, "card_glove_right" ) || ! stricmp( token, "card_glove2" ) )
+							{
+								mDropOptionScriptMap.insert( std::make_pair( GetItemKey( eWearedItem_Card_Glove2, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ), script ) );
+							}
+							else if( ! stricmp( token, "card_belt" ) )
+							{
+								mDropOptionScriptMap.insert( std::make_pair( GetItemKey( eWearedItem_Card_Belt, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ), script ) );
+							}
+							else if( ! stricmp( token, "card_shoes_left" ) || ! stricmp( token, "card_shoes1" ) )
+							{
+								mDropOptionScriptMap.insert( std::make_pair( GetItemKey( eWearedItem_Card_Shoes1, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ), script ) );
+							}
+							else if( ! stricmp( token, "card_shoes_right" ) || ! stricmp( token, "card_shoes2" ) )
+							{
+								mDropOptionScriptMap.insert( std::make_pair( GetItemKey( eWearedItem_Card_Shoes2, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ), script ) );
 							}
 							else if( ! stricmp( token, "one_hand" ) )
 							{
@@ -5475,6 +5599,54 @@ void CGameResourceManager::LoadApplyOptionScript()
 								equipSlot	= eWearedItem_Band;
 
 								script->mTargetTypeSet.insert( GetItemKey( equipSlot, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ) );
+							}
+							else if( ! stricmp( token, "card_weapon_main" ) || ! stricmp( token, "card_weapon1" ) )
+							{
+								equipSlot	= eWearedItem_Card_Weapon1;
+
+								script->mTargetTypeSet.insert( GetItemKey( equipSlot, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ) );
+							}
+							else if( ! stricmp( token, "card_weapon_sub" ) || ! stricmp( token, "card_weapon2" ) )
+							{
+								equipSlot	= eWearedItem_Card_Weapon2;
+
+								script->mTargetTypeSet.insert( GetItemKey( equipSlot, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ) );
+							}
+							else if( ! stricmp( token, "card_head" ) )
+							{
+								equipSlot	= eWearedItem_Card_Head;
+
+								script->mTargetTypeSet.insert( GetItemKey( equipSlot, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ) );
+							}
+							else if( ! stricmp( token, "card_glove_left" ) || ! stricmp( token, "card_glove1" ) )
+							{
+								equipSlot	= eWearedItem_Card_Glove1;
+
+								script->mTargetTypeSet.insert( GetItemKey( equipSlot, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ) );
+							}
+							else if( ! stricmp( token, "card_glove_right" ) || ! stricmp( token, "card_glove2" ) )
+							{
+								equipSlot	= eWearedItem_Card_Glove2;
+
+								script->mTargetTypeSet.insert( GetItemKey( equipSlot, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ) );
+							}
+							else if( ! stricmp( token, "card_belt" ) )
+							{
+								equipSlot	= eWearedItem_Card_Belt;
+
+								script->mTargetTypeSet.insert( GetItemKey( equipSlot, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ) );
+							}
+							else if( ! stricmp( token, "card_shoes_left" ) || ! stricmp( token, "card_shoes1" ) )
+							{
+								equipSlot	= eWearedItem_Card_Shoes1;
+
+								script->mTargetTypeSet.insert( GetItemKey( equipSlot, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ) );
+							}
+							else if( ! stricmp( token, "card_shoes_right" ) || ! stricmp( token, "card_shoes2" ) )
+							{
+								equipSlot	= eWearedItem_Card_Shoes2;
+
+								script->mTargetTypeSet.insert( GetItemKey( equipSlot, eWeaponType_None, eArmorType_None, eWeaponAnimationType_None ) );
 							}						
 							else if( ! stricmp( token, "glasses" ) )
 							{
@@ -5937,64 +6109,123 @@ void CGameResourceManager::LoadReinforceScript()
 				script.mBias	= float(atof(strtok(0, separator)));
 				script.mForRare	= ! strcmpi("true", strtok(0, separator));
 
-				// ��ȭ ������ ������ ���� ����
+// ��ȭ ������ ������ ���� ����
 				{
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Weapon);
-					}
+						const char* slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Weapon);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Shield);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Shield);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Dress);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Dress);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Hat);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Hat);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Glove);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Glove);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Shoes);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Shoes);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Ring1);
-						script.mSlot.insert(eWearedItem_Ring2);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Ring1);
+								script.mSlot.insert(eWearedItem_Ring2);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Necklace);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Necklace);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Earring1);
-						script.mSlot.insert(eWearedItem_Earring2);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Earring1);
+								script.mSlot.insert(eWearedItem_Earring2);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Belt);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Belt);
+						}
 
-					if(const std::string("1") == strtok(0, separator))
-					{
-						script.mSlot.insert(eWearedItem_Band);
-					}
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Band);
+						}
+
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Card_Weapon1);
+						}
+
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Card_Weapon2);
+						}
+
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Card_Head);
+						}
+
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Card_Glove1);
+						}
+
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Card_Glove2);
+						}
+
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Card_Belt);
+						}
+
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Card_Shoes1);
+						}
+
+						slotToken = strtok(0, separator);
+						if(slotToken && std::string("1") == slotToken)
+						{
+								script.mSlot.insert(eWearedItem_Card_Shoes2);
+						}
 				}
 
 				// ��ȭ ������ �ɷ� ����

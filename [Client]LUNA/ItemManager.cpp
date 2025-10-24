@@ -2774,21 +2774,53 @@ LPCTSTR CItemManager::GetName(EWEARED_ITEM slot) const
 		{
 			return CHATMGR->GetChatMsg( 835 );
 		}
-	case eWearedItem_Costume_Dress:
-		{
-			return CHATMGR->GetChatMsg( 836 );
-		}
-	case eWearedItem_Costume_Glove:
-		{
-			return CHATMGR->GetChatMsg( 837 );
-		}
-	case eWearedItem_Costume_Shoes:
-		{
-			return CHATMGR->GetChatMsg( 838 );
-		}
-	}
+	 case eWearedItem_Costume_Dress:
+                {
+                        return CHATMGR->GetChatMsg( 836 );
+                }
+        case eWearedItem_Costume_Glove:
+                {
+                        return CHATMGR->GetChatMsg( 837 );
+                }
+        case eWearedItem_Costume_Shoes:
+                {
+                        return CHATMGR->GetChatMsg( 838 );
+                }
+        case eWearedItem_Card_Weapon1:
+                {
+                        return "Main Weapon Card";
+                }
+        case eWearedItem_Card_Weapon2:
+                {
+                        return "Off-hand Weapon Card";
+                }
+        case eWearedItem_Card_Head:
+                {
+                        return "Head Card";
+                }
+        case eWearedItem_Card_Glove1:
+                {
+                        return "Left Hand Card";
+                }
+        case eWearedItem_Card_Glove2:
+                {
+                        return "Right Hand Card";
+                }
+        case eWearedItem_Card_Belt:
+                {
+                        return "Belt Card";
+                }
+        case eWearedItem_Card_Shoes1:
+                {
+                        return "Left Foot Card";
+                }
+        case eWearedItem_Card_Shoes2:
+                {
+                        return "Right Foot Card";
+                }
+        }
 
-	return "?";
+        return "?";
 }
 
 // 080916 LUJ, �ɼ� �̸��� ��ȯ�޴´�
