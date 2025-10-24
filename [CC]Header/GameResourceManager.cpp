@@ -1845,19 +1845,23 @@ void CGameResourceManager::ParseSetScript(std::list< std::string >& text, SetScr
 	{
 	public:
 		SetItemNameContainer( const SetItemName& name ):
-		  mSetName( name )
-		  {}
+			mSetName( name )
+			{}
 
-		  const TCHAR* GetName( const TCHAR* index ) const
-		  {
-			  const SetItemName::const_iterator it = mSetName.find( _ttoi( index ) );
+		const TCHAR* GetName( const TCHAR* index ) const
+		{
+			if( 0 == index )
+			{
+					return _T( "" );
+			}
+			const SetItemName::const_iterator it = mSetName.find( _ttoi( index ) );
+			return mSetName.end() == it ? _T( "" ) : it->second.c_str();
+		}
 
-			  return mSetName.end() == it ? "" : it->second.c_str();
-		  }
-
-	private:
-		const SetItemName& mSetName;
-	}
+        private:
+                const SetItemName& mSetName;
+        }
+	
 	setItemNameContainer( name );
 
 	int					openCount			= 0;
@@ -1986,7 +1990,6 @@ void CGameResourceManager::ParseSetScript(std::list< std::string >& text, SetScr
 		{
 			data.mSlotNameMap[ eWearedItem_Costume_Glove ] = setItemNameContainer.GetName( _tcstok( 0, separator ) );
 		}
-		// 080916 LUJ, ���� �̸� ������
 		 // 080916 LUJ, ���� �̸� ������
                 else if( ! _tcsicmp( "costume_shoes", token ) )
                 {
