@@ -74,10 +74,20 @@ namespace
                                 eWearedItem_Card_Weapon1 <= itemInfo->EquipSlot &&
                                 itemInfo->EquipSlot < eWearedItem_Max;
 
-                        if( !isCardItem )
+                          if( !isCardItem )
                         {
+                                const POSTYPE cardSlotOffset = position - cardSlotStart;
                                 const POSTYPE cardSlotCount = eWearedItem_Max - eWearedItem_Card_Weapon1;
-                                position += cardSlotCount;
+                                const POSTYPE fallbackInventoryStart = TP_EXTENDED_INVENTORY2_END - cardSlotCount;
+
+                                if( fallbackInventoryStart >= TP_INVENTORY_START )
+                                {
+                                        position = fallbackInventoryStart + cardSlotOffset;
+                                }
+                                else
+                                {
+                                        position = TP_INVENTORY_START + cardSlotOffset;
+                                }
                         }
                 }
 
