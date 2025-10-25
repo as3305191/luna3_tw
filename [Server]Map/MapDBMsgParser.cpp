@@ -113,7 +113,17 @@ extern int g_nServerSetNum;
                                        
                                                 if( useInventoryFallback )
                                                 {
-                                                      return cardSlotStart + equipSlotOffset;
+                                                      if( cardSlotStart <= position && position < cardSlotEnd )
+														{
+																		return cardSlotStart + equipSlotOffset;
+														}
+
+														if( TP_STORAGE_START <= position && position < TP_STORAGE_START + cardSlotCount )
+														{
+																		return cardSlotStart + equipSlotOffset;
+														}
+
+														return position;
                                                 }
                                                 if( cardSlotStart <= position && position < cardSlotEnd )
                                                 {
