@@ -66,16 +66,22 @@ extern int g_nServerSetNum;
                 bool useInventoryFallback,
                 POSTYPE inventoryEndPosition = TP_EXTENDED_INVENTORY2_END )
          {
-                 const POSTYPE cardSlotStart = TP_WEAR_START + eWearedItem_Card_Weapon1;
-                 const POSTYPE cardSlotEnd   = TP_WEAR_START + eWearedItem_Max;
- 
-                 if( cardSlotStart <= position && position < cardSlotEnd )
-                 {
-                         const POSTYPE cardSlotOffset = position - cardSlotStart;
-                        const POSTYPE cardSlotCount = eWearedItem_Max - eWearedItem_Card_Weapon1;
-                        POSTYPE fallbackEnd = inventoryEndPosition;
+				const POSTYPE cardSlotStart = TP_WEAR_START + eWearedItem_Card_Weapon1;
+				const POSTYPE cardSlotEnd   = TP_WEAR_START + eWearedItem_Max;
 
-                        if( fallbackEnd < TP_INVENTORY_START + cardSlotCount )
+				if( cardSlotStart <= position && position < cardSlotEnd )
+				{
+						const POSTYPE cardSlotCount = eWearedItem_Max - eWearedItem_Card_Weapon1;
+
+						if( cardSlotCount <= 0 )
+						{
+								return position;
+						}
+
+						const POSTYPE cardSlotOffset = position - cardSlotStart;
+						POSTYPE fallbackEnd = inventoryEndPosition;
+
+						if( fallbackEnd < TP_INVENTORY_START + cardSlotCount )
                         {
                                 fallbackEnd = TP_INVENTORY_START + cardSlotCount;
                         }
@@ -97,7 +103,19 @@ extern int g_nServerSetNum;
                                  {
 
                                         const POSTYPE equipSlotOffset = itemInfo->EquipSlot - eWearedItem_Card_Weapon1;
+  										if( equipSlotOffset >= cardSlotCount )
+                                        {
+                                                if( useInventoryFallback )
+                                                {
+                                                        position = fallbackStart + cardSlotOffset;
+                                                }
+                                                else
+                                                {
+                                                        position = TP_STORAGE_START + cardSlotOffset;
+                                                }
 
+                                                return position;
+                                        }
                                         if( useInventoryFallback )
                                         {
                                                 position = cardSlotStart + equipSlotOffset;
