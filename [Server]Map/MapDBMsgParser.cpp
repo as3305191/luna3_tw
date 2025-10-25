@@ -58,71 +58,81 @@
 
 extern int g_nServerSetNum;
 
-namespace
-{
-        POSTYPE AdjustItemPositionForCardSlots(
-                POSTYPE position,
-                const ITEM_INFO* itemInfo,
-                bool useInventoryFallback )
-        {
-                const POSTYPE cardSlotStart = TP_WEAR_START + eWearedItem_Card_Weapon1;
-                const POSTYPE cardSlotEnd   = TP_WEAR_START + eWearedItem_Max;
+ namespace
+ {
+         POSTYPE AdjustItemPositionForCardSlots(
+                 POSTYPE position,
+                 const ITEM_INFO* itemInfo,
+                bool useInventoryFallback,
+                POSTYPE inventoryEndPosition = TP_EXTENDED_INVENTORY2_END )
+         {
+                 const POSTYPE cardSlotStart = TP_WEAR_START + eWearedItem_Card_Weapon1;
+                 const POSTYPE cardSlotEnd   = TP_WEAR_START + eWearedItem_Max;
+ 
+                 if( cardSlotStart <= position && position < cardSlotEnd )
+                 {
+                         const POSTYPE cardSlotOffset = position - cardSlotStart;
+                        const POSTYPE cardSlotCount = eWearedItem_Max - eWearedItem_Card_Weapon1;
+                        POSTYPE fallbackEnd = inventoryEndPosition;
 
-                if( cardSlotStart <= position && position < cardSlotEnd )
-                {
-                        const POSTYPE cardSlotOffset = position - cardSlotStart;
-
-                        if( itemInfo )
+                        if( fallbackEnd < TP_INVENTORY_START + cardSlotCount )
                         {
-                              if( itemInfo )
+                                fallbackEnd = TP_INVENTORY_START + cardSlotCount;
+                        }
+
+                        POSTYPE fallbackStart = fallbackEnd - cardSlotCount;
+
+                        if( fallbackStart < TP_INVENTORY_START )
+                        {
+                                fallbackStart = TP_INVENTORY_START;
+                        }
+ 
+                         if( itemInfo )
+                         {
+                                const bool isCardItem =
+                                        eWearedItem_Card_Weapon1 <= itemInfo->EquipSlot &&
+                                        itemInfo->EquipSlot < eWearedItem_Max;
+
+                                if( isCardItem )
+                                 {
+
+                                        const POSTYPE equipSlotOffset = itemInfo->EquipSlot - eWearedItem_Card_Weapon1;
+
+                                        if( useInventoryFallback )
+                                        {
+                                                position = cardSlotStart + equipSlotOffset;
+                                        }
+                                        else
+                                        {
+                                                position = TP_STORAGE_START + equipSlotOffset;
+                                        }
+                                 }
+
+                                else if( useInventoryFallback )
                                 {
-                                 	const bool isCardItem =
-										eWearedItem_Card_Weapon1 <= itemInfo->EquipSlot &&
-										itemInfo->EquipSlot < eWearedItem_Max;
-
-                                         if( isCardItem )
-											{
-													const POSTYPE equipSlotOffset = itemInfo->EquipSlot - eWearedItem_Card_Weapon1;
-
-													if( useInventoryFallback )
-													{
-															position = cardSlotStart + equipSlotOffset;
-													}
-													else
-													{
-															position = TP_STORAGE_START + equipSlotOffset;
-													}
-											}
-											else if( useInventoryFallback )
-											{
-													const POSTYPE cardSlotCount = eWearedItem_Max - eWearedItem_Card_Weapon1;
-													const POSTYPE fallbackInventoryStart = TP_EXTENDED_INVENTORY2_END - cardSlotCount;
-
-													if( fallbackInventoryStart >= TP_INVENTORY_START )
-													{
-															position = fallbackInventoryStart + cardSlotOffset;
-													}
-													else
-													{
-															position = TP_INVENTORY_START + cardSlotOffset;
-													}
-											}
-											else
-											{
-												 position = TP_STORAGE_START + cardSlotOffset;
-                               				}
+                                        position = fallbackStart + cardSlotOffset;
                                 }
-
+                                else
+                                {
+                                        position = TP_STORAGE_START + cardSlotOffset;
+                                }
                         }
-						else if( !useInventoryFallback )
+                        else if( useInventoryFallback )
                         {
-                            position = TP_STORAGE_START + cardSlotOffset;
-                        }
-                }
+                                position = fallbackStart + cardSlotOffset;
+                         }
 
-                return position;
-        }
-}
+                        else
+                         {
+
+                                position = TP_STORAGE_START + cardSlotOffset;
+                         }
+                 }
+ 
+                 return position;
+         }
+ }
+ 
 
 DBMsgFunc g_DBMsgFunc[MaxQuery] =
 {
@@ -2151,12 +2161,14 @@ void RCharacterItemInfo(LPQUERY pData, LPDBMESSAGE pMessage)
 	ITEMBASE OverLapItem[maxoverlap];
 	memset(&OverLapItem, 0, sizeof(ITEMBASE)*maxoverlap);
 	memset(&Iteminfo, 0, sizeof(ITEM_TOTALINFO));
+	const POSTYPE inventoryEndPosition = POSTYPE( TP_INVENTORY_END + pPlayer->GetInventoryExpansionSize() );
+
 	 for(DWORD  i = 0; i < pMessage->dwResult; i++)
         {
                 POSTYPE itemPos = POSTYPE( atoi((char*)pData[i].Data[3]) );
                 const DWORD itemIndex = atoi((char*)pData[i].Data[2]);
                 ITEM_INFO* const itemInfo = ITEMMGR->GetItemInfo( itemIndex );
-              	itemPos = AdjustItemPositionForCardSlots( itemPos, itemInfo, true );
+              	itemPos = AdjustItemPositionForCardSlots( itemPos, itemInfo, true, inventoryEndPosition );
 
                 ITEMBASE* pItemBase = NULL;
                 // ���������ˡ���c��ia(AI������IAa�ˡ���c)��u����AIAU ��uA����A
