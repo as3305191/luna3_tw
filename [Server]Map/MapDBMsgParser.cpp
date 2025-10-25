@@ -2304,9 +2304,20 @@ void RCharacterItemInfo(LPQUERY pData, LPDBMESSAGE pMessage)
 					����, ��� �����ۿ� �������� ���� TB_ITEM_DROP_OPTION�� ��������
 					���ս��� �����´�
 		*/
+		//{
+			//const QUERYST& record = pData[ i ];
+
+			//ITEM_OPTION& option = optionMessage.mOption[ optionMessage.mSize ];
 		{
 			const QUERYST& record = pData[ i ];
 
+			const DWORD maxOptionCount = sizeof( optionMessage.mOption ) / sizeof( optionMessage.mOption[ 0 ] );
+
+			if( optionMessage.mSize >= maxOptionCount )
+			{
+					ASSERT( 0 );
+					continue;
+			}
 			ITEM_OPTION& option = optionMessage.mOption[ optionMessage.mSize ];
 			option.mTransmogIdx = atoi( ( char* )record.Data[ 48 ] ); 
 
@@ -5061,9 +5072,20 @@ void RGuildItemSelect( LPQUERY query, LPDBMESSAGE dbMessage )
 		guild->InitGuildItem( item );
 
 		// �ɼ� �ε�
-		{
-			const QUERYST& record = query[ i ];
+		//{
+			//const QUERYST& record = pData[ i ];
 
+			//ITEM_OPTION& option = optionMessage.mOption[ optionMessage.mSize ];
+		{
+			const QUERYST& record = pData[ i ];
+
+			const DWORD maxOptionCount = sizeof( optionMessage.mOption ) / sizeof( optionMessage.mOption[ 0 ] );
+
+			if( optionMessage.mSize >= maxOptionCount )
+			{
+					ASSERT( 0 );
+					continue;
+			}
 			ITEM_OPTION& option = optionMessage.mOption[ optionMessage.mSize ];
 
 			{
