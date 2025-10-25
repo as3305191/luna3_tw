@@ -59,7 +59,7 @@ public:
 	WORD GetCellNum() const { return m_wCellNum; }
 	LONG GetCurSelCellPos() const { return m_lCurSelCellPos; }
 	void SetCurSelCellPos(LONG pos){ m_lCurSelCellPos = pos; }
-	cIcon * GetIconForIdx(WORD idx){ ASSERT(idx < m_wCellNum); return m_pIconCell[idx].icon; }
+	cIcon * GetIconForIdx(WORD idx){ if(idx >= m_wCellNum) return NULL; return m_pIconCell[idx].icon; }
 	
 	virtual void SetDisable( BOOL val );
 	virtual BOOL IsDragOverDraw();

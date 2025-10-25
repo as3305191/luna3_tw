@@ -224,7 +224,7 @@ DWORD cIconDialog::ActionEvent(CMouse * mouseInfo)
 			}
 			else
 			{
-				if( m_bItemDraged )	//µå·¡±×ÈÄ¿¡ ³¡³ÂÀ½.
+				if( m_bItemDraged )	//ï¿½å·¡ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 				{
 					if( GetPositionForXYRef(mouseInfo->GetMouseEventX(),mouseInfo->GetMouseEventY(),pos) )
 						m_lCurSelCellPos = pos;
@@ -278,6 +278,10 @@ void cIconDialog::SetAlpha(BYTE al)
 
 BOOL cIconDialog::IsAddable(WORD idx)
 {
+	if(idx >= m_wCellNum)
+	{
+		return FALSE;
+	}
 	if(m_pIconCell[idx].use == USE)
 		return FALSE;
 	return TRUE;
@@ -321,7 +325,7 @@ BOOL cIconDialog::GetPositionForXYRef(LONG mouseX, LONG mouseY, WORD& pos)
 BOOL cIconDialog::AddIcon(WORD cellIdx, cIcon * icon,BOOL bOnlyLink)
 {
 	ASSERT(icon);
-	if(cellIdx > m_wCellNum) return FALSE;
+	if(cellIdx >= m_wCellNum) return FALSE;
 	if(m_pIconCell[cellIdx].use == NOTUSE)
 	{
 		m_pIconCell[cellIdx].icon = icon;
@@ -331,7 +335,7 @@ BOOL cIconDialog::AddIcon(WORD cellIdx, cIcon * icon,BOOL bOnlyLink)
 		{
 			m_pIconCell[cellIdx].icon->SetAbsXY((LONG)m_absPos.x+m_pIconCell[cellIdx].rel_rect.left, (LONG)m_absPos.y+m_pIconCell[cellIdx].rel_rect.top);
 			m_pIconCell[cellIdx].icon->SetParent(this);
-			//ÇöÀç Ã¢ÀÌ µð½º¿¡ÀÌºíÀÌ¸é ¾ÆÀÌÄÜµµ µð½º¿¡ÀÌºí
+			//ï¿½ï¿½ï¿½ï¿½ Ã¢ï¿½ï¿½ ï¿½ð½º¿ï¿½ï¿½Ìºï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Üµï¿½ ï¿½ð½º¿ï¿½ï¿½Ìºï¿½
 			if( m_bDisable )
 				m_pIconCell[cellIdx].icon->SetDisable( TRUE );
 			m_pIconCell[cellIdx].icon->SetActive(m_bActive);
@@ -353,7 +357,7 @@ BOOL cIconDialog::AddIcon(WORD cellIdx, cIcon * icon,BOOL bOnlyLink)
 
 /********************************************/
 /*   Delete operation						*/
-/*	 À©µµ¿ì ¸Þ´ÏÀú¿¡¼­ »èÁ¦¸¦ ÇØÁØ´Ù.		*/
+/*	 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø´ï¿½.		*/
 /********************************************/
 
 BOOL cIconDialog::DeleteIcon(WORD cellIdx, cIcon ** icon)
