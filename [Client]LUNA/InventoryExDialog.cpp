@@ -2874,35 +2874,9 @@ BOOL CInventoryExDialog::CanBeMoved( CItem* pItem, POSTYPE toPos )
                         else if( eWearedItem_Card_Weapon1 <= movingItemInfo->EquipSlot &&
                                 movingItemInfo->EquipSlot <= eWearedItem_Card_Shoes2 )
                         {
-                                switch( movingItemInfo->EquipSlot )
+                                if( targetSlot != movingItemInfo->EquipSlot )
                                 {
-                                case eWearedItem_Card_Weapon1:
-                                case eWearedItem_Card_Weapon2:
-                                        if( targetSlot != eWearedItem_Card_Weapon1 && targetSlot != eWearedItem_Card_Weapon2 )
-                                        {
-                                                return FALSE;
-                                        }
-                                        break;
-                                case eWearedItem_Card_Glove1:
-                                case eWearedItem_Card_Glove2:
-                                        if( targetSlot != eWearedItem_Card_Glove1 && targetSlot != eWearedItem_Card_Glove2 )
-                                        {
-                                                return FALSE;
-                                        }
-                                        break;
-                                case eWearedItem_Card_Shoes1:
-                                case eWearedItem_Card_Shoes2:
-                                        if( targetSlot != eWearedItem_Card_Shoes1 && targetSlot != eWearedItem_Card_Shoes2 )
-                                        {
-                                                return FALSE;
-                                        }
-                                        break;
-                                default:
-                                        if( targetSlot != movingItemInfo->EquipSlot )
-                                        {
-                                                return FALSE;
-                                        }
-                                        break;
+                                 return FALSE;
                                 }
                         }
                         else if( movingItemInfo->EquipSlot != targetSlot )

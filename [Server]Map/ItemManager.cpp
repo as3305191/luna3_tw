@@ -8754,37 +8754,8 @@ BOOL CItemManager::CanbeMoved(DWORD wIconIdx,POSTYPE pos, CPlayer* pPlayer)
                 }
                 else if( eWearedItem_Card_Weapon1 <= pInfo->EquipSlot && pInfo->EquipSlot <= eWearedItem_Card_Shoes2 )
                 {
-                        switch( pInfo->EquipSlot )
-                        {
-                        case eWearedItem_Card_Weapon1:
-                                if( targetSlot != eWearedItem_Card_Weapon1 && targetSlot != eWearedItem_Card_Weapon2 )
-                                        return FALSE;
-                                break;
-                        case eWearedItem_Card_Weapon2:
-                                if( targetSlot != eWearedItem_Card_Weapon1 && targetSlot != eWearedItem_Card_Weapon2 )
-                                        return FALSE;
-                                break;
-                        case eWearedItem_Card_Glove1:
-                                if( targetSlot != eWearedItem_Card_Glove1 && targetSlot != eWearedItem_Card_Glove2 )
-                                        return FALSE;
-                                break;
-                        case eWearedItem_Card_Glove2:
-                                if( targetSlot != eWearedItem_Card_Glove1 && targetSlot != eWearedItem_Card_Glove2 )
-                                        return FALSE;
-                                break;
-                        case eWearedItem_Card_Shoes1:
-                                if( targetSlot != eWearedItem_Card_Shoes1 && targetSlot != eWearedItem_Card_Shoes2 )
-                                        return FALSE;
-                                break;
-                        case eWearedItem_Card_Shoes2:
-                                if( targetSlot != eWearedItem_Card_Shoes1 && targetSlot != eWearedItem_Card_Shoes2 )
-                                        return FALSE;
-                                break;
-                        default:
-                                if( targetSlot != pInfo->EquipSlot )
-                                        return FALSE;
-                                break;
-                        }
+					if( targetSlot != pInfo->EquipSlot )
+							return FALSE;
                 }
                 // 080703 LUJ, �̵��� ���°� �ƴ� ��� ���� �Ұ�
                 else if( targetSlot != pInfo->EquipSlot )

@@ -70,33 +70,53 @@ namespace
 
                 if( cardSlotStart <= position && position < cardSlotEnd )
                 {
-                        if( useInventoryFallback )
-                        {
-                                const bool isCardItem =
-									itemInfo &&
-									eWearedItem_Card_Weapon1 <= itemInfo->EquipSlot &&
-									itemInfo->EquipSlot < eWearedItem_Max;
+                        const POSTYPE cardSlotOffset = position - cardSlotStart;
 
-                                if( !isCardItem )
+                        if( itemInfo )
+                        {
+                              if( itemInfo )
                                 {
-									const POSTYPE cardSlotOffset = position - cardSlotStart;
-									const POSTYPE cardSlotCount = eWearedItem_Max - eWearedItem_Card_Weapon1;
-									const POSTYPE fallbackInventoryStart = TP_EXTENDED_INVENTORY2_END - cardSlotCount;
+                                 	const bool isCardItem =
+										eWearedItem_Card_Weapon1 <= itemInfo->EquipSlot &&
+										itemInfo->EquipSlot < eWearedItem_Max;
 
-									if( fallbackInventoryStart >= TP_INVENTORY_START )
-									{
-											position = fallbackInventoryStart + cardSlotOffset;
-									}
-									else
-									{
-											position = TP_INVENTORY_START + cardSlotOffset;
-									}
+                                         if( isCardItem )
+											{
+													const POSTYPE equipSlotOffset = itemInfo->EquipSlot - eWearedItem_Card_Weapon1;
+
+													if( useInventoryFallback )
+													{
+															position = cardSlotStart + equipSlotOffset;
+													}
+													else
+													{
+															position = TP_STORAGE_START + equipSlotOffset;
+													}
+											}
+											else if( useInventoryFallback )
+											{
+													const POSTYPE cardSlotCount = eWearedItem_Max - eWearedItem_Card_Weapon1;
+													const POSTYPE fallbackInventoryStart = TP_EXTENDED_INVENTORY2_END - cardSlotCount;
+
+													if( fallbackInventoryStart >= TP_INVENTORY_START )
+													{
+															position = fallbackInventoryStart + cardSlotOffset;
+													}
+													else
+													{
+															position = TP_INVENTORY_START + cardSlotOffset;
+													}
+											}
+											else
+											{
+												 position = TP_STORAGE_START + cardSlotOffset;
+                               				}
                                 }
+
                         }
-						else
+						else if( !useInventoryFallback )
                         {
-                                const POSTYPE cardSlotOffset = position - cardSlotStart;
-                                position = TP_STORAGE_START + cardSlotOffset;
+                            position = TP_STORAGE_START + cardSlotOffset;
                         }
                 }
 
