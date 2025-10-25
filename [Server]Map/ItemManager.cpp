@@ -8735,30 +8735,66 @@ BOOL CItemManager::CanbeMoved(DWORD wIconIdx,POSTYPE pos, CPlayer* pPlayer)
 */
 		return TRUE;
 	}
-	else if(TP_WEAR_START <= pos && pos < TP_WEAR_END)
-	{
-		ITEM_INFO * pInfo = GetItemInfo(wIconIdx);
-		if(!pInfo) return FALSE;
+	 else if(TP_WEAR_START <= pos && pos < TP_WEAR_END)
+        {
+                ITEM_INFO * pInfo = GetItemInfo(wIconIdx);
+                if(!pInfo) return FALSE;
 
-		if(pInfo->EquipSlot == eWearedItem_Earring1)
-		{	
-			if(pos-TP_WEAR_START != eWearedItem_Earring1 && pos-TP_WEAR_START != eWearedItem_Earring2)
-				return FALSE;
-		}
-		else if(pInfo->EquipSlot == eWearedItem_Ring1)
-		{	
-			if(pos-TP_WEAR_START != eWearedItem_Ring1 && pos-TP_WEAR_START != eWearedItem_Ring2)
-				return FALSE;
-		}
-		// 080703 LUJ, �̵��� ���°� �ƴ� ��� ���� �Ұ�
-		else if( pos-TP_WEAR_START != pInfo->EquipSlot )
-		{
-			if( ! pPlayer->GetHeroTotalInfo()->bUsingTwoBlade )
-				return FALSE;
-		}
-		
-		return CanEquip(pInfo, pPlayer);
-	}
+                const EWEARED_ITEM targetSlot = static_cast<EWEARED_ITEM>( pos - TP_WEAR_START );
+
+                if(pInfo->EquipSlot == eWearedItem_Earring1)
+                {
+                        if(targetSlot != eWearedItem_Earring1 && targetSlot != eWearedItem_Earring2)
+                                return FALSE;
+                }
+                else if(pInfo->EquipSlot == eWearedItem_Ring1)
+                {
+                        if(targetSlot != eWearedItem_Ring1 && targetSlot != eWearedItem_Ring2)
+                                return FALSE;
+                }
+                else if( eWearedItem_Card_Weapon1 <= pInfo->EquipSlot && pInfo->EquipSlot <= eWearedItem_Card_Shoes2 )
+                {
+                        switch( pInfo->EquipSlot )
+                        {
+                        case eWearedItem_Card_Weapon1:
+                                if( targetSlot != eWearedItem_Card_Weapon1 && targetSlot != eWearedItem_Card_Weapon2 )
+                                        return FALSE;
+                                break;
+                        case eWearedItem_Card_Weapon2:
+                                if( targetSlot != eWearedItem_Card_Weapon1 && targetSlot != eWearedItem_Card_Weapon2 )
+                                        return FALSE;
+                                break;
+                        case eWearedItem_Card_Glove1:
+                                if( targetSlot != eWearedItem_Card_Glove1 && targetSlot != eWearedItem_Card_Glove2 )
+                                        return FALSE;
+                                break;
+                        case eWearedItem_Card_Glove2:
+                                if( targetSlot != eWearedItem_Card_Glove1 && targetSlot != eWearedItem_Card_Glove2 )
+                                        return FALSE;
+                                break;
+                        case eWearedItem_Card_Shoes1:
+                                if( targetSlot != eWearedItem_Card_Shoes1 && targetSlot != eWearedItem_Card_Shoes2 )
+                                        return FALSE;
+                                break;
+                        case eWearedItem_Card_Shoes2:
+                                if( targetSlot != eWearedItem_Card_Shoes1 && targetSlot != eWearedItem_Card_Shoes2 )
+                                        return FALSE;
+                                break;
+                        default:
+                                if( targetSlot != pInfo->EquipSlot )
+                                        return FALSE;
+                                break;
+                        }
+                }
+                // 080703 LUJ, �̵��� ���°� �ƴ� ��� ���� �Ұ�
+                else if( targetSlot != pInfo->EquipSlot )
+                {
+                        if( ! pPlayer->GetHeroTotalInfo()->bUsingTwoBlade )
+                                return FALSE;
+                }
+
+                return CanEquip(pInfo, pPlayer);
+        }
 	// 080513 KTH -- â�� Ȯ�� ũ�⸦ ������ �ȱ�� �ִ��� üũ �Ѵ�.
 	//else if(TP_STORAGE_START <= pos && pos < TP_STORAGE_END)
 	else if( TP_STORAGE_START <= pos && pos < TP_STORAGE_START + (pPlayer->GetStorageNum()*TABCELL_STORAGE_NUM) )//TP_STORAGE_END)

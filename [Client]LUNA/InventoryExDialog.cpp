@@ -2853,34 +2853,63 @@ BOOL CInventoryExDialog::CanBeMoved( CItem* pItem, POSTYPE toPos )
 				return FALSE;
 			}
 		}
-		else if( movingItemInfo->EquipSlot == eWearedItem_Earring1 )
-		{	
-			if(toPos-TP_WEAR_START != eWearedItem_Earring1 && toPos-TP_WEAR_START != eWearedItem_Earring2)
-				return FALSE;
-		}
-		else if( movingItemInfo->EquipSlot == eWearedItem_Ring1 )
-		{	
-			if(toPos-TP_WEAR_START != eWearedItem_Ring1 && toPos-TP_WEAR_START != eWearedItem_Ring2)
-				return FALSE;
-		}		
-		else if( movingItemInfo->EquipSlot == eWearedItem_Earring1 )
-		{	
-			if( toPos - TP_WEAR_START != eWearedItem_Earring1 && toPos - TP_WEAR_START != eWearedItem_Earring2)
-			{
-				return FALSE;
-			}
-		}
-		else if( movingItemInfo->EquipSlot == eWearedItem_Ring1 )
-		{	
-			if( toPos - TP_WEAR_START != eWearedItem_Ring1 && toPos - TP_WEAR_START != eWearedItem_Ring2)
-			{
-				return FALSE;
-			}
-		}
-		else if( movingItemInfo->EquipSlot + TP_WEAR_START != toPos )
-		{
-			return FALSE;
-		}
+		else
+                {
+                        const EWEARED_ITEM targetSlot = static_cast<EWEARED_ITEM>( toPos - TP_WEAR_START );
+
+                        if( movingItemInfo->EquipSlot == eWearedItem_Earring1 )
+                        {
+                                if( targetSlot != eWearedItem_Earring1 && targetSlot != eWearedItem_Earring2 )
+                                {
+                                        return FALSE;
+                                }
+                        }
+                        else if( movingItemInfo->EquipSlot == eWearedItem_Ring1 )
+                        {
+                                if( targetSlot != eWearedItem_Ring1 && targetSlot != eWearedItem_Ring2 )
+                                {
+                                        return FALSE;
+                                }
+                        }
+                        else if( eWearedItem_Card_Weapon1 <= movingItemInfo->EquipSlot &&
+                                movingItemInfo->EquipSlot <= eWearedItem_Card_Shoes2 )
+                        {
+                                switch( movingItemInfo->EquipSlot )
+                                {
+                                case eWearedItem_Card_Weapon1:
+                                case eWearedItem_Card_Weapon2:
+                                        if( targetSlot != eWearedItem_Card_Weapon1 && targetSlot != eWearedItem_Card_Weapon2 )
+                                        {
+                                                return FALSE;
+                                        }
+                                        break;
+                                case eWearedItem_Card_Glove1:
+                                case eWearedItem_Card_Glove2:
+                                        if( targetSlot != eWearedItem_Card_Glove1 && targetSlot != eWearedItem_Card_Glove2 )
+                                        {
+                                                return FALSE;
+                                        }
+                                        break;
+                                case eWearedItem_Card_Shoes1:
+                                case eWearedItem_Card_Shoes2:
+                                        if( targetSlot != eWearedItem_Card_Shoes1 && targetSlot != eWearedItem_Card_Shoes2 )
+                                        {
+                                                return FALSE;
+                                        }
+                                        break;
+                                default:
+                                        if( targetSlot != movingItemInfo->EquipSlot )
+                                        {
+                                                return FALSE;
+                                        }
+                                        break;
+                                }
+                        }
+                        else if( movingItemInfo->EquipSlot != targetSlot )
+                        {
+                                return FALSE;
+                        }
+                }
 
 		// 090114 LYW --- InvantoryExDialog : ������ ���� ���� üũ �Լ� ������ ���� ó��.
 		const BYTE byEnableEquip = ITEMMGR->CanEquip(pItem->GetItemIdx() ) ;
