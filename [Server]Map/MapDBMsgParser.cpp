@@ -5076,8 +5076,8 @@ void RGuildItemSelect( LPQUERY query, LPDBMESSAGE dbMessage )
 			//const QUERYST& record = pData[ i ];
 
 			//ITEM_OPTION& option = optionMessage.mOption[ optionMessage.mSize ];
-		{
-			const QUERYST& record = pData[ i ];
+		 {
+			const QUERYST& record = query[ i ];
 
 			const DWORD maxOptionCount = sizeof( optionMessage.mOption ) / sizeof( optionMessage.mOption[ 0 ] );
 
